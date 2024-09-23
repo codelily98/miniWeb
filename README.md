@@ -2,7 +2,7 @@
 
 ### 팀원
 
-- **김태훈** - codelily98@naver.com
+- **김태훈** - codelily98@gmail.com
 - **김효진** - yellomouse05@gmail.com
 - **신재영** - shinja0829@naver.com
 - **추현식** - gustlr887@naver.com
