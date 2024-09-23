@@ -28,12 +28,20 @@
     - `BoardDAO.java`: 게시판 DB 연동
 - **board.service**
     - `Board(기능)Service.java`: 게시판 관련 기능 구현
+- **imageboard.bean**
+    - `ImageboardDTO.java`: 이미지게시판 테이블 변수명과 일치하는 DTO
+    - `ImageboardPaging.java`: 이미지게시판 페이징 처리
+- **imageboard.dao**
+    - `ImageboardDAO.java`: 이미지게시판 DB 연동
+- **imageboard.service**
+    - `Imageboard(기능)Service.java`: 이미지게시판 관련 기능 구현
 - **com.control**
     - `CommandProcess.java`: 인터페이스 정의
     - `ControlServlet.java`: 서블릿
 - **mapper**
     - `memberMapper.xml`: 회원 관련 SQL
     - `boardMapper.xml`: 게시판 관련 SQL
+    - `imageboardMapper.xml`: 이미지게시판 관련 SQL
 - setting
     - `db.properties`: DB 연결 설정
     - `mybatis-config.xml`: MyBatis 설정
@@ -61,6 +69,7 @@
         - `mybatis-3.5.16.jar`
         - `ojdbc11.jar`
         - `standard-1.1.2.jar`
+        - `cos-05Nov2002.jar`
 
 ### 3. **페이지 구성**
 
