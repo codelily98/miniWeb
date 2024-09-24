@@ -29,12 +29,12 @@
 - **board.service**
     - `Board(기능)Service.java`: 게시판 관련 기능 구현
 - **adminboard.bean**
-    - `adminboardDTO.java`: 관리자게시판 테이블 변수명과 일치하는 DTO
-    - `adminboardPaging.java`: 관리자게시판 페이징 처리
+    - `adminDTO.java`: 관리자페이지 테이블 변수명과 일치하는 DTO
+    - `adminPaging.java`: 관리자페이지 페이징 처리
 - **adminboard.dao**
-    - `adminboardDAO.java`: 관리자게시판 DB 연동
+    - `adminDAO.java`: 관리자페이지 DB 연동
 - **adminboard.service**
-    - `adminboard(기능)Service.java`: 관리자게시판 관련 기능 구현
+    - `admin(기능)Service.java`: 관리자페이지 관련 기능 구현
 - **com.control**
     - `CommandProcess.java`: 인터페이스 정의
     - `ControlServlet.java`: 서블릿
