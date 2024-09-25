@@ -3,36 +3,84 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>개발자 커뮤니티: 홈</title>
+<title></title>
 <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
+<div id="topwrap">
+	<div id="topnav">
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">홈</a></li>
+		</ul>
+	</div>
+</div>
 <div id="wrap">
 	<div id="header">
-		<div id="topnav">
-			<h1>상단 네비게이션</h1>
-		</div>
 		<div id="logowrap">
-			<h1>로고</h1>
-		</div>
-		<div id="menulist">
-			<h1>메뉴</h1>
+			<h1>Google</h1>
 		</div>
 	</div>
-	
 	<div id="container">
-		<div id="nav">
-			<div id="loginwrap">
-				<h1>로그인</h1>
+		<div id="section">
+			<div id="formwrap">
+				<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요"> 
+			</div>
+			<div id="menulist">
+				<ul>
+					<li><div class="menuli">
+						<a class="awrap" href="">
+							<div class="imgwrap">
+								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+							</div>
+							<div class="menuliname">
+								<span>로그인</span>
+							</div>					
+						</a>
+					</div></li>
+					<li><div class="menuli">
+						<a class="awrap" href="">
+							<div class="imgwrap">
+								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+							</div>
+							<div class="menuliname">
+								<span>뉴스</span>
+							</div>					
+						</a>
+					</div></li>
+					<li><div class="menuli">
+						<a class="awrap" href="">
+							<div class="imgwrap">
+								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+							</div>
+							<div class="menuliname">
+								<span>커뮤니티</span>
+							</div>					
+						</a>
+					</div></li>
+					<li><div class="menuli">
+						<a class="awrap" href="">
+							<div class="imgwrap">
+								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+							</div>
+							<div class="menuliname">
+								<span>날씨</span>
+							</div>					
+						</a>
+					</div></li>
+					<li><div class="menuli">
+						<a class="awrap" href="">
+							<div class="imgwrap">
+								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+							</div>
+							<div class="menuliname">
+								<span>지도</span>
+							</div>					
+						</a>
+					</div></li>
+				</ul>
 			</div>
 		</div>
-		<div id="section">
-			<h1>메인화면 내용</h1>
-		</div>
-	</div>
-	
-	<div id="footer">
-		<h1>카피라이트</h1>
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

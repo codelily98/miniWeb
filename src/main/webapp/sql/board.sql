@@ -1,13 +1,13 @@
 -- [MySQL TABLE] 게시판 테이블
-CREATE TABLE BOARD(
+CREATE TABLE MINIBOARD(
      seq INTEGER PRIMARY KEY AUTO_INCREMENT,	-- 글번호
      id VARCHAR(20) NOT NULL,          			-- 아이디
-     name VARCHAR(40) NOT NULL,        			-- 이름
+     nickname VARCHAR(100),						-- 닉네임
      email VARCHAR(100),						-- 이메일
      subject VARCHAR(255) NOT NULL,    			-- 제목
-     content VARCHAR(4000) NOT NULL,   			-- 내용
-     image1 VARCHAR(200) DEFAULT NULL,			-- 이미지 파일(파일이름)
-     ref int NOT NULL,               			-- 그룹번호
+     content VARCHAR(5000) NOT NULL,   			-- 내용
+     image1 VARCHAR(200) DEFAULT NULL,			-- 게시글 이미지 파일(파일이름)
+     ref int DEFAULT 0 NOT NULL,       			-- 그룹번호
      lev int DEFAULT 0 NOT NULL,     			-- 단계
      step int DEFAULT 0 NOT NULL,    			-- 글순서
      pseq int DEFAULT 0 NOT NULL,    			-- 원글번호

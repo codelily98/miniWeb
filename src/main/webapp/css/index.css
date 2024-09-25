@@ -1,2 +1,171 @@
-@charset "UTF-8";
+/* 전체 레이아웃 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #ffffff;
+}
 
+a:active, a:visited, a:link {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#topwrap {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#topnav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#topnav h1 {
+    font-size: 14px;
+    color: #5f6368;
+}
+
+#wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#logowrap {
+	text-align: center;
+}
+
+#logowrap h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #4285f4;
+}
+
+#menulist h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #5f6368;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background-color: #ffffff;
+}
+
+#section {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+#section input[type="text"] {
+	font-size: 18px;
+	border-radius: 25px;
+	width: 746px;
+	height: 48px;
+	padding: 0 1.2em;
+	border-style: none;
+	border: 1px solid #4285f4;
+}
+
+#section input[type="text"]:focus {
+	outline-color: #4285f4;
+}
+
+#section h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #202124;
+}
+
+#menulist {
+	display: inline-block;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+#menulist ul li {
+	display: inline-block;
+}
+
+.menuli {
+	padding : 5px;
+	width: 110px;
+	height: 135px;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	justify-content: center;
+}
+
+.awrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.awrap:hover {
+	color: #4285f4;
+	text-decoration: none;
+}
+
+.imgwrap {
+	width: 60px;
+	height: 60px;
+	border: 1px solid #4285f4;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #4285f4;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.imgwrap .menuliimg {
+	width: 30px;
+	height: 30px;
+}
+
+#footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #5f6368;
+    font-size: 12px;
+    margin-top: 50px;
+    background-color: #ffffff;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* 버튼, 링크 스타일 */
+a {
+    text-decoration: none;
+    color: #1a73e8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
