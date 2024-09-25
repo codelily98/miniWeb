@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/* 전체 레이아웃 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #ffffff;
+}
+
+a:active, a:visited, a:link {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#topwrap {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#topnav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#topnav ul li {
+	display: inline-block;
+}
+
+#topnav ul li a {
+	padding: 10px;
+}
+
+#topnav ul li a:hover {
+	text-decoration: none;
+	color: #ff4b2b;
+	cursor: pointer;
+}
+
+#wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -3.5em;
+}
+
+#logowrap {
+	text-align: center;
+	margin-bottom: -4em;
+}
+
+#logowrap h1 {
+    font-size: 56px;
+    font-weight: 400;
+    color: #ff4b2b;
+    margin-top: 0.5em;
+    margin-bottom: -4em;
+}
+
+#gomain {
+	font-weight: bold;
+}
+
+#gomain:hover {
+	color: #ff4b2b;
+	cursor: pointer;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background-color: #ffffff;
+}
+
+#section {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+#section input[type="text"] {
+	font-size: 18px;
+	border-radius: 25px;
+	width: 746px;
+	height: 48px;
+	padding: 0 1.2em;
+	border-style: none;
+	border: 1px solid #ff4b2b;
+}
+
+#section input[type="text"]:focus {
+	outline-color: #ff4b2b;
+}
+
+#section h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #202124;
+}

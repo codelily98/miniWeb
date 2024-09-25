@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 전체 레이아웃 설정 */
 body {
     margin: 0;
@@ -35,8 +36,9 @@ a:active, a:visited, a:link {
 }
 
 #topnav ul li a:hover {
-	color: #ff4b2b;
 	text-decoration: none;
+	color: #ff4b2b;
+	cursor: pointer;
 }
 
 #gomain {
@@ -56,7 +58,7 @@ a:active, a:visited, a:link {
 	transition: background-color 0.25s ease;
 }
 
-#topnav ul li a:last-of-type:hover {
+#loginlink:last-of-type:hover {
 	color: white;
 	background-color: #ff4b2b;
 	text-decoration: none;
@@ -190,9 +192,4 @@ ul {
     font-size: 12px;
     margin-top: 50px;
     background-color: #ffffff;
-}
-
-h1 {
-    margin: 0;
-    padding: 0;
 }

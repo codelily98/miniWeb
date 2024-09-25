@@ -11,7 +11,7 @@ $('#id').blur(function(){
 			url: '/miniWeb/member/checkId.do',
 			data: {'id' : $('#id').val()},
 			dataType: 'text',
-			success:function(data){
+			success: function(data){
 				if(data.trim() == 'exist'){
 					$('#idDiv').html('<font color = red>사용 불가능</font>');
 				}

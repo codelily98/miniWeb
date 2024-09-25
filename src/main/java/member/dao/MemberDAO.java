@@ -12,7 +12,7 @@ import member.bean.MemberDTO;
 
 public class MemberDAO {
 	private static MemberDAO memberDAO = new MemberDAO();
-	private SqlSessionFactory sessiongFactory;
+	private SqlSessionFactory sessionFactory;
 	
 	public static MemberDAO getInstance() {
 		return memberDAO;
@@ -21,14 +21,14 @@ public class MemberDAO {
 	public MemberDAO() {
 		try {
 			Reader reader = Resources.getResourceAsReader("mybatis-config.xml"); // - 문자 단위
-			sessiongFactory = new SqlSessionFactoryBuilder().build(reader);		
+			sessionFactory = new SqlSessionFactoryBuilder().build(reader);		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public void write(MemberDTO memberDTO) {
-		SqlSession sqlSession = sessiongFactory.openSession();
+		SqlSession sqlSession = sessionFactory.openSession();
 		sqlSession.insert("memberSQL.write", memberDTO);
 		sqlSession.commit();
 		sqlSession.close();
@@ -37,7 +37,7 @@ public class MemberDAO {
 	public boolean isExistId(String id){
 		boolean exist = false;
 		MemberDTO memberDTO = null;
-		SqlSession sqlSession = sessiongFactory.openSession();
+		SqlSession sqlSession = sessionFactory.openSession();
 		memberDTO = sqlSession.selectOne("memberSQL.isExistId", id);
 		if(memberDTO != null ) {
 			exist = true;
@@ -50,7 +50,7 @@ public class MemberDAO {
 	public boolean isExistNick(String nickname) {
 		boolean exist = false;
 		MemberDTO memberDTO = null;
-		SqlSession sqlSession = sessiongFactory.openSession();
+		SqlSession sqlSession = sessionFactory.openSession();
 		memberDTO = sqlSession.selectOne("memberSQL.isExistId", nickname);
 		if(memberDTO != null ) {
 			exist = true;

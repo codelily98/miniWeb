@@ -11,7 +11,7 @@
 <div id="topwrap">
 	<div id="topnav">
 		<ul>
-			<li><a href="">홈</a></li>
+			<li><a href="./index.do">홈</a></li>
 			<li><a href="./member/loginForm.do" id="loginlink">로그인</a></li>			
 		</ul>
 	</div>
@@ -50,7 +50,7 @@
 						</a>
 					</div></li>
 					<li><div class="menuli">
-						<a class="awrap" href="">
+						<a class="awrap" href="./board/boardForm.do">
 							<div class="imgwrap">
 								<img class="menuliimg" src="./image/comu.png" alt="커뮤니티">
 							</div>
