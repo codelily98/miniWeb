@@ -7,6 +7,7 @@ CREATE TABLE MINIBOARD(
      subject VARCHAR(255) NOT NULL,    			-- 제목
      content VARCHAR(5000) NOT NULL,   			-- 내용
      image1 VARCHAR(200) DEFAULT NULL,			-- 게시글 이미지 파일(파일이름)
+     profile VARCHAR(200) DEFAULT NULL,			-- 프로필 이미지(파일이름)
      ref int DEFAULT 0 NOT NULL,       			-- 그룹번호
      lev int DEFAULT 0 NOT NULL,     			-- 단계
      step int DEFAULT 0 NOT NULL,    			-- 글순서
@@ -15,3 +16,4 @@ CREATE TABLE MINIBOARD(
      hit int DEFAULT 0,              			-- 조회수
      logtime TIMESTAMP DEFAULT NOW()			-- 작성일
  );
+ select * from minimember;

@@ -24,9 +24,14 @@ body, html {
 	margin-bottom: 20px;
 }
 
-#loginformwrap .title span {
+#loginformwrap .title #gomain {
 	font-size: 36px;
 	font-weight: bold;
+}
+
+#loginformwrap .title #gomain:hover {
+	color: #ff4b2b;
+	cursor: pointer;
 }
 
 input[type="text"], input[type="password"] {

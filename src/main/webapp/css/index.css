@@ -39,6 +39,15 @@ a:active, a:visited, a:link {
 	text-decoration: none;
 }
 
+#gomain {
+	font-weight: bold;
+}
+
+#gomain:hover {
+	color: #ff4b2b;
+	cursor: pointer;
+}
+
 #loginlink {
 	color: #ffffff;
 	padding: 5px 10px;

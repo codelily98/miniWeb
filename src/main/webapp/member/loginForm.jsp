@@ -14,7 +14,7 @@
 			<div id="loginwrap">
 				<div id="titlewrap">
 					<div class="title">
-						<span>로그인</span>
+						<span id="gomain">Google</span>
 					</div>
 				</div>
 				<div class="inputwrap">
@@ -35,6 +35,7 @@
 		</form>
 	</div>
 </div>
-<script type="text/javascript" src="../js/memberForm.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../js/loginForm.js"></script>
 </body>
 </html>

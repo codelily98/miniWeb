@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -18,7 +19,7 @@
 <div id="wrap">
 	<div id="header">
 		<div id="logowrap">
-			<h1>Google</h1>
+			<h1 id="gomain">Google</h1>
 		</div>
 	</div>
 	<div id="container">
