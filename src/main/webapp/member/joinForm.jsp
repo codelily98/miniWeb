@@ -4,55 +4,52 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>function(){}: Join</title>
+<title>404: 회원가입</title>
 <link rel="stylesheet" href="../css/joinForm.css">
 </head>
 <body>
 <div id="wrap">
-	<div id="joinformwrap">
+   <div id="joinformwrap">
       <form id="joinForm">
          <div id="joinwrap">
             <div id="titlewrap">
                <div class="title">
-                  <span id="gomain">Google</span>
+                  <span id="gomain">404</span>
                </div>
             </div>
             <div class="inputwrap">
                <div id="idwrap">
                   <input type="text" id="id" name="id" placeholder="아이디" required="required">
                   <input type="hidden" id="checkid" value="">
-                  <div id="idDiv" class="check"></div>
                </div>
                <div id="pwdwrap">
-                  <input type="password" id="pwd" name="pwd" placeholder="비밀번호" required="required">
-                  <div id="pwdDiv" class="check"></div>                  
+                  <input type="password" id="pwd" name="pwd" placeholder="비밀번호" required="required">              
                </div>
                <div id="repwdwrap">
                   <input type="password" id="repwd" name="repwd" placeholder="비밀번호 확인" required="required">
-                  <div id="repwdDiv" class="check"></div>
                </div>
                <div id="nicknamewrap">
                   <input type="text" id="nickname" name="nickname" placeholder="닉네임" required="required">
                   <input type="hidden" id="checknick" value="">
-                  <div id="nicknameDiv" class="check"></div>
                </div> 
                <div id="namewrap">
                   <input type="text" id="name" name="name" placeholder="이름" required="required">
-                  <div id="nameDiv" class="check"></div>
+                  <div id="check1" class="check"></div>
                </div>
                <div id="genderwrap">
-                  <label for="gender1">남자</label>
                   <input type="radio" id="gender1" name="gender" value="M">
-                  <label for="gender2">여자</label>
+                  <label for="gender1">남자</label>
                   <input type="radio" id="gender2" name="gender" value="F">
+                  <label for="gender2">여자</label>
                </div>
                <div id="emailwrap">
                   <input type="email" id="email" name="email" placeholder="이메일" required="required">
                   <input type="button" id="emailcheck" name="emailcheck" value="이메일 인증">
-                  <div id="emailDiv" class="check"></div>
-                  <input type="text" id=ckechnum name="ckechnum" placeholder="인증번호" required="required">
+               </div>
+               <div>
+                  <input type="text" id="ckechnum" name="ckechnum" placeholder="인증번호" required="required">
                   <input type="button" id="emailchecknum" value="인증번호 확인">
-                  <div id="checkemailDiv" class="check"></div>
+                  <div id="check2" class="check"></div>
                </div>
                <div id="zipcodewrap">
                   <input type="text" id="zipcode" placeholder="우편번호" name="zipcode">

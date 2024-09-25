@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>function(){}: Login</title>
+<title>404: 로그인</title>
 <link rel="stylesheet" href="../css/loginForm.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 			<div id="loginwrap">
 				<div id="titlewrap">
 					<div class="title">
-						<span id="gomain">Google</span>
+						<span id="gomain">404</span>
 					</div>
 				</div>
 				<div class="inputwrap">

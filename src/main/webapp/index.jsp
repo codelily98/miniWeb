@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>function(){}: home</title>
+<title>404: 메인</title>
 <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 <div id="wrap">
 	<div id="header">
 		<div id="logowrap">
-			<h1 id="gomain">Google</h1>
+			<h1 id="gomain">404</h1>
 		</div>
 	</div>
 	<div id="container">

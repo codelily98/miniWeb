@@ -41,6 +41,7 @@ input[type="text"], input[type="password"] {
 	border-radius: 10px;
 	margin-bottom: 1em;
 	border-style: none;
+	background-color: #ffffff;
 	outline: 1px solid #ff4b2b; 
 }
 

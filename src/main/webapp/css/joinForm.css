@@ -34,6 +34,33 @@ body, html {
 	cursor: pointer;
 }
 
+#genderwrap {
+	padding-bottom: 1em;
+}
+
+#genderwrap input[type=radio] {
+	display: none;
+}
+
+#genderwrap input[type=radio]+label{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    width: 285px;
+    border: 1px solid #ff4b2b;
+    border-radius: 10px;
+    padding: 0.7em 1.2em;
+    background-color: #ffffff;
+    color: #ff4b2b;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+#genderwrap input[type=radio]:checked+label{
+    background-color: #ff4b2b;
+    color: #ffffff;
+}
+
 #id, #name, #nickname, #addr1, #addr2, input[type="password"] {
 	width: 600px;
 	padding: 0.5em 1.2em;
@@ -59,9 +86,11 @@ input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .check {
-	color: red;
+	height: 24px;
 	font-size: 9pt;
 	margin-left: 1em;
+	margin-top: -5px;
+	margin-bottom: 5px;
 }
 
 #joinbtn, input[type="reset"] {
