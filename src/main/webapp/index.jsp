@@ -3,15 +3,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>function(){}: home</title>
 <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 <div id="topwrap">
 	<div id="topnav">
 		<ul>
-			<li><a href="">로그인</a></li>
 			<li><a href="">홈</a></li>
+			<li><a href="./member/loginForm.do" id="loginlink">로그인</a></li>			
 		</ul>
 	</div>
 </div>
@@ -29,9 +29,9 @@
 			<div id="menulist">
 				<ul>
 					<li><div class="menuli">
-						<a class="awrap" href="">
+						<a class="awrap" href="./member/loginForm.do">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+								<img class="menuliimg" src="./image/peo.png" alt="로그인">
 							</div>
 							<div class="menuliname">
 								<span>로그인</span>
@@ -41,7 +41,7 @@
 					<li><div class="menuli">
 						<a class="awrap" href="">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+								<img class="menuliimg" src="./image/news.png" alt="뉴스">
 							</div>
 							<div class="menuliname">
 								<span>뉴스</span>
@@ -51,7 +51,7 @@
 					<li><div class="menuli">
 						<a class="awrap" href="">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+								<img class="menuliimg" src="./image/comu.png" alt="커뮤니티">
 							</div>
 							<div class="menuliname">
 								<span>커뮤니티</span>
@@ -61,10 +61,10 @@
 					<li><div class="menuli">
 						<a class="awrap" href="">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+								<img class="menuliimg" src="./image/cale.png" alt="달력">
 							</div>
 							<div class="menuliname">
-								<span>날씨</span>
+								<span>달력</span>
 							</div>					
 						</a>
 					</div></li>

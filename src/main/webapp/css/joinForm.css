@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+body, html {
+	margin: 0 auto;
+	padding: 0;
+}
+
+#wrap {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+#joinformwrap {
+	border: 1px solid #ff4b2b;
+	border-radius: 10px;
+	padding: 4em;
+}
+
+#joinformwrap .title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#joinformwrap .title span {
+	font-size: 36px;
+	font-weight: bold;
+}
+
+#id, #name, #nickname, #addr1, #addr2, input[type="password"] {
+	width: 600px;
+	padding: 0.5em 1.2em;
+	font-size: 16px;
+	border-radius: 10px;
+	margin-bottom: 1em;
+	border-style: none;
+	outline: 1px solid #ff4b2b; 
+}
+
+#zipcode, input[type="email"] {
+	width: 394px;
+	padding: 0.5em 1.2em;
+	font-size: 16px;
+	border-radius: 10px;
+	margin-bottom: 1em;
+	border-style: none;
+	outline: 1px solid #ff4b2b; 
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	outline: 2px solid #ff4b2b;
+}
+
+#joinbtn, input[type="reset"] {
+	width: 316px;
+	padding: 0.7em 1.2em;
+	color: #ffffff;
+	border: 3px solid #ff4b2b;
+	background-color: #ff4b2b;
+	border-radius: 10px;
+}
+
+#zipcodebtn, #emailbtn {
+	font-size: 10pt;
+	width: 200px;
+	padding: 8px 5px;
+	color: #ffffff;
+	border: 1px solid #ff4b2b;
+	background-color: #ff4b2b;
+	border-radius: 10px;
+}
+
+input[type="button"]:hover, input[type="reset"]:hover {
+	cursor: pointer;
+}
+
+.awrap {
+	margin-top: 1em;
+	text-align: center;
+}
+
+.awrap a:link, .awrap a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.awrap a:hover {
+	color: #ff4b2b;
+	cursor: pointer;
+}
