@@ -72,10 +72,13 @@
 						<!-- DB에서 불러와서 입력 -->
 						<c:if test="${list != null}">
 						<c:forEach var = "boardDTO" items = "${list}">
+							<c:set var="startnum" value="${startnum + 1}"/>
 							<tr>
-								<td>${boardDTO.seq }</td>
-								<td>${boardDTO.subject }</td>
-								<td>${boardDTO.nickname }</td>
+								<td><input type="hidden" value="${boardDTO.seq}">
+									<span>${startnum}</span>
+								</td>
+								<td>${boardDTO.subject}</td>
+								<td>${boardDTO.nickname}</td>
 								<td>
 									<fmt:formatDate pattern = "yyyy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>
 								</td>
@@ -85,11 +88,14 @@
 						</c:if>
 					</tbody>
 				</table>
+				<div id="pagewrap">
+					${pagingHTML }
+				</div>
 			</div>
 		</div>
 	</div>
 	<div id="footer">
-	${pagingHTML }
+		
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

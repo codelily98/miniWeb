@@ -385,3 +385,31 @@ tbody tr {
 tbody tr:hover {
     background-color: #FFDFBF;
 }
+
+#pagewrap {
+	color: black;
+	font-family: 'Malgun Gothic';
+	font-size: 12pt;
+	text-align: center;
+	margin-top: 1em;
+}
+
+#pagewrap span {
+	text-decoration: none;
+	margin: 1em 0.5em;
+}
+
+#pagewrap span:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #ff4b2b;
+}
+
+#pagewrap #currentPaging {
+	font-weight: bold;
+	color: #ff4b2b;
+}
+
+#pagewrap #movepaging {
+	color: red;
+}
