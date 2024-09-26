@@ -32,7 +32,7 @@
 					<li><div class="menuli">
 						<a class="awrap" href="./member/loginForm.do">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/peo.png" alt="로그인">
+								<img class="menuliimg" src="./image/login.png" alt="로그인">
 							</div>
 							<div class="menuliname">
 								<span>로그인</span>
@@ -42,7 +42,7 @@
 					<li><div class="menuli">
 						<a class="awrap" href="">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/news.png" alt="뉴스">
+								<img class="menuliimg" src="./image/newsicon.png" alt="뉴스">
 							</div>
 							<div class="menuliname">
 								<span>뉴스</span>
@@ -52,7 +52,7 @@
 					<li><div class="menuli">
 						<a class="awrap" href="./board/boardForm.do">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/comu.png" alt="커뮤니티">
+								<img class="menuliimg" src="./image/community.png" alt="커뮤니티">
 							</div>
 							<div class="menuliname">
 								<span>커뮤니티</span>
@@ -62,7 +62,7 @@
 					<li><div class="menuli">
 						<a class="awrap" href="">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/cale.png" alt="달력">
+								<img class="menuliimg" src="./image/calender.png" alt="달력">
 							</div>
 							<div class="menuliname">
 								<span>달력</span>
@@ -72,7 +72,7 @@
 					<li><div class="menuli">
 						<a class="awrap" href="">
 							<div class="imgwrap">
-								<img class="menuliimg" src="./image/naver.png" alt="네이버1">
+								<img class="menuliimg" src="./image/map.png" alt="지도">
 							</div>
 							<div class="menuliname">
 								<span>지도</span>

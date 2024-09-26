@@ -1,5 +1,12 @@
 @charset "UTF-8";
 /* 전체 레이아웃 설정 */
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -14,36 +21,138 @@ a:active, a:visited, a:link {
 }
 
 #topwrap {
-    width: 100%;
-    background-color: #ffffff;
+    text-align: right;
+    width: 100%; /* Ensure it spans the full width */
+    box-sizing: border-box;
+    position: relative; /* Changed to relative so it flows within #wrap */
+}
+
+#header {
+    background-color: #fff;
+    color: white;
+    position: relative;
+}
+
+#topawrap {
+	background-color: #FF8E33;
+}
+
+#topwrap a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+#topnav a:hover {
+    text-decoration: underline;
 }
 
 #topnav {
-    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
-    padding: 10px 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    max-width: 1100px;
+    padding: 5px 30px;
 }
 
 #topnav #formwrap {
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-#topnav ul li {
+#searchwrap {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: -1em;
+	padding-bottom: 2em;
+}
+
+#searchwrap span {
+	font-family: 'LeeSeoyun';
+	align-items: center;
+	padding: 0em 0.5em;
+	color: #ff4b2b;
+}
+
+#searchwrap span:hover {
+	cursor: pointer;
+	color: #ff0000;
+}
+
+#searchwrap input[type="text"] {
+	align-items: center;
+}
+
+#formwrap input[type="text"] {
+    font-size: 18px;
+    border-radius: 25px;
+    width: 580px;
+    height: 48px;
+    padding: 0 1.2em;
+    border-style: none;
+    border: 1px solid #ff4b2b;
+}
+
+#formwrap input[type="text"]:focus {
+    outline-color: #ff4b2b;
+}
+
+#menunav {
+    margin-top: -20px; /* Add space between #logowrap and #menunav */
+    border-top: 1px solid #FF8E33;
+    border-bottom: 1px solid #FF8E33;
+}
+
+#menunav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#menunav ul li {
+    position: relative;
     display: inline-block;
-}
-
-#topnav ul li a {
-    padding: 10px;
-}
-
-#topnav ul li a:hover {
-    text-decoration: none;
-    color: #ff4b2b;
+    color: #40423C;
+    font-weight: bold;
     cursor: pointer;
+    text-align: center;
+    transition: color 250ms ease-out;
+}
+
+#menunav ul li::after {
+    position: absolute;
+    content: "";
+    display: block;
+    border-bottom: 2px solid #ff4b2b;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    transition: all 250ms ease-out;
+}
+
+#menunav ul li:hover {
+    color: #ff4b2b;
+}
+
+#menunav ul li:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+#menunav ul li a {
+	color: #40423C;
+	text-decoration: none;
+	display: block;
+	padding: 15px 20px;
+}
+
+#menunav ul li a:hover {
+	color: #ff4b2b;
 }
 
 #gomain {
@@ -75,22 +184,15 @@ a:active, a:visited, a:link {
     padding: 20px 0;
 }
 
-#header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-}
-
 #logowrap {
     text-align: center;
+    margin: 20px 0;
 }
 
-#logowrap h1 {
+#logowrap span {
     font-size: 56px;
     font-weight: 400;
     color: #ff4b2b;
-    margin-top: 0.5em;
 }
 
 #container {
@@ -106,20 +208,6 @@ a:active, a:visited, a:link {
     padding: 0 40px;
     margin-top: -1em;
     text-align: center;
-}
-
-#formwrap input[type="text"] {
-    font-size: 18px;
-    border-radius: 25px;
-    width: 580px;
-    height: 48px;
-    padding: 0 1.2em;
-    border-style: none;
-    border: 1px solid #ff4b2b;
-}
-
-#formwrap input[type="text"]:focus {
-    outline-color: #ff4b2b;
 }
 
 #menulist {
@@ -217,6 +305,22 @@ ul {
 #boardlist {
     width: 75%; /* 나머지 공간을 차지하게 */
     margin-top: 20px; /* 테이블과 동일한 여백 추가 */
+}
+
+#btnwrap {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+#btnwrap input[type="button"] {
+	color: #ffffff;
+	padding: 10px 20px;
+	font-size: 10pt;
+	margin-bottom: 5px;
+	border-style: none;
+	background-color: #ff4b2b;
+	border-radius: 5px;
 }
 
 table {

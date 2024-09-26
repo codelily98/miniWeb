@@ -9,77 +9,39 @@
 <link rel="stylesheet" href="../css/boardForm.css">
 </head>
 <body>
+<c:set var="context" value="${pageContext.request.contextPath}"/>
 <div id="topwrap">
-	<div id="topnav">
-		<ul>
-			<li><a href="../index.do">홈</a></li>
-			<li><a href="../member/loginForm.do" id="loginlink">로그인</a></li>			
-		</ul>
+	<div id="header">
+		<div id="topawrap">
+			<div id="topnav">
+			    <a href="../member/loginForm.do">로그인</a>&nbsp;|
+				<a href="../index.do">홈</a>
+			</div>
+		</div>
+		<div id="logowrap">
+			<div id="logo">
+				<div id="formwrap">
+					<div id="searchwrap">
+						<span id="gomain" onclick="location.href='../index.do'">404</span>
+						<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요">
+					</div> 
+				</div>
+			</div>
+		</div>
+		<div id="menunav">
+			<ul>
+				<li><a href="#">메인</a></li>
+				<li><a href="">뉴스</a></li>
+				<li><a href="#">커뮤니티</a></li>
+				<li><a href="#">달력</a></li>
+				<li><a href="#">지도</a></li>
+			</ul> 
+		</div>
 	</div>
 </div>
 <div id="wrap">
-	<div id="header">
-		<div id="logowrap">
-			<h1 id="gomain" onclick="location.href='../index.do'">404</h1>
-		</div>
-	</div>
 	<div id="container">
-		<div id="section">
-			<div id="menulist">
-				<ul>
-					<li><div class="menuli">
-						<a class="awrap" href="../member/loginForm.do">
-							<div class="imgwrap">
-								<img class="menuliimg" src="../image/peo.png" alt="로그인">
-							</div>
-							<div class="menuliname">
-								<span>로그인</span>
-							</div>					
-						</a>
-					</div></li>
-					<li><div class="menuli">
-						<a class="awrap" href="">
-							<div class="imgwrap">
-								<img class="menuliimg" src="../image/news.png" alt="뉴스">
-							</div>
-							<div class="menuliname">
-								<span>뉴스</span>
-							</div>					
-						</a>
-					</div></li>
-					<li><div class="menuli">
-						<a class="awrap" href="../board/boardForm.do">
-							<div class="imgwrap">
-								<img class="menuliimg" src="../image/comu.png" alt="커뮤니티">
-							</div>
-							<div class="menuliname">
-								<span>커뮤니티</span>
-							</div>					
-						</a>
-					</div></li>
-					<li><div class="menuli">
-						<a class="awrap" href="">
-							<div class="imgwrap">
-								<img class="menuliimg" src="../image/cale.png" alt="달력">
-							</div>
-							<div class="menuliname">
-								<span>달력</span>
-							</div>					
-						</a>
-					</div></li>
-					<li><div class="menuli">
-						<a class="awrap" href="">
-							<div class="imgwrap">
-								<img class="menuliimg" src="../image/naver.png" alt="네이버1">
-							</div>
-							<div class="menuliname">
-								<span>지도</span>
-							</div>					
-						</a>
-					</div></li>
-				</ul>
-			</div>
-		</div>
+		
 	</div>
 	<div id="boardcontainer">
 		<div id="boardnav">
@@ -91,6 +53,9 @@
 			</ul>
 		</div>
 		<div id="boardlist">
+			<div id="btnwrap">
+				<input type="button" id="writebtn" value="글쓰기">
+			</div>
 			<div id="listwrap">
 				<table>
 					<thead>
@@ -131,11 +96,7 @@
 		</div>
 	</div>
 	<div id="footer">
-		<div id="section">
-			<div id="formwrap">
-				<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요"> 
-			</div>
-		</div>
+		
 	</div>
 </div>
 </body>

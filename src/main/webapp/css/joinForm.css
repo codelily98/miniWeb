@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, html {
 	margin: 0 auto;
 	padding: 0;
@@ -25,12 +32,14 @@ body, html {
 }
 
 #joinformwrap #gomain {
+	font-family: 'LeeSeoyun';
 	font-size: 36px;
 	font-weight: bold;
+	color: #ff4b2b;
 }
 
 #joinformwrap #gomain:hover {
-	color: #ff4b2b;
+	color: #ff0000;
 	cursor: pointer;
 }
 

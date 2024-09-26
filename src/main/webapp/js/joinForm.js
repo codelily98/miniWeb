@@ -3,7 +3,7 @@ $('#id').on('keyup blur', function(){
     var id = $('#id').val();
     $('#check1').html('');
     if(!id){
-        $('#check1').html('먼저 아이디를 입력');
+        $('#check1').html('<span style="color: red; font-weight: bold;">먼저 아이디를 입력해주세요.</span>');
     } else {
         $.ajax({
             type: 'post',
@@ -12,9 +12,9 @@ $('#id').on('keyup blur', function(){
             dataType: 'text',
             success: function(data){
                 if(data.trim() == 'exist'){
-                    $('#check1').html('<span style="color: red; font-weight: bold;">사용 불가능</span>');
+                    $('#check1').html('<span style="color: red; font-weight: bold;">사용 불가능한 아이디.</span>');
                 } else {
-                    $('#check1').html('<span style="color: blue; font-weight: bold;">사용 가능</span>');
+                    $('#check1').html('<span style="color: blue; font-weight: bold;">사용 가능한 아이디.</span>');
                     $('#checkid').val(id);
                 }
             },
@@ -46,7 +46,7 @@ $('#nickname').on('keyup blur', function(){
     var nickname = $('#nickname').val();
     $('#check1').html('');
     if(!nickname){
-        $('#check1').html('먼저 닉네임을 입력');
+        $('#check1').html('<span style="color: red; font-weight: bold;">먼저 닉네임을 입력해주세요.</span>');
     } else {
         $.ajax({
             type: 'post',
@@ -55,9 +55,9 @@ $('#nickname').on('keyup blur', function(){
             dataType: 'text',
             success: function(data){
                 if(data.trim() == 'exist'){
-                    $('#check1').html('<span style="color: red; font-weight: bold;">사용 불가능</span>');
+                    $('#check1').html('<span style="color: red; font-weight: bold;">사용 불가능한 닉네임.</span>');
                 } else {
-                    $('#check1').html('<span style="color: blue; font-weight: bold;">사용 가능</span>');
+                    $('#check1').html('<span style="color: blue; font-weight: bold;">사용 가능한 닉네임.</span>');
                     $('#checknick').val(nickname);
                 }
             },
@@ -86,23 +86,23 @@ $('#joinbtn').click(function(){
     $('#check2').html('');
 	
     if (!id) {
-        $('#check1').html('<span style="color: red; font-weight: bold;">아이디 입력</span>');
+        $('#check1').html('<span style="color: red; font-weight: bold;">아이디 입력해주세요.</span>');
     } else if (id != checkid) {
         $('#check1').html('<span style="color: red; font-weight: bold;">아이디 중복체크를 해주세요</span>');
     } else if (!pwd) {
-        $('#check1').html('<span style="color: red; font-weight: bold;">비밀번호 입력</span>');
+        $('#check1').html('<span style="color: red; font-weight: bold;">비밀번호 입력해주세요.</span>');
     } else if (pwd != repwd) {
         $('#check1').html('<span style="color: red; font-weight: bold;">비밀번호가 일치하지 않습니다.</span>');
     } else if (!nickname) {
-        $('#check1').html('<span style="color: red; font-weight: bold;">닉네임 입력</span>');
+        $('#check1').html('<span style="color: red; font-weight: bold;">닉네임 입력해주세요.</span>');
     } else if (nickname != checknick) {
         $('#check1').html('<span style="color: red; font-weight: bold;">닉네임 중복체크를 해주세요</span>');
     } else if (!name) {
-        $('#check1').html('<span style="color: red; font-weight: bold;">이름 입력</span>');
+        $('#check1').html('<span style="color: red; font-weight: bold;">이름 입력해주세요.</span>');
     } else if (!gender) {
-        $('#check1').html('<span style="color: red; font-weight: bold;">성별 입력</span>');
+        $('#check1').html('<span style="color: red; font-weight: bold;">성별 입력해주세요.</span>');
     } else if (!email) {
-        $('#check2').html('<span style="color: red; font-weight: bold;">이메일 입력</span>');
+        $('#check2').html('<span style="color: red; font-weight: bold;">이메일 입력해주세요.</span>');
     } else {
         // 폼 유효성 검사 통과 시 서버에 제출
         $.ajax({

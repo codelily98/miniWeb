@@ -16,3 +16,6 @@ CREATE TABLE MINIMEMBER (
 );
 insert into minimember (id, pwd, nickname, name, gender, email) values('test', '1234', 'test', '테스트', '0', 'test@naver.com');
 select * from minimember;
+
+-- 업데이트 LOCK 해제
+set sql_safe_updates=0;
