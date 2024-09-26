@@ -2,11 +2,18 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="miniboardSQL">
-	<select id="boardList" parameterType="Map" resultType="miniboardDTO">
+<mapper namespace="boardSQL">
+	<select id="boardList" parameterType="Map" resultType="boardDTO">
 		select * from miniboard order by ref desc, step asc limit #{startNum}, #{endNum}
 	</select>
 	<select id="getTotalA" resultType="Integer">
 		SELECT COUNT(*) FROM MINIBOARD
 	</select>
+	<insert id="boardWrite" parameterType="Map" useGeneratedKeys="true" keyProperty="seq">
+		INSERT INTO miniboard (ID, NICKNAME, EMAIL, SUBJECT, CONTENT) 
+		VALUES (#{id}, #{nickname}, #{email}, #{subject}, #{content})
+	</insert>
+	<update id="refUpdate" parameterType="Map">
+		update miniboard set ref = last_insert_id() where seq = last_insert_id()
+	</update>
 </mapper>

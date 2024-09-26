@@ -1,6 +1,7 @@
 package member.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.control.CommandProcess;
 
+import member.bean.MemberDTO;
 import member.dao.MemberDAO;
 
 public class SearchIdService implements CommandProcess {

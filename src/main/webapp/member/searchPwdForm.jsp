@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>404: 비밀번호 찾기</title>
+<title>function(){}: searchPwd</title>
 <link rel="stylesheet" href="../css/loginForm.css">
 </head>
 <body>
