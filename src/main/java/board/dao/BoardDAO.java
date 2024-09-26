@@ -38,7 +38,7 @@ public class BoardDAO {
 		map.put("endNum", endNum);
 		
 		SqlSession sqlSession = sessionFactory.openSession();
-		list = sqlSession.selectList("boardSQL.boardList", map); 
+		list = sqlSession.selectList("miniboardSQL.boardList", map); 
 		sqlSession.close();
 		return list;
 	}
@@ -47,7 +47,7 @@ public class BoardDAO {
 		int totalA = 0;
 		
 		SqlSession sqlSession = sessionFactory.openSession();
-		totalA = sqlSession.selectOne("boardSQL.getTotalA");
+		totalA = sqlSession.selectOne("miniboardSQL.getTotalA");
 		sqlSession.close();
 		
 		return totalA;

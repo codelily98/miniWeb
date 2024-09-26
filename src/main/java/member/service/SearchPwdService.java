@@ -1,7 +1,6 @@
 package member.service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.control.CommandProcess;
 
-import member.bean.MemberDTO;
 import member.dao.MemberDAO;
 
 public class SearchPwdService implements CommandProcess {
@@ -29,6 +27,6 @@ public class SearchPwdService implements CommandProcess {
 		String pwd = memberDAO.isExistSearchPwd(map);
 		request.setAttribute("pwd", pwd);
 		
-		return "/member/check.jsp";
+		return "/member/searchPwd.jsp";
 	}
 }

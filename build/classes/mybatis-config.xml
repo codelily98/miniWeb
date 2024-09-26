@@ -6,9 +6,9 @@
 	<properties resource="db.properties"></properties>
 
 	<typeAliases>
-		<typeAlias type="member.bean.MemberDTO" alias="memberDTO"/>
-		<typeAlias type="board.bean.BoardDTO" alias="boardDTO"/>
-		<typeAlias type="admin.bean.AdminDTO" alias="adminDTO"/>
+		<typeAlias type="member.bean.MemberDTO" alias="minimemberDTO"/>
+		<typeAlias type="board.bean.BoardDTO" alias="miniboardDTO"/>
+		<typeAlias type="admin.bean.AdminDTO" alias="miniadminDTO"/>
 	</typeAliases>
 	
 	<environments default="development">

@@ -17,10 +17,11 @@ $('#name, #email').on('blur', function(){
 			data: $("#findidForm").serialize(),  
 			dataType: 'text',
 			success: function(data){
-				if(data.trim() !='non'){
+				if(data.trim() != 'fail'){
 				     $("#result").html("<span>당신의 아이디는 " + data.trim() + "입니다.</span>");
-				}else
-				 alert('이름 혹은 이메일로 가입된 아이디 정보가 없습니다.');
+				} else {
+					$("#result").html("<span>이름 혹은 이메일로 가입된 아이디 정보가 없습니다.</span>");
+				}
 			},
 			error: function(e){
 				console.log(e);
