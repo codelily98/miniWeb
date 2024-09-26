@@ -12,7 +12,14 @@
 	<div id="topnav">
 		<ul>
 			<li><a href="./index.do">홈</a></li>
-			<li><a href="./member/loginForm.do" id="loginlink">로그인</a></li>			
+			<c:choose>
+				<c:when test="${not empty sessionScope.memId}">
+					<li><a href="./member/logout.do" id="logoutlink">로그아웃</a></li>
+				</c:when>
+				<c:otherwise>			
+					<li><a href="./member/loginForm.do" id="loginlink">로그인</a></li>
+				</c:otherwise>
+			</c:choose>					
 		</ul>
 	</div>
 </div>
@@ -29,6 +36,7 @@
 			</div>
 			<div id="menulist">
 				<ul>
+					<c:if test="${empty sessionScope.memId}">
 					<li><div class="menuli">
 						<a class="awrap" href="./member/loginForm.do">
 							<div class="imgwrap">
@@ -39,6 +47,7 @@
 							</div>					
 						</a>
 					</div></li>
+					</c:if>
 					<li><div class="menuli">
 						<a class="awrap" href="">
 							<div class="imgwrap">
@@ -79,6 +88,18 @@
 							</div>					
 						</a>
 					</div></li>
+					<c:if test="${not empty sessionScope.memId}">
+					<li><div class="menuli">
+						<a class="awrap" href="">
+							<div class="imgwrap">
+								<img class="menuliimg" src="./image/infoicon.png" alt="회원정보">
+							</div>
+							<div class="menuliname">
+								<span>회원정보</span>
+							</div>					
+						</a>
+					</div></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

@@ -19,16 +19,18 @@
 				</div>
 				<div class="inputwrap">
 					<input type="text" id="id" name="id" placeholder="아이디" required="required">
+					<div id="checkid"></div>
 				</div>
 				<div class="inputwrap">
 					<input type="password" id="pwd" name="pwd" placeholder="비밀번호" required="required">
+					<div id="checkpwd"></div>
 				</div>
 				<div class="btnwrap">
-					<input type="button" value="SIGN IN">
+					<input type="button" id="loginbtn" value="SIGN IN">
 				</div>
 				<div class="awrap">
-					<a href="">아이디 찾기</a>&nbsp;|&nbsp; 
-					<a href="">비밀번호 찾기</a>&nbsp;|&nbsp; 
+					<a href="./searchIdForm.do">아이디 찾기</a>&nbsp;|&nbsp; 
+					<a href="./searchPwdForm.do">비밀번호 찾기</a>&nbsp;|&nbsp; 
 					<a href="../member/joinForm.do">회원가입</a>
 				</div>
 			</div>

@@ -2,6 +2,10 @@ package member.dao;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -58,5 +62,35 @@ public class MemberDAO {
 		sqlSession.close();
 		
 		return exist;
+	}
+
+	public MemberDTO login(String id, String pwd) {
+		SqlSession sqlSession = sessionFactory.openSession();
+
+		Map<String, String> map = new HashMap<>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+	
+		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.login", map);
+		sqlSession.close();
+		return memberDTO;
+	}
+
+	public String isExistSearchId(Map<String, String> map) {
+		String id = null;
+		SqlSession sqlSession = sessionFactory.openSession();
+		id = sqlSession.selectOne("memberSQL.isExistSearchId", map);
+		sqlSession.close();
+		
+		return id;
+	}
+	
+	public String isExistSearchPwd(Map<String, String> map) {
+		String pwd = null;
+		SqlSession sqlSession = sessionFactory.openSession();
+		pwd = sqlSession.selectOne("memberSQL.isExistSearchPwd",map);
+		
+		sqlSession.close();
+		return pwd;
 	}
 }

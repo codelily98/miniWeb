@@ -4,14 +4,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberSQL">
 	<select id="isExistId" parameterType="String" resultType="memberDTO">
-		select * from minimember where id = #{id}
+		select * from MINIMEMBER where id = #{id}
 	</select>
 	<select id="isExistNick" parameterType="String" resultType="memberDTO">
-		select * from minimember where nickname = #{nickname}
+		select * from MINIMEMBER where nickname = #{nickname}
 	</select>
 	
 	<insert id="write" parameterType="memberDTO">
-		insert into minimember(id, pwd, nickname, name, gender, email, tel, zipcode, addr1, addr2, logtime)
+		insert into MINIMEMBER(id, pwd, nickname, name, gender, email, tel, zipcode, addr1, addr2, logtime)
 						   values(#{id}
 								, #{pwd}
 								, #{nickname}
@@ -24,7 +24,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 								, #{addr2}
 								, now())
 	</insert>
-	<select id="login" parameterType="memberDTO" resultType="memberDTO">
-		select * from minimember where id = #{id} and pwd = #{pwd}
+	<select id="login" parameterType="java.util.Map" resultType="memberDTO">
+		select * from MINIMEMBER where id = #{id} and pwd = #{pwd}
+	</select>
+	
+	<!-- 아이디 찾기 -->
+	<select id="isExistSearchId" parameterType="java.util.Map" resultType="memberDTO">
+		select id from MINIMEMBER where name = #{name} and email=#{email}
+	</select>
+	
+	<!-- 비밀번호 찾기  -->
+	<select id="isExistSearchPwd" parameterType="java.util.Map" resultType="memberDTO">
+		select pwd from MINIMEMBER where id=#{id} and name=#{name} and email=#{email}
 	</select>
 </mapper>
