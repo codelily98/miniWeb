@@ -55,7 +55,7 @@
 		</div>
 		<div id="boardlist">
 			<div id="btnwrap">
-				<input type="button" id="writebtn" value="글쓰기">
+				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
 			</div>
 			<div id="listwrap">
 				<table>

@@ -9,4 +9,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getTotalA" resultType="Integer">
 		SELECT COUNT(*) FROM MINIBOARD
 	</select>
+	<insert id="boardWrite" parameterType="Map" useGeneratedKeys="true" keyProperty="seq">
+		INSERT INTO miniboard (ID, NICKNAME, EMAIL, SUBJECT, CONTENT) 
+		VALUES (#{id}, #{nickname}, #{email}, #{subject}, #{content})
+	</insert>
+	<update id="refUpdate" parameterType="Map">
+		update miniboard set ref = last_insert_id() where seq = last_insert_id()
+	</update>
 </mapper>

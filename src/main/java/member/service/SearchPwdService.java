@@ -18,7 +18,9 @@ public class SearchPwdService implements CommandProcess {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
-		
+		System.out.println("id="+id);
+		System.out.println("name="+name);
+		System.out.println("email="+email);
 		MemberDAO memberDAO = MemberDAO.getInstance();
 
 		Map<String, String> map = new HashMap<String, String>();
@@ -28,7 +30,7 @@ public class SearchPwdService implements CommandProcess {
 		
 		String pwd = memberDAO.isExistSearchPwd(map);
 		request.setAttribute("pwd", pwd);
-		
-		return "/member/check.jsp";
+		System.out.println(pwd);
+		return "/member/searchPwd.jsp";
 	}
 }

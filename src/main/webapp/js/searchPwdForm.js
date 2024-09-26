@@ -17,11 +17,12 @@ $('#id,#name,#email').on('blur',function(){
 	else{
 		$.ajax({
 			type: 'post',
-			url: '/miniweb/member/searchPwd.do',
+			url: '/miniWeb/member/searchPwd.do',
 			data: $("#findpwdForm").serialize(),
 			dataType: 'text',
 			success: function(data){
-				if(data.trim() !='non')
+				alert(data);
+				if(data.trim() !='fail')
 					$('#result').html("<span> 당신의 비밀번호는 "+data.trim()+"입니다.</span>");
 				else
 					alert('아이디 혹은 이메일로 가입된 아이디 정보가 없습니다.');

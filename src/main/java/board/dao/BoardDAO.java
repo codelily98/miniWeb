@@ -52,4 +52,16 @@ public class BoardDAO {
 		
 		return totalA;
 	}
+
+	public void boardWrite(Map<String, String> map) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		//Oracle
+		//sqlSession.insert("boardSQL.boardWrite", map);
+		
+		//MySQL
+		sqlSession.insert("boardSQL.boardWrite", map);
+		sqlSession.update("boardSQL.refUpdate", map);
+		sqlSession.commit();
+		sqlSession.close();
+	}
 }

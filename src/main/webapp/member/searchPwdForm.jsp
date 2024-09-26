@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="wrap">
-		<div id="findpwdForm">
+		<form id="findpwdForm">
 			<div id="titlewrap">
 				<div class="title">
 					<span>비밀번호 찾기</span>
@@ -42,7 +42,7 @@
 				<a href="../member/searchIdForm.do">아이디 찾기</a>&nbsp;|&nbsp;
 				<a href="../member/joinForm.do">회원가입</a>
 			</div>
-		</div>
+		</form>
 	</div>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

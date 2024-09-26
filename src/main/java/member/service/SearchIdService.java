@@ -26,6 +26,6 @@ public class SearchIdService implements CommandProcess {
 		String id = memberDAO.isExistSearchId(map);
 		request.setAttribute("id", id);
 		
-		return "/member/check.jsp";
+		return "/member/searchId.jsp";
 	}
 }
