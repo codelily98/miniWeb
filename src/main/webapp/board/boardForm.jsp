@@ -32,8 +32,8 @@
 		<div id="menunav">
 			<ul>
 				<li><a href="#">메인</a></li>
-				<li><a href="">뉴스</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="#">뉴스</a></li>
+				<li class="active"><a href="/miniWeb/board/boardForm.do?pg=1"><span>커뮤니티</span></a></li>
 				<li><a href="#">달력</a></li>
 				<li><a href="#">지도</a></li>
 			</ul> 
@@ -47,10 +47,10 @@
 	<div id="boardcontainer">
 		<div id="boardnav">
 			<ul>
-				<li>공지사항</li>
-				<li>전체글</li>
-				<li>인기글</li>
-				<li>최신글</li>
+				<li id="notice_list">공지사항</li>
+				<li id="all_list">전체글</li>
+				<li id="hot_list">인기글</li>
+				<li id="latest_list">최신글</li>
 			</ul>
 		</div>
 		<div id="boardlist">
@@ -99,10 +99,7 @@
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript">
-function boardPaging(pg){
-	location.href = "boardForm.do?pg=" + pg;
-}
+<script type="text/javascript" src="../js/boardForm.js">
 </script>
 </body>
 </html>

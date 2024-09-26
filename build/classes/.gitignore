@@ -1,8 +1,3 @@
-/admin/
-/board/
-/com/
-/db.properties
-/main/
-/mapper/
+/사용안함/
+/notuse/
 /member/
-/mybatis-config.xml

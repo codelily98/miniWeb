@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>404: 로그인</title>
 <link rel="stylesheet" href="../css/loginForm.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <div id="wrap">
@@ -29,8 +30,8 @@
 					<input type="button" id="loginbtn" value="SIGN IN">
 				</div>
 				<div class="awrap">
-					<a href="./searchIdForm.do">아이디 찾기</a>&nbsp;|&nbsp; 
-					<a href="./searchPwdForm.do">비밀번호 찾기</a>&nbsp;|&nbsp; 
+					<a id="seachId">아이디 찾기</a>&nbsp;|&nbsp; 
+					<a id="searchPwd">비밀번호 찾기</a>&nbsp;|&nbsp; 
 					<a href="../member/joinForm.do">회원가입</a>
 				</div>
 			</div>

@@ -14,7 +14,6 @@ body {
     font-family: 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', sans-serif;
     font-size: 12pt;
     background-color: #ffffff;
-    line-height: 1.5;
 }
 
 a:active, a:visited, a:link {
@@ -23,24 +22,21 @@ a:active, a:visited, a:link {
     cursor: pointer;
 }
 
-/* Top Wrap */
 #topwrap {
     text-align: right;
-    width: 100%;
+    width: 100%; /* Ensure it spans the full width */
     box-sizing: border-box;
-    position: relative;
+    position: relative; /* Changed to relative so it flows within #wrap */
 }
 
-/* Header */
 #header {
     background-color: #fff;
     color: white;
     position: relative;
 }
 
-/* Top Area */
 #topawrap {
-    background-color: #FF8E33;
+   background-color: #FF8E33;
 }
 
 #topwrap a {
@@ -55,8 +51,6 @@ a:active, a:visited, a:link {
 }
 
 #topnav {
-	font-family: '돋움', Dotum, Helvetica, Sans-serif;	
-	font-size: 12px;
     width: 100%;
     margin: 0 auto;
     max-width: 1100px;
@@ -64,29 +58,33 @@ a:active, a:visited, a:link {
 }
 
 #topnav #formwrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
-/* Search Wrap */
 #searchwrap {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 24px; /* 수정: padding-top 제거 */
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-bottom: 2em;
 }
 
 #searchwrap span {
-    font-family: 'LeeSeoyun';
-    padding: 0 0.5em;
-    color: #ff4b2b;
+   font-family: 'LeeSeoyun';
+   align-items: center;
+   padding: 0em 0.5em;
+   color: #ff4b2b;
 }
 
 #searchwrap span:hover {
-    cursor: pointer;
-    color: #ff0000;
+   cursor: pointer;
+   color: #ff0000;
+}
+
+#searchwrap input[type="text"] {
+   align-items: center;
 }
 
 #formwrap input[type="text"] {
@@ -95,6 +93,7 @@ a:active, a:visited, a:link {
     width: 580px;
     height: 48px;
     padding: 0 1.2em;
+    border-style: none;
     border: 1px solid #ff4b2b;
 }
 
@@ -102,12 +101,10 @@ a:active, a:visited, a:link {
     outline-color: #ff4b2b;
 }
 
-/* Menu Navigation */
 #menunav {
-    margin-top: -20px;
+    margin-top: -20px; /* Add space between #logowrap and #menunav */
     border-top: 1px solid #FF8E33;
     border-bottom: 1px solid #FF8E33;
-    font-family: '돋움', Dotum, Helvetica, Sans-serif;
 }
 
 #menunav ul {
@@ -149,17 +146,16 @@ a:active, a:visited, a:link {
 }
 
 #menunav ul li a {
-    color: #40423C;
-    text-decoration: none;
-    display: block;
-    padding: 15px 20px;
+   color: #40423C;
+   text-decoration: none;
+   display: block;
+   padding: 15px 20px;
 }
 
 #menunav ul li a:hover {
-    color: #ff4b2b;
+   color: #ff4b2b;
 }
 
-/* Main Content */
 #gomain {
     font-weight: bold;
 }
@@ -169,7 +165,6 @@ a:active, a:visited, a:link {
     cursor: pointer;
 }
 
-/* Login Link */
 #loginlink {
     color: #ffffff;
     padding: 5px 10px;
@@ -181,16 +176,15 @@ a:active, a:visited, a:link {
 #loginlink:hover {
     color: white;
     background-color: #e04328;
+    text-decoration: none;
 }
 
-/* Wrap */
 #wrap {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px 0;
 }
 
-/* Logo Wrap */
 #logowrap {
     text-align: center;
     margin: 20px 0;
@@ -202,7 +196,6 @@ a:active, a:visited, a:link {
     color: #ff4b2b;
 }
 
-/* Container */
 #container {
     display: flex;
     justify-content: center;
@@ -210,7 +203,6 @@ a:active, a:visited, a:link {
     background-color: #ffffff;
 }
 
-/* Section */
 #section {
     width: 100%;
     height: 130px;
@@ -219,7 +211,63 @@ a:active, a:visited, a:link {
     text-align: center;
 }
 
-/* Board Container */
+#menulist {
+   display: inline-block;
+}
+
+ul {
+   padding: 0;
+   list-style: none;
+}
+
+#menulist ul li {
+   display: inline-block;
+}
+
+.menuli {
+   padding : 5px;
+   width: 110px;
+   height: 135px;
+   margin-left: 0.5em;
+   margin-right: 0.5em;
+   justify-content: center;
+}
+
+.awrap {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 5px;
+   padding-bottom: 10px;
+}
+
+.awrap:hover {   
+   color: #ff4b2b;
+   text-decoration: none;
+   background-color: #f0f0f0;
+   border-radius: 10px;
+}
+
+.imgwrap {
+   width: 50px;
+   height: 50px;
+   border: 1px solid #ff4b2b;
+   border-radius: 25px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #ff4b2b;
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+.imgwrap .menuliimg {
+   width: 30px;
+   height: 30px;
+}
+
+/* 게시판 컨테이너 */
 #boardcontainer {
     display: flex;
     justify-content: space-between;
@@ -227,9 +275,9 @@ a:active, a:visited, a:link {
     height: 800px;
 }
 
-/* Left Navigation */
+/* 좌측 네비게이션 */
 #boardnav {
-    width: 20%;
+    width: 20%; /* 좌측 메뉴가 차지할 공간 */
     text-align: left;
     padding-top: 5px;
 }
@@ -273,17 +321,16 @@ a:active, a:visited, a:link {
     z-index: -1;
 }
 
-/* Active State */
 .active {
-    border: none; /* 기본 상태의 경계선으로 복원 (필요시) */
+	border: none; /* 기본 상태의 경계선으로 복원 (필요시) */
     z-index: 1;
-    color: #ff4b2b;
-    border-bottom: 2px solid #ff4b2b;
-    background-color: #ff4b2b;
+	color: #ff4b2b;
+	border-bottom: 2px solid #ff4b2b;
+	background-color: #ff4b2b;;
 }
 
 .active a span {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 /* 게시판 리스트 */
@@ -299,56 +346,38 @@ a:active, a:visited, a:link {
     justify-content: center;
 }
 
-/* List Wrap */
+#listwrap input[type="text"] {
+    width: 100%; /* 각 입력 요소의 너비를 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 보더를 포함한 총 너비 계산 */
+}
+
+#listwrap input[type="button"] {
+	width: 100%; /* 각 입력 요소의 너비를 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 보더를 포함한 총 너비 계산 */
+}
+
+#editorForm {
+	width: 100%;
+}
+
 #listwrap {
     display: flex;
     flex-direction: column; /* 입력 요소들을 세로 방향으로 나열 */
 }
 
 #listwrap input[type="text"] {
-    width: 100%; /* 각 입력 요소의 너비를 100%로 설정 */
-    box-sizing: border-box; /* 패딩과 보더를 포함한 총 너비 계산 */
-    font-size: 12pt;
-    padding: 0.4em 1em;
-    outline-style: none;
-    border: 1px solid #ff4b2b;
-    margin-bottom: 1em;
+	font-size: 12pt;
+	padding: 0.4em 1em;
+	outline-style: none;
+	border: 1px solid #ff4b2b;
+	margin-bottom: 1em;
 }
 
 #listwrap input[type="text"]:focus {
-    outline-color: #ff4b2b;
+	outline-color: #ff4b2b;
 }
 
 #listwrap input[type="button"] {
-    width: 100%; /* 각 입력 요소의 너비를 100%로 설정 */
-    box-sizing: border-box; /* 패딩과 보더를 포함한 총 너비 계산 */
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 10pt;
-    margin-bottom: 5px;
-    border-style: none;
-    background-color: #ff4b2b;
-    border-radius: 5px;
-}
-
-#listwrap input[type="button"]:hover {
-    cursor: pointer;
-    box-shadow: inset 0 0 15px red; 
-}
-
-/* 게시판 리스트 */
-#boardlist {
-    width: 75%; /* 나머지 공간을 차지하게 */
-    margin-top: 20px; /* 테이블과 동일한 여백 추가 */
-}
-
-#btnwrap {
-   display: flex;
-   justify-content: flex-end;
-   width: 100%;
-}
-
-#btnwrap input[type="button"] {
    color: #ffffff;
    padding: 10px 20px;
    font-size: 10pt;
@@ -358,75 +387,7 @@ a:active, a:visited, a:link {
    border-radius: 5px;
 }
 
-#btnwrap input[type="button"]:hover {
+#listwrap input[type="button"]:hover {
    cursor: pointer;
    box-shadow: inset 0 0 15px red; 
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    table-layout: fixed;
-    margin-top: 0; /* 상단 여백 초기화 */
-}
-
-table th, table td {
-    padding: 12px;
-    border-bottom: 1px solid #dcdcdc;
-}
-
-table th {
-    background-color: #ffffff;
-    font-weight: bold;
-    color: #ff4b2b;
-}
-
-table td {
-    color: #202124;
-    word-break: break-all;
-}
-
-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-thead tr {
-    border-top: 2px solid rgb;
-}
-
-tbody tr {
-    transition: background-color 0.25s ease;
-}
-
-tbody tr:hover {
-    background-color: #FFDFBF;
-}
-
-#pagewrap {
-	color: black;
-	font-family: 'Malgun Gothic';
-	font-size: 12pt;
-	text-align: center;
-	margin-top: 1em;
-}
-
-#pagewrap span {
-	text-decoration: none;
-	margin: 1em 0.5em;
-}
-
-#pagewrap span:hover {
-	cursor: pointer;
-	text-decoration: underline;
-	color: #ff4b2b;
-}
-
-#pagewrap #currentPaging {
-	font-weight: bold;
-	color: #ff4b2b;
-}
-
-#pagewrap #movepaging {
-	color: red;
 }
