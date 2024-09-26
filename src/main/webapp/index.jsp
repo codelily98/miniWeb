@@ -50,7 +50,7 @@
 						</a>
 					</div></li>
 					<li><div class="menuli">
-						<a class="awrap" href="./board/boardForm.do">
+						<a class="awrap" href="./board/boardForm.do?pg=1">
 							<div class="imgwrap">
 								<img class="menuliimg" src="./image/community.png" alt="커뮤니티">
 							</div>

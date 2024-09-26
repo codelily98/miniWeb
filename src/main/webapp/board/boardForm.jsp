@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,35 +70,33 @@
 					</thead>
 					<tbody>
 						<!-- DB에서 불러와서 입력 -->
-						<tr>
-							<td>1</td>
-							<td>게시물 작성</td>
-							<td>admin</td>
-							<td>24.09.26 23:55</td>
-							<td>5</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>디자인이 어려워요</td>
-							<td>myid</td>
-							<td>24.09.26 23:22</td>
-							<td>11</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>테스트 작성</td>
-							<td>test</td>
-							<td>24.09.26 21:32</td>
-							<td>24</td>
-						</tr>
+						<c:if test="${list != null}">
+						<c:forEach var = "boardDTO" items = "${list}">
+							<tr>
+								<td>${boardDTO.seq }</td>
+								<td>${boardDTO.subject }</td>
+								<td>${boardDTO.nickname }</td>
+								<td>
+									<fmt:formatDate pattern = "yyyy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>
+								</td>
+								<td>${boardDTO.hit }</td>
+							</tr>
+							</c:forEach>
+						</c:if>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
 	<div id="footer">
-		
+	${pagingHTML }
 	</div>
 </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+function boardPaging(pg){
+	location.href = "boardForm.do?pg=" + pg;
+}
+</script>
 </body>
 </html>

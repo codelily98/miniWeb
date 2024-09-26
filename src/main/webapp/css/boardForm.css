@@ -34,7 +34,7 @@ a:active, a:visited, a:link {
 }
 
 #topawrap {
-	background-color: #FF8E33;
+   background-color: #FF8E33;
 }
 
 #topwrap a {
@@ -56,34 +56,34 @@ a:active, a:visited, a:link {
 }
 
 #topnav #formwrap {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 #searchwrap {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: -1em;
-	padding-bottom: 2em;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-top: -1em;
+   padding-bottom: 2em;
 }
 
 #searchwrap span {
-	font-family: 'LeeSeoyun';
-	align-items: center;
-	padding: 0em 0.5em;
-	color: #ff4b2b;
+   font-family: 'LeeSeoyun';
+   align-items: center;
+   padding: 0em 0.5em;
+   color: #ff4b2b;
 }
 
 #searchwrap span:hover {
-	cursor: pointer;
-	color: #ff0000;
+   cursor: pointer;
+   color: #ff0000;
 }
 
 #searchwrap input[type="text"] {
-	align-items: center;
+   align-items: center;
 }
 
 #formwrap input[type="text"] {
@@ -145,14 +145,14 @@ a:active, a:visited, a:link {
 }
 
 #menunav ul li a {
-	color: #40423C;
-	text-decoration: none;
-	display: block;
-	padding: 15px 20px;
+   color: #40423C;
+   text-decoration: none;
+   display: block;
+   padding: 15px 20px;
 }
 
 #menunav ul li a:hover {
-	color: #ff4b2b;
+   color: #ff4b2b;
 }
 
 #gomain {
@@ -211,59 +211,59 @@ a:active, a:visited, a:link {
 }
 
 #menulist {
-	display: inline-block;
+   display: inline-block;
 }
 
 ul {
-	padding: 0;
-	list-style: none;
+   padding: 0;
+   list-style: none;
 }
 
 #menulist ul li {
-	display: inline-block;
+   display: inline-block;
 }
 
 .menuli {
-	padding : 5px;
-	width: 110px;
-	height: 135px;
-	margin-left: 0.5em;
-	margin-right: 0.5em;
-	justify-content: center;
+   padding : 5px;
+   width: 110px;
+   height: 135px;
+   margin-left: 0.5em;
+   margin-right: 0.5em;
+   justify-content: center;
 }
 
 .awrap {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	padding: 5px;
-	padding-bottom: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 5px;
+   padding-bottom: 10px;
 }
 
-.awrap:hover {	
-	color: #ff4b2b;
-	text-decoration: none;
-	background-color: #f0f0f0;
-	border-radius: 10px;
+.awrap:hover {   
+   color: #ff4b2b;
+   text-decoration: none;
+   background-color: #f0f0f0;
+   border-radius: 10px;
 }
 
 .imgwrap {
-	width: 50px;
-	height: 50px;
-	border: 1px solid #ff4b2b;
-	border-radius: 25px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #ff4b2b;
-	margin-top: 1em;
-	margin-bottom: 1em;
+   width: 50px;
+   height: 50px;
+   border: 1px solid #ff4b2b;
+   border-radius: 25px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #ff4b2b;
+   margin-top: 1em;
+   margin-bottom: 1em;
 }
 
 .imgwrap .menuliimg {
-	width: 30px;
-	height: 30px;
+   width: 30px;
+   height: 30px;
 }
 
 /* 게시판 컨테이너 */
@@ -287,19 +287,37 @@ ul {
 }
 
 #boardnav ul li {
+    position: relative;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px 14%;
     background-color: #ffffff;
     border-left: 1px solid #ff4b2b;
     cursor: pointer;
+    z-index: 1;
+    transition: all 0.4s;
+    color: #000000;
+}
+
+#boardnav ul li:after {
+    content: "";
+    width: 0%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    left: 0;
+    transition: all 0.4s;
+    background: #ff4b2b;
 }
 
 #boardnav ul li:hover {
-    background-color: #ff4b2b;
-    border-radius: 5px;
-    text-align: center;
-    color: white;
+    color: #ffffff;
 }
+
+#boardnav ul li:hover:after {
+    width: 100%;
+    z-index: -1;
+}
+
 
 /* 게시판 리스트 */
 #boardlist {
@@ -308,19 +326,24 @@ ul {
 }
 
 #btnwrap {
-	display: flex;
-	justify-content: flex-end;
-	width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   width: 100%;
 }
 
 #btnwrap input[type="button"] {
-	color: #ffffff;
-	padding: 10px 20px;
-	font-size: 10pt;
-	margin-bottom: 5px;
-	border-style: none;
-	background-color: #ff4b2b;
-	border-radius: 5px;
+   color: #ffffff;
+   padding: 10px 20px;
+   font-size: 10pt;
+   margin-bottom: 5px;
+   border-style: none;
+   background-color: #ff4b2b;
+   border-radius: 5px;
+}
+
+#btnwrap input[type="button"]:hover {
+   cursor: pointer;
+   box-shadow: inset 0 0 15px red; 
 }
 
 table {

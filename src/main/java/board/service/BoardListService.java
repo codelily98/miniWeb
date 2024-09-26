@@ -11,7 +11,7 @@ import board.bean.BoardDTO;
 import board.bean.BoardPaging;
 import board.dao.BoardDAO;
 
-public class BoardFormService implements CommandProcess {
+public class BoardListService implements CommandProcess{
 	@Override
 	public String requestpro(HttpServletRequest request, HttpServletResponse response)
 			throws Throwable {
@@ -23,7 +23,7 @@ public class BoardFormService implements CommandProcess {
 		//int startNum = endNum - 4;
 		
 		//MySQL
-		int endNum = 3;		//개수
+		int endNum = 10;		//개수
 		int startNum = (pg * endNum) - endNum;	//시작위치, 0부터 시작
 		//DB
 		BoardDAO boardDAO = BoardDAO.getInstance();
@@ -43,6 +43,6 @@ public class BoardFormService implements CommandProcess {
 		request.setAttribute("pg", pg);
 		request.setAttribute("list", list);
 		request.setAttribute("pagingHTML", boardPaging.getPagingHTML().toString());
-		return "/board/boardForm.jsp";
+		return "/board/boardList.jsp";
 	}
 }
