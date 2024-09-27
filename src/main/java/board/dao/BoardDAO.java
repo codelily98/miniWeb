@@ -93,4 +93,19 @@ public class BoardDAO {
 		sqlSession.close();	
 		
 	}
+	public List<BoardDTO> boardView(int seq){
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		SqlSession sqlSession = sessionFactory.openSession();
+		System.out.println(seq);
+		list = sqlSession.selectList("boardSQL.boardView", seq); 
+		sqlSession.close();
+		return list;
+	}
+	public void delete(int seq) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		System.out.println(seq);
+		sqlSession.delete("boardSQL.boardDelete", seq);
+		sqlSession.commit();
+		sqlSession.close();
+	}
 }

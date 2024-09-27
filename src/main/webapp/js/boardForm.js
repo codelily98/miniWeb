@@ -1,7 +1,3 @@
-$(document).ready(function() {
-    boardPaging(pg);
-});
-
 function boardPaging(pg) {
     location.href = "boardForm.do?pg=" + pg;
 }
@@ -26,20 +22,33 @@ $(function(){
 	
 	//조회수 증가
 	$(document).on("click",".asubject", function(){
-		let seq = $(this).closest('tr').find('#seq').val();//현재 글 번호를 가져옴
-		
-		//AJAX로 조회수 증가 요청
-		$.ajax({
-			type: 'post',
-			url: '/miniWeb/board/boardHit.do',//조회수 증가를 처리하는 URL
-			data: {'seq':seq},
-			dataType: 'text',
-			success: function(data){
-				location.reload();
-			},
-			error: function(e){
-				console.log(e);
+		if($('#memNickname').val() == ''){
+				alert('먼저 로그인하세요');
 			}
-		});
+			else{
+				let seq = $(this).closest('tr').find('.seq').val();
+				let pg = $('#pg').val();
+				let memNickname = $('#memNickname').val();
+				let postnickname = $(this).closest('tr').find('.postnickname').val();
+				
+				
+				if(memNickname != postnickname){
+					$.ajax({
+						type:'post',
+						url:'./boardHit.do',
+						data:{'seq':seq},
+						dataType:'text',
+						success:function(){
+							location.href = './boardView.do?seq=' + seq + '&pg=' + pg;
+						},
+						error:function(e){
+							console.log(e);
+						}
+					});
+				}
+				else{
+					location.href = './boardView.do?seq=' + seq + '&pg=' + pg;
+				}
+			}
 	});
 });

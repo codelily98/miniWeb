@@ -37,4 +37,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="boardLatestList" parameterType="Map" resultType="boardDTO">
 		select * from miniboard order by logtime desc, step asc limit #{startNum}, #{endNum}
 	</select>
+	<!-- View -->
+	<select id="boardView" parameterType = "Integer" resultType="boardDTO">
+		SELECT * FROM MINIBOARD WHERE SEQ = #{seq}
+	</select>
+	<!-- 글 삭제 -->
+	<delete id = "boardDelete" parameterType = "Integer">
+		DELETE FROM MINIBOARD WHERE SEQ = #{seq}
+	</delete>
 </mapper>

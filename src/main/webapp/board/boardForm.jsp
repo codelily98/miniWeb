@@ -80,10 +80,15 @@
 						<c:forEach var = "boardDTO" items = "${list}">
 							<c:set var="startnum" value="${startnum + 1}"/>
 							<tr>
-								<td><input id="seq" type="hidden" value="${boardDTO.seq}">
+								<td><input class="seq" id="seq" type="hidden" value="${boardDTO.seq}">
 									<span>${startnum}</span>
 								</td>
-								<td class="asubject">${boardDTO.subject}</td>
+								<td class="asubject">
+								<input type = "hidden" id = "pg" class = "pg" value = "${requestScope.pg}" />
+								<input type = "hidden" id = "memNickname" class = "memNickname" value = "${memNickname}" />
+								<input type = "hidden" id = "postnickname" class = "postnickname" value = "${boardDTO.nickname}" />
+									${boardDTO.subject}
+								</td>
 								<td>${boardDTO.nickname}</td>
 								<td>
 									<fmt:formatDate pattern = "yy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>

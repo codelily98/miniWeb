@@ -26,6 +26,7 @@ public class LoginService implements CommandProcess {
 			HttpSession session = request.getSession();
 			session.setAttribute("memberDTO", memberDTO);
 			session.setAttribute("memId", id);
+			session.setAttribute("memPwd", pwd);
 			session.setAttribute("memNickname", memberDTO.getNickname());
 			session.setAttribute("memName", memberDTO.getName());
 			session.setAttribute("memEmail", memberDTO.getEmail());
