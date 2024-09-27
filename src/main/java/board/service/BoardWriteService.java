@@ -53,19 +53,21 @@ public class BoardWriteService implements CommandProcess {
         if (image1 != null) {
             File file = new File(realFolder, image1);
             
-            System.out.println("2.0에서 추출한 image1 : " + image1);
-            System.out.println("image1 있으면 file : " + file);
-            
-        	System.out.println("파일이 존재합니다.");
-            NCPObjectStorageService ncpObjectStorageService = new NCPObjectStorageService();
-            String uploadedImagePath = ncpObjectStorageService.uploadFile(bucketName, "upload/", file);
-                
-            // 업로드된 이미지 경로 확인
-            System.out.println("uploadedImagePath = " + uploadedImagePath);
+            if (!file.exists()) {
+            	System.out.println("2.0에서 추출한 image1 : " + image1);
+                System.out.println("image1 있으면 file : " + file);
+            	System.out.println("파일이 존재합니다.");
+            	
+                NCPObjectStorageService ncpObjectStorageService = new NCPObjectStorageService();
+                String uploadedImagePath = ncpObjectStorageService.uploadFile(bucketName, "upload/", file);
+                    
+                // 업로드된 이미지 경로 확인
+                System.out.println("uploadedImagePath = " + uploadedImagePath);
 
-            // 업로드된 이미지 경로가 null이 아니면 맵에 추가
-            if (uploadedImagePath != null) {
-                map.put("image1", uploadedImagePath);
+                // 업로드된 이미지 경로가 null이 아니면 맵에 추가
+                if (uploadedImagePath != null) {
+                    map.put("image1", uploadedImagePath);
+                }
             }
         } else {
         	map.put("image1", null);       	

@@ -69,6 +69,49 @@ $('#nickname').on('keyup blur', function(){
 });
 
 // 이메일 유효성 검사 등 추가 가능
+$(document).ready(function () {
+    // 인증번호 발송 버튼 클릭 시
+    $("#emailcheck").click(function () {
+        var email = $("#email").val();
+        if (email) {
+            $.ajax({
+                url: "/miniWeb/sendAuthCode",
+                type: "POST",
+                data: { email: email },
+                success: function (response) {
+                    $("#check2").html(response);
+                },
+                error: function () {
+                    alert("인증번호 발송에 실패했습니다.");
+                }
+            });
+        } else {
+            alert("이메일을 입력해주세요.");
+        }
+    });
+
+    // 인증번호 확인 버튼 클릭 시
+    $("#emailchecknum").click(function () {
+        var email = $("#email").val();
+        var ckechnum = $("#ckechnum").val();
+        if (ckechnum) {
+            $.ajax({
+                url: "/miniWeb/verifyAuthCode",
+                type: "POST",
+                data: { email: email, ckechnum: ckechnum },
+                success: function (response) {
+                    $("#check2").html(response);
+					
+                },
+                error: function () {
+                    alert("인증번호 확인에 실패했습니다.");
+                }
+            });
+        } else {
+            alert("인증번호를 입력해주세요.");
+        }
+    });
+});
 
 // 회원가입 버튼 클릭 시 최종 확인 후 제출
 $('#joinbtn').click(function(){

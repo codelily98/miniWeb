@@ -1,8 +1,2 @@
-/admin/
-/board/
-/com/
-/db.properties
-/main/
-/mapper/
+/AuthServlet/
 /member/
-/mybatis-config.xml

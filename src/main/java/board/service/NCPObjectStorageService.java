@@ -37,11 +37,15 @@ public class NCPObjectStorageService {
 
     // Method to upload a file to Naver Cloud Object Storage
     public String uploadFile(String bucketName, String directoryPath, File file) {
-        String fileName = UUID.randomUUID().toString(); // Generate a unique file name
-
+    	//String fileName = UUID.randomUUID().toString(); // Generate a unique file name
+    	String fileName = file.getName();
+        System.out.println("NCP 파일명 : " + file);
+		System.out.println("NCP fileName : " + fileName);
+        
         FileInputStream fileInputStream = null;
         try {
-            fileInputStream = new FileInputStream(file);
+            fileInputStream = new FileInputStream(fileName);
+            System.out.println("111");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return null;
@@ -67,6 +71,7 @@ public class NCPObjectStorageService {
         s3.putObject(putObjectRequest);
         
         // Return the file name
+        System.out.println("NCP 파일 이름 : " + fileName);
         return fileName;
     }
 }
