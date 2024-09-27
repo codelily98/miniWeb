@@ -365,6 +365,10 @@ textarea {
 	border: 1px solid black;
 }
 
+se2_inputarea .bg {
+	max-width: 400px;
+}
+
 #listwrap {
     display: flex;
     flex-direction: column; /* 입력 요소들을 세로 방향으로 나열 */
@@ -395,9 +399,4 @@ textarea {
 #listwrap input[type="button"]:hover {
    cursor: pointer;
    box-shadow: inset 0 0 15px red; 
-}
-
-img {
-	width: 250px;
-	height: 80px;
 }

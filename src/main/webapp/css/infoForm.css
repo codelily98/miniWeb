@@ -1,0 +1,291 @@
+@charset "UTF-8";
+/* 전체 레이아웃 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-size: 12pt;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+a:active, a:visited, a:link {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Top Wrap */
+#topwrap {
+    text-align: right;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Header */
+#header {
+    background-color: #fff;
+    color: white;
+    position: relative;
+}
+
+/* Top Area */
+#topawrap {
+    background-color: #FF8E33;
+}
+
+#topwrap a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+#topnav a:hover {
+    text-decoration: underline;
+}
+
+#topnav {
+	font-family: '돋움', Dotum, Helvetica, Sans-serif;	
+	font-size: 12px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 5px 30px;
+}
+
+#topnav #formwrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search Wrap */
+#searchwrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 24px; /* 수정: padding-top 제거 */
+}
+
+#searchwrap span {
+    font-family: 'LeeSeoyun';
+    padding: 0 0.5em;
+    color: #ff4b2b;
+}
+
+#searchwrap span:hover {
+    cursor: pointer;
+    color: #ff0000;
+}
+
+#formwrap input[type="text"] {
+    font-size: 18px;
+    border-radius: 25px;
+    width: 580px;
+    height: 48px;
+    padding: 0 1.2em;
+    border: 1px solid #ff4b2b;
+}
+
+#formwrap input[type="text"]:focus {
+    outline-color: #ff4b2b;
+}
+
+/* Menu Navigation */
+#menunav {
+    margin-top: -20px;
+    border-top: 1px solid #FF8E33;
+    border-bottom: 1px solid #FF8E33;
+    font-family: '돋움', Dotum, Helvetica, Sans-serif;
+}
+
+#menunav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#menunav ul li {
+    position: relative;
+    display: inline-block;
+    color: #40423C;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: color 250ms ease-out;
+}
+
+#menunav ul li::after {
+    position: absolute;
+    content: "";
+    display: block;
+    border-bottom: 2px solid #ff4b2b;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    transition: all 250ms ease-out;
+}
+
+#menunav ul li:hover {
+    color: #ff4b2b;
+}
+
+#menunav ul li:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+#menunav ul li a {
+    color: #40423C;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+}
+
+#menunav ul li a:hover {
+    color: #ff4b2b;
+}
+
+/* Main Content */
+#gomain {
+    font-weight: bold;
+}
+
+#gomain:hover {
+    color: #ff4b2b;
+    cursor: pointer;
+}
+
+/* Login Link */
+#loginlink {
+    color: #ffffff;
+    padding: 5px 10px;
+    background-color: #ff4b2b;
+    border-radius: 5px;
+    transition: background-color 0.25s ease;
+}
+
+#loginlink:hover {
+    color: white;
+    background-color: #e04328;
+}
+
+/* Wrap */
+#wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Logo Wrap */
+#logowrap {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#logowrap span {
+    font-size: 56px;
+    font-weight: 400;
+    color: #ff4b2b;
+}
+
+#wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 90vh;
+}
+
+
+/* Form Styling */
+#joinForm {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.inputwrap input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.inputwrap input:focus {
+    border-color: #ff4b2b;
+    outline: none;
+}
+
+#genderwrap input[type="radio"] {
+    margin-right: 10px;
+}
+
+#genderwrap label {
+    margin-right: 30px;
+    font-size: 14px;
+}
+
+#emailcheck, #zipcodebtn, #emailchecknum {
+    background-color: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#emailcheck:hover, #zipcodebtn:hover, #emailchecknum:hover {
+    background-color: #e04328;
+}
+
+/* Buttons */
+.btnwrap input[type="button"],
+.btnwrap input[type="reset"] {
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnwrap input[type="button"] {
+    background-color: #ff4b2b;
+    color: white;
+}
+
+.btnwrap input[type="button"]:hover {
+    background-color: #e04328;
+}
+
+.btnwrap input[type="reset"] {
+    background-color: #ccc;
+    color: white;
+}
+
+.btnwrap input[type="reset"]:hover {
+    background-color: #999;
+}

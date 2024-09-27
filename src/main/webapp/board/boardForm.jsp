@@ -16,13 +16,13 @@
 		<div id="topawrap">
 			<div id="topnav">
 				<c:if test="${empty sessionScope.memId}">
-			    <a href="../member/loginForm.do">로그인</a>&nbsp;|
+			    <a href="/miniWeb/member/loginForm.do">로그인</a>&nbsp;|
 			    </c:if>
 			    <c:if test="${not empty sessionScope.memId}">
-			    <a href="../member/infoForm.do">회원정보</a>&nbsp;|
-			    <a href="../member/loout.do">로그아웃</a>&nbsp;|
+			    <a href="/miniWeb/member/infoForm.do">회원정보</a>&nbsp;|
+			    <a href="/miniWeb/member/logout.do">로그아웃</a>&nbsp;|
 				</c:if>
-				<a href="../index.do">홈</a>
+				<a href="/miniWeb/index.do">홈</a>
 			</div>
 		</div>
 		<div id="logowrap">
@@ -35,9 +35,11 @@
 				</div>
 			</div>
 		</div>
+		<input type="hidden" id="image1" name="image1" value="${image1}"/>
+		<input type="hidden" id="imageName" name="imageName" value="${imageName}"/>
 		<div id="menunav">
 			<ul>
-				<li><a href="#">메인</a></li>
+				<li><a href="/miniWeb/index.do">메인</a></li>
 				<li><a href="#">뉴스</a></li>
 				<li class="active"><a href="/miniWeb/board/boardForm.do?pg=1"><span>커뮤니티</span></a></li>
 				<li><a href="#">달력</a></li>

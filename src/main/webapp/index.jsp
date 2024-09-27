@@ -23,84 +23,100 @@
 		</ul>
 	</div>
 </div>
-<div id="wrap">
-	<div id="header">
-		<div id="logowrap">
-			<h1 id="gomain">404</h1>
-		</div>
-	</div>
-	<div id="container">
-		<div id="section">
-			<div id="formwrap">
-				<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요"> 
+<div>
+<div id="mainwrap">
+	<div id="wrap">
+		<div id="header">
+			<div id="logowrap">
+				<h1 id="gomain">404</h1>
 			</div>
-			<div id="menulist">
-				<ul>
-					<c:if test="${empty sessionScope.memId}">
-					<li><div class="menuli">
-						<a class="awrap" href="./member/loginForm.do">
-							<div class="imgwrap">
-								<img class="menuliimg" src="./image/login.png" alt="로그인">
+		</div>
+		<div id="container">
+			<div id="section">
+				<div id="formwrap">
+					<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요"> 
+				</div>
+				<div id="menulist">
+					<ul>
+						<c:if test="${empty sessionScope.memId}">
+						<li>
+							<div class="menuli">
+								<a class="awrap" href="./member/loginForm.do">
+									<div class="imgwrap">
+										<img class="menuliimg" src="/miniWeb/image/login.png" alt="로그인">
+									</div>
+									<div class="menuliname">
+										<span>로그인</span>
+									</div>					
+								</a>
 							</div>
-							<div class="menuliname">
-								<span>로그인</span>
-							</div>					
-						</a>
-					</div></li>
-					</c:if>
-					<li><div class="menuli">
-						<a class="awrap" href="">
-							<div class="imgwrap">
-								<img class="menuliimg" src="./image/newsicon.png" alt="뉴스">
+						</li>
+						</c:if>
+						<li>
+							<div class="menuli">
+								<a class="awrap" href="">
+									<div class="imgwrap">
+										<img class="menuliimg" src="./image/newsicon.png" alt="뉴스">
+									</div>
+									<div class="menuliname">
+										<span>뉴스</span>
+									</div>					
+								</a>
 							</div>
-							<div class="menuliname">
-								<span>뉴스</span>
-							</div>					
-						</a>
-					</div></li>
-					<li><div class="menuli">
-						<a class="awrap" href="./board/boardForm.do?pg=1">
-							<div class="imgwrap">
-								<img class="menuliimg" src="./image/community.png" alt="커뮤니티">
+						</li>
+						<li>
+							<div class="menuli">
+								<a class="awrap" href="/miniWeb/board/boardForm.do?pg=1">
+									<div class="imgwrap">
+										<img class="menuliimg" src="./image/community.png" alt="커뮤니티">
+									</div>
+									<div class="menuliname">
+										<span>커뮤니티</span>
+									</div>					
+								</a>
 							</div>
-							<div class="menuliname">
-								<span>커뮤니티</span>
-							</div>					
-						</a>
-					</div></li>
-					<li><div class="menuli">
-						<a class="awrap" href="">
-							<div class="imgwrap">
-								<img class="menuliimg" src="./image/calender.png" alt="달력">
+						</li>
+						<li>
+							<div class="menuli">
+								<a class="awrap" href="">
+									<div class="imgwrap">
+										<img class="menuliimg" src="./image/calender.png" alt="달력">
+									</div>
+									<div class="menuliname">
+										<span>달력</span>
+									</div>					
+								</a>
 							</div>
-							<div class="menuliname">
-								<span>달력</span>
-							</div>					
-						</a>
-					</div></li>
-					<li><div class="menuli">
-						<a class="awrap" href="">
-							<div class="imgwrap">
-								<img class="menuliimg" src="./image/map.png" alt="지도">
+						</li>
+						<li>
+							<div class="menuli">
+								<a class="awrap" href="">
+									<div class="imgwrap">
+										<img class="menuliimg" src="./image/map.png" alt="지도">
+									</div>
+									<div class="menuliname">
+										<span>지도</span>
+									</div>					
+								</a>
 							</div>
-							<div class="menuliname">
-								<span>지도</span>
-							</div>					
-						</a>
-					</div></li>
-					<c:if test="${not empty sessionScope.memId}">
-					<li><div class="menuli">
-						<a class="awrap" href="">
-							<div class="imgwrap">
-								<img class="menuliimg" src="./image/infoicon.png" alt="회원정보">
+						</li>
+						<c:if test="${not empty sessionScope.memId}">
+						<li>
+							<div class="menuli">
+								<a class="awrap" href="/miniWeb/member/infoForm.do">
+									<div class="imgwrap">
+										<img class="menuliimg" src="./image/infoicon.png" alt="회원정보">
+									</div>
+									<div class="menuliname">
+										<span>회원정보</span>
+									</div>					
+								</a>
 							</div>
-							<div class="menuliname">
-								<span>회원정보</span>
-							</div>					
-						</a>
-					</div></li>
-					</c:if>
-				</ul>
+						</li>
+						</c:if>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -7,11 +7,11 @@
 <title>404:글 쓰기</title>
 <link rel="stylesheet" href="../css/boardWriteForm.css">
 <!-- 스마트에디터 CSS 파일 로드 -->
-<link rel="stylesheet" type="text/css" href="../se2/css/ko_KR/smart_editor2_in.css">
-<link rel="stylesheet" type="text/css" href="../se2/css/ko_KR/smart_editor2_out.css">
-<link rel="stylesheet" type="text/css" href="../se2/css/ko_KR/smart_editor2.css">
+<link rel="stylesheet" type="text/css" href="../se2/css/smart_editor2_in.css">
+<link rel="stylesheet" type="text/css" href="../se2/css/smart_editor2_out.css">
+<link rel="stylesheet" type="text/css" href="../se2/css/smart_editor2.css">
 <!-- 필수 자바스크립트 파일 로드 -->
-<script type="text/javascript" src="../se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="../se2/js/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
 <div id="topwrap">
@@ -25,7 +25,7 @@
 			    <a href="../member/infoForm.do">회원정보</a>&nbsp;|
 			    <a href="../member/loout.do">로그아웃</a>&nbsp;|
 				</c:if>
-				<a href="../index.do">홈</a>
+				<a href="/miniWeb/index.do">홈</a>
 			</div>
 		</div>
 		<div id="logowrap">
@@ -40,7 +40,7 @@
 		</div>
 		<div id="menunav">
 			<ul>
-				<li><a href="#">메인</a></li>
+				<li><a href="/miniWeb/index.do">메인</a></li>
 				<li><a href="#">뉴스</a></li>
 				<li class="active"><a href="/miniWeb/board/boardForm.do?pg=1"><span>커뮤니티</span></a></li>
 				<li><a href="#">달력</a></li>
@@ -79,7 +79,7 @@
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="../se2/js/service/HuskyEZCreator.js"></script>
+<script type="text/javascript" src="../se2/js/HuskyEZCreator.js"></script>
 <script type="text/javascript" src="../js/boardWriteForm.js"></script>
 <script type="text/javascript">
 /*<!-- 스마트에디터 자바스크립트 초기화 -->*/
@@ -101,7 +101,7 @@ nhn.husky.EZCreator.createInIFrame({
         I18N_LOCALE: "ko_KR",
         // 이미지 업로드 플러그인 사용 설정
         se2M_AttachImage: {
-            sUploadURL: "/se2/sample/photo_uploader/file_uploader.jsp"  // 이미지 업로드 경로 (서버측 업로드 핸들러)
+            sUploadURL: "/miniWeb/board/imageUpload.do"  // 이미지 업로드 경로 (서버측 업로드 핸들러)
         }
 	}
 });
@@ -109,23 +109,23 @@ nhn.husky.EZCreator.createInIFrame({
 function submitContents(elClickedObj) {
 	// 에디터의 내용이 textarea에 반영되도록 업데이트
 	oEditors[0].exec("UPDATE_CONTENTS_FIELD", []);
-	subject = document.getElementById("subject").value;
-	content = document.getElementById("ir1").value;
-	
-	var imageName = null;
-    
-	// 본문 내용에서 첫 번째 이미지 태그 찾기
-    var imgTag = content.match(/<img[^>]+src="([^">]+)"/);
-    var imgName = ''; // 기본값 설정
+	let subject = document.getElementById("subject").value;
+	let content = document.getElementById("ir1").value;	
 
-    if (imgTag) {
-        // src 속성에서 파일 이름 추출
-        var src = imgTag[1]; // match로 찾은 그룹 1을 사용
-        imgName = src.split('/').pop(); // 경로에서 파일 이름만 추출
-    }
+	// 본문 내용에서 첫 번째 이미지 태그 찾기
+	let imgTag = content.match(/<img[^>]+src="([^">]+)"/);
+	let imgName = ''; // 기본값 설정
+
+	let imageName = null;
+
+	if (imgTag) {
+	    // src 속성에서 전체 URL 추출
+	    var src = imgTag[1]; // match로 찾은 그룹 1을 사용
+	    imgName = src; // 전체 src를 사용
+	}	
 	
 	// FormData 객체 생성
-	var formData = new FormData();
+	let formData = new FormData();
 	formData.append('subject', subject);
 	formData.append('content', content);
 	
@@ -135,24 +135,27 @@ function submitContents(elClickedObj) {
 	}
 	
 	alert(imgName);
-	
-	$.ajax({
-		type: 'post',
-		enctype: 'multipart/form-data',
-		url: '/miniWeb/board/boardWrite.do',
-		processData: false,
-		contentType: false,
-		data: formData,
-		dataType: 'text',
-		success: function(data) {
-			alert('글을 작성하였습니다.');
-			location.href = '/miniWeb/board/boardForm.do?pg=1';
-		},
-		error: function(e) {
-			console.log(e);
-			alert('로그인이 필요합니다.');
-		}
-	});
+	if(subject != '' && content != '') {
+		$.ajax({
+			type: 'post',
+			enctype: 'multipart/form-data',
+			url: '/miniWeb/board/boardWrite.do',
+			processData: false,
+			contentType: false,
+			data: formData,
+			dataType: 'text',
+			success: function(data) {
+				alert('글을 작성하였습니다.');
+				location.href = '/miniWeb/board/boardForm.do?pg=1';
+			},
+			error: function(e) {
+				console.log(e);
+				alert('로그인이 필요합니다.');
+			}
+		});
+	} else {
+		alert("제목과 내용을 입력해주세요.");
+	}	
 }
 </script>
 </body>
