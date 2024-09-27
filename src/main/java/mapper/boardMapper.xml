@@ -10,10 +10,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT COUNT(*) FROM MINIBOARD
 	</select>
 	<insert id="boardWrite" parameterType="Map" useGeneratedKeys="true" keyProperty="seq">
-		INSERT INTO miniboard (ID, NICKNAME, EMAIL, SUBJECT, CONTENT) 
-		VALUES (#{id}, #{nickname}, #{email}, #{subject}, #{content})
+	    <choose>
+		    <when test="image1 != null and image1 != '' and image1 != 'null'">
+		        INSERT INTO MINIBOARD (ID, NICKNAME, EMAIL, SUBJECT, CONTENT, IMAGE1) 
+		        VALUES (#{id}, #{nickname}, #{email}, #{subject}, #{content}, #{image1})
+		    </when>
+		    <otherwise>
+		        INSERT INTO MINIBOARD (ID, NICKNAME, EMAIL, SUBJECT, CONTENT) 
+		        VALUES (#{id}, #{nickname}, #{email}, #{subject}, #{content})
+		    </otherwise>
+		</choose>
 	</insert>
 	<update id="refUpdate" parameterType="Map">
 		update miniboard set ref = last_insert_id() where seq = last_insert_id()
 	</update>
+	
+	<!-- 조회수 -->
+	<update id="boardHit" parameterType="int">
+		update miniboard set hit = hit + 1 where seq=#{seq}
+	</update>
+	<!-- 인기글 게시판 -->
+	<select id="boardHotList" parameterType="Map" resultType="boardDTO">
+		select * from miniboard order by hit desc, step asc limit #{startNum}, #{endNum}
+	</select>
+	<!-- 최신글 게시판 -->
+	<select id="boardLatestList" parameterType="Map" resultType="boardDTO">
+		select * from miniboard order by logtime desc, step asc limit #{startNum}, #{endNum}
+	</select>
 </mapper>

@@ -5,13 +5,12 @@ $(function(){
 	
 	//로그인버튼 클릭 이벤
 	$('#loginbtn').on('click',function(){
-		$('#checkid').empty();
 		$('#checkpwd').empty();				
 		
 		if ($('#id').val() == '')
-			$('#checkid').html('아이디 입력');
+			$('#checkpwd').html("<span style='color: red; font-size: 10pt; font-weight: bold;'>아이디를 입력해주세요.</span>");
 		else if ($('#pwd').val() == '')
-			$('#checkpwd').html('비밀번호 입력');
+			$('#checkpwd').html("<span style='color: red; font-size: 10pt; font-weight: bold;'>비밀번호 입력해주세요.</span>");
 		else {
 			$.ajax({
 				type: 'post',
@@ -23,7 +22,7 @@ $(function(){
 					if(result != 'fail') {
 						location.href="../index.do";				
 					} else {
-						alert("로그인 실패.");
+						$("#checkpwd").html("<span style='color: red; font-size: 10pt; font-weight: bold;'>아이디 또는 비밀번호를 확인해주세요.</span>");
 					}
 				},
 				error: function(e) {

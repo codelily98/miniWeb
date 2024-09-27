@@ -278,8 +278,7 @@ a:active, a:visited, a:link {
     border: none; /* 기본 상태의 경계선으로 복원 (필요시) */
     z-index: 1;
     color: #ff4b2b;
-    border-bottom: 2px solid #ff4b2b;
-    background-color: #ff4b2b;
+    background-color: #FF8E33;
 }
 
 .active a span {
@@ -385,6 +384,9 @@ table th {
 table td {
     color: #202124;
     word-break: break-all;
+    white-space: nowrap; /* 텍스트를 한 줄로 표시 */
+	overflow: hidden; /* 넘치는 텍스트를 숨김 */
+	text-overflow: ellipsis; /* 넘친 텍스트를 ...으로 표시 */
 }
 
 table tr:hover {

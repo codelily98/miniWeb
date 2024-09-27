@@ -15,7 +15,13 @@
 	<div id="header">
 		<div id="topawrap">
 			<div id="topnav">
+				<c:if test="${empty sessionScope.memId}">
 			    <a href="../member/loginForm.do">로그인</a>&nbsp;|
+			    </c:if>
+			    <c:if test="${not empty sessionScope.memId}">
+			    <a href="../member/infoForm.do">회원정보</a>&nbsp;|
+			    <a href="../member/loout.do">로그아웃</a>&nbsp;|
+				</c:if>
 				<a href="../index.do">홈</a>
 			</div>
 		</div>
@@ -74,13 +80,13 @@
 						<c:forEach var = "boardDTO" items = "${list}">
 							<c:set var="startnum" value="${startnum + 1}"/>
 							<tr>
-								<td><input type="hidden" value="${boardDTO.seq}">
+								<td><input id="seq" type="hidden" value="${boardDTO.seq}">
 									<span>${startnum}</span>
 								</td>
-								<td>${boardDTO.subject}</td>
+								<td class="asubject">${boardDTO.subject}</td>
 								<td>${boardDTO.nickname}</td>
 								<td>
-									<fmt:formatDate pattern = "yyyy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>
+									<fmt:formatDate pattern = "yy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>
 								</td>
 								<td>${boardDTO.hit }</td>
 							</tr>

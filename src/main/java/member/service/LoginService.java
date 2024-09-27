@@ -32,7 +32,7 @@ public class LoginService implements CommandProcess {
 			
 			return "/member/loginOk.jsp";
 		} else {
-			return "/member/loginForm.do";
+			return "/member/loginOk.jsp";
 		}
 	}
 }
