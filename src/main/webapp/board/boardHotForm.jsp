@@ -80,7 +80,7 @@
 								<td class="asubject">${boardDTO.subject}</td>
 								<td>${boardDTO.nickname}</td>
 								<td>
-									<fmt:formatDate pattern = "yyyy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>
+									<fmt:formatDate pattern = "yy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>
 								</td>
 								<td>${boardDTO.hit }</td>
 							</tr>

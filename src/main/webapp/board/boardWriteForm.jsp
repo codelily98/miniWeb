@@ -7,11 +7,11 @@
 <title>404:글 쓰기</title>
 <link rel="stylesheet" href="../css/boardWriteForm.css">
 <!-- 스마트에디터 CSS 파일 로드 -->
-<link rel="stylesheet" type="text/css" href="../SE2/css/smart_editor2_in.css">
-<link rel="stylesheet" type="text/css" href="../SE2/css/smart_editor2_out.css">
-<link rel="stylesheet" type="text/css" href="../SE2/css/smart_editor2.css">
+<link rel="stylesheet" type="text/css" href="../se2/css/ko_KR/smart_editor2_in.css">
+<link rel="stylesheet" type="text/css" href="../se2/css/ko_KR/smart_editor2_out.css">
+<link rel="stylesheet" type="text/css" href="../se2/css/ko_KR/smart_editor2.css">
 <!-- 필수 자바스크립트 파일 로드 -->
-<script type="text/javascript" src="../SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="../se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
 <div id="topwrap">
@@ -79,7 +79,7 @@
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="../SE2/js/HuskyEZCreator.js"></script>
+<script type="text/javascript" src="../se2/js/service/HuskyEZCreator.js"></script>
 <script type="text/javascript" src="../js/boardWriteForm.js"></script>
 <script type="text/javascript">
 /*<!-- 스마트에디터 자바스크립트 초기화 -->*/
@@ -88,7 +88,7 @@ var oEditors = [];
 nhn.husky.EZCreator.createInIFrame({
     oAppRef: oEditors,
     elPlaceHolder: "ir1",
-    sSkinURI: "../SE2/SmartEditor2Skin.html",
+    sSkinURI: "../se2/SmartEditor2Skin.html",
     fCreator: "createSEditor2",
     htParams : { 
         // 툴바 사용 여부 (true:사용/ false:사용하지 않음) 
@@ -100,8 +100,8 @@ nhn.husky.EZCreator.createInIFrame({
         fOnBeforeUnload: function(){},
         I18N_LOCALE: "ko_KR",
         // 이미지 업로드 플러그인 사용 설정
-        SE2M_AttachImage: {
-            sUploadURL: "/SE2/sample/photo_uploader/file_uploader.jsp"  // 이미지 업로드 경로 (서버측 업로드 핸들러)
+        se2M_AttachImage: {
+            sUploadURL: "/se2/sample/photo_uploader/file_uploader.jsp"  // 이미지 업로드 경로 (서버측 업로드 핸들러)
         }
 	}
 });

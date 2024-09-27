@@ -47,7 +47,7 @@ public class BoardWriteService implements CommandProcess {
         map.put("content", content);
 
         // 스마트 에디터 2.0에서 이미지 파일명 추출
-        String image1 = ImageExtractor.extractImageName(content);
+        String image1 = multi.getParameter("image1");
 
         // 이미지가 있는 경우
         if (image1 != null) {
