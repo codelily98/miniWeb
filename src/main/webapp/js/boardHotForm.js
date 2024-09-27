@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function boardPaging(pg) {
-    location.href = "boardForm.do?pg=" + pg;
+    location.href = "./boardHotForm.do?pg=" + pg;
 }
 
 $(function(){
@@ -43,6 +43,5 @@ $(document).on("click",".asubject", function(){
 		}
 	});
 });
-
 
 

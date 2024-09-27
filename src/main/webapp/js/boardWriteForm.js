@@ -8,10 +8,10 @@ $(document).ready(function(){
 	});
 	
 	$("#hot_list").on('click', function(){
-		location.href="/miniWeb/board/hotboardForm.do?pg=1";
+		location.href="/miniWeb/board/boardHotForm.do?pg=1";
 	});
 	
 	$("#latest_list").on('click', function(){
-		location.href="/miniWeb/board/latestboardForm.do?pg=1";
+		location.href="/miniWeb/board/boardLatestForm.do?pg=1";
 	});
 });

@@ -16,4 +16,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="refUpdate" parameterType="Map">
 		update miniboard set ref = last_insert_id() where seq = last_insert_id()
 	</update>
+	<!-- 조회수 -->
+	<update id="boardHit" parameterType="int">
+		update miniboard set hit = hit + 1 where seq=#{seq}
+	</update>
+	<!-- 인기글 게시판 -->
+	<select id="boardHotList" parameterType="Map" resultType="boardDTO">
+		select * from miniboard order by hit desc, step asc limit #{startNum}, #{endNum}
+	</select>
+	<!-- 최신글 게시판 -->
+	<select id="boardLatestList" parameterType="Map" resultType="boardDTO">
+		select * from miniboard order by logtime desc, step asc limit #{startNum}, #{endNum}
+	</select>
 </mapper>

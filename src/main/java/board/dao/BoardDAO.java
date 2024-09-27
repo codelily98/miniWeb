@@ -43,6 +43,18 @@ public class BoardDAO {
 		return list;
 	}
 	
+	public List<BoardDTO> boardHotList(int startNum, int endNum) {
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		SqlSession sqlSession = sessionFactory.openSession();
+		list = sqlSession.selectList("boardSQL.boardHotList", map); 
+		sqlSession.close();
+		return list;
+	}
+	
 	public int getTotalA() {
 		int totalA = 0;
 		
@@ -64,4 +76,27 @@ public class BoardDAO {
 		sqlSession.commit();
 		sqlSession.close();
 	}
+
+
+	public void boardHit(int seq) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.insert("boardSQL.boardHit", seq);
+		sqlSession.commit();
+		sqlSession.close();	
+		
+	}
+
+	public List<BoardDTO> boardLatestList(int startNum, int endNum) {
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		SqlSession sqlSession = sessionFactory.openSession();
+		list = sqlSession.selectList("boardSQL.boardLatestList", map); 
+		sqlSession.close();
+		return list;
+	}
+	
+
 }
