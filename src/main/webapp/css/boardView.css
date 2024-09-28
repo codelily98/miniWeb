@@ -341,6 +341,10 @@ a:active, a:visited, a:link {
     margin-top: 20px; /* 테이블과 동일한 여백 추가 */
 }
 
+#content {
+	white-space: pre-wrap;
+}
+
 #btnwrap {
    display: flex;
    justify-content: flex-end;
@@ -386,6 +390,11 @@ table td {
     white-space: nowrap; /* 텍스트를 한 줄로 표시 */
 	overflow: hidden; /* 넘치는 텍스트를 숨김 */
 	text-overflow: ellipsis; /* 넘친 텍스트를 ...으로 표시 */
+}
+
+#hitStyle, #logtimeStyle {
+	text-align: left;
+	margin-left: 3em;	
 }
 
 thead tr {

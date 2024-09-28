@@ -13,10 +13,9 @@ import board.dao.BoardDAO;
 public class BoardViewService implements CommandProcess{
 
 	@Override
-	public String requestpro(HttpServletRequest request, HttpServletResponse response) 
-		throws Throwable {
+	public String requestpro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		int pg = Integer.parseInt(request.getParameter("pg"));
-		if(request.getParameter("seq") == null)	return "/board/boardList.do";
+		if(request.getParameter("seq") == null)	return "/board/boardForm.do?pg=1";
 		
 		else {
 			int seq = Integer.parseInt(request.getParameter("seq"));

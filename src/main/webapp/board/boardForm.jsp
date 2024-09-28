@@ -69,11 +69,11 @@
 				<table>
 					<thead>
 						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>조회수</th>
+							<th width="10%">번호</th>
+							<th width="40%">제목</th>
+							<th width="25%">작성자</th>
+							<th width="15%">작성일</th>
+							<th width="10%">조회수</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -82,18 +82,19 @@
 						<c:forEach var = "boardDTO" items = "${list}">
 							<c:set var="startnum" value="${startnum + 1}"/>
 							<tr>
-								<td><input class="seq" id="seq" type="hidden" value="${boardDTO.seq}">
+								<td>
+									<input class="seq" id="seq" type="hidden" value="${boardDTO.seq}">
 									<span>${startnum}</span>
 								</td>
-								<td class="asubject">
-								<input type = "hidden" id = "pg" class = "pg" value = "${requestScope.pg}" />
-								<input type = "hidden" id = "memNickname" class = "memNickname" value = "${memNickname}" />
-								<input type = "hidden" id = "postnickname" class = "postnickname" value = "${boardDTO.nickname}" />
-									${boardDTO.subject}
+								<td class="asubject" id="titleStyle">
+									<input type = "hidden" id = "pg" class = "pg" value = "${requestScope.pg}" />
+									<input type = "hidden" id = "memNickname" class = "memNickname" value = "${memNickname}" />
+									<input type = "hidden" id = "postnickname" class = "postnickname" value = "${boardDTO.nickname}" />
+									<span id="title">${boardDTO.subject}</span>
 								</td>
 								<td>${boardDTO.nickname}</td>
 								<td>
-									<fmt:formatDate pattern = "yy.MM.dd HH:mm" value = "${boardDTO.logtime}"/>
+									<fmt:formatDate pattern = "yy.MM.dd." value = "${boardDTO.logtime}"/>
 								</td>
 								<td>${boardDTO.hit }</td>
 							</tr>

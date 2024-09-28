@@ -72,16 +72,16 @@
 			</div>
 			<div id="listwrap">
 				<form id = boardViewForm>
-					<input type = "hidden" name = "pg" value = "${requestScope.pg }">
-					<input type = "hidden" name = "seq" value = "${list[0].seq}">
-					<input type = "hidden" id = "pwd" value = "${memPwd}">
+					<input type="hidden" name="pg" value="${requestScope.pg }">
+					<input type="hidden" name="seq" value="${list[0].seq}">
+					<input type="hidden" id="pwd" value="${memPwd}">
 					<table>
 						<tr>
 							<th width="10%" align="left">글&nbsp;번&nbsp;호&nbsp;:</th>
-							<td width=40% data-seq="${list[0].seq}" align="left">${list[0].seq}</td>
+							<td width=55% data-seq="${list[0].seq}" align="left">${list[0].seq}</td>
 							<th width=10% align="right">작&nbsp;성&nbsp;일&nbsp;:</th>
-							<td width="40%" align="right">							
-								<fmt:formatDate pattern="yy년 MM월 dd일 [HH:mm:ss]" value="${list[0].logtime}"/>
+							<td id="logtimeStyle" width="25%" align="right">
+								<fmt:formatDate pattern="yy.MM.dd. HH:mm:ss" value="${list[0].logtime}"/>
 							</td>
 						</tr>
 						<tr>
@@ -90,10 +90,10 @@
 							
 						</tr>
 						<tr>
-							<th width=10% align="left">작&nbsp;성&nbsp;자&nbsp;:</th>
-							<td width=60% align="left">${list[0].id}</td>
-							<th width=10% align="right">조&nbsp;회&nbsp;수&nbsp;:</th>
-							<td width=20% align="right">${list[0].hit}</td>
+							<th align="left">작&nbsp;성&nbsp;자&nbsp;:</th>
+							<td align="left">${list[0].id}</td>
+							<th align="right">조&nbsp;회&nbsp;수&nbsp;:</th>
+							<td id="hitStyle" align="right">${list[0].hit}</td>
 						</tr>
 						<tr>
 							<th align="left">내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</th>
@@ -106,8 +106,7 @@
 								</c:if>
 								<c:if test="${memId == list[0].id}">
 									<input id="deleteBtn" type="button" value="글 삭제"/>
-									<input id="updateBtn" type="button" value="글 수정" 
-									onclick="location.href = './boardUpdateForm.do?seq=${list[0].seq}'"/>
+									<input id="updateBtn" type="button" value="글 수정" onclick="location.href='./boardUpdateForm.do?pg=${requestScope.pg}&seq=${list[0].seq}'"/>
 									<input id="listBtn" type="button" value="목록" onclick="location.href='./boardForm.do?pg=${requestScope.pg}'">
 								</c:if>
 							</td>
@@ -150,10 +149,6 @@ $(function(){
 		else{
 			alert('비밀번호가 일치하지 않습니다.');
 		}
-	});
-	$('#updateBtn').click(function(){
-		$('#boardViewForm').attr('action','./boardUpdateForm.do')
-		$('#boardViewForm').submit();
 	});
 });
 </script>

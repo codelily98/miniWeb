@@ -108,4 +108,11 @@ public class BoardDAO {
 		sqlSession.commit();
 		sqlSession.close();
 	}
+
+	public void boardUpdate(Map<String, Object> map) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.update("boardSQL.boardUpdate", map);
+		sqlSession.commit();
+		sqlSession.close();
+	}
 }

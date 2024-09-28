@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>404:글 쓰기</title>
+<title>404:글 수정</title>
 <link rel="stylesheet" href="../css/boardWriteForm.css">
 <!-- 스마트에디터 CSS 파일 로드 -->
 <link rel="stylesheet" type="text/css" href="../se2/css/smart_editor2_in.css">
@@ -65,11 +65,17 @@
 		<div id="boardlist">
 			<div id="listwrap">
 				<form id="editorForm">
-					<input type="text" name="subject" id="subject" placeholder="제목 입력"/>
+					<input type="hidden" name="pg" value="${requestScope.pg }">
+					<input type="hidden" id="seq" name="seq" value="${list[0].seq}">
+					<input type="hidden" id="pwd" value="${memPwd}">
+					<input type="text" name="subject" id="subject" value="${list[0].subject}" placeholder="제목 입력"/>
 					<!-- 스마트에디터가 적용될 textarea -->
-					<textarea name="ir1" id="ir1" cols="100" rows="10"></textarea>
+					<textarea name="ir1" id="ir1" cols="100" rows="10">${list[0].content}</textarea>
 					<br>
-					<input type="button" value="글쓰기" onclick="submitContents(this);">
+					<div id="btnwrap">
+						<input type="button" value="수정" onclick="submitContents(this);">
+						<input type="reset" value="다시작성">					
+					</div>
 				</form>
 			</div>
 		</div>
@@ -80,7 +86,7 @@
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../se2/js/HuskyEZCreator.js"></script>
-<script type="text/javascript" src="../js/boardWriteForm.js"></script>
+<script type="text/javascript" src="../js/boardUpdateForm.js"></script>
 <script type="text/javascript">
 /*<!-- 스마트에디터 자바스크립트 초기화 -->*/
 var oEditors = [];
@@ -109,9 +115,10 @@ nhn.husky.EZCreator.createInIFrame({
 function submitContents(elClickedObj) {
 	// 에디터의 내용이 textarea에 반영되도록 업데이트
 	oEditors[0].exec("UPDATE_CONTENTS_FIELD", []);
+	let seq = document.getElementById("seq").value;
 	let subject = document.getElementById("subject").value;
-	let content = document.getElementById("ir1").value;	
-
+	let content = document.getElementById("ir1").value;
+	
 	// 본문 내용에서 첫 번째 이미지 태그 찾기
 	let imgTag = content.match(/<img[^>]+src="([^">]+)"/);
 	let imgName = ''; // 기본값 설정
@@ -122,10 +129,11 @@ function submitContents(elClickedObj) {
 	    // src 속성에서 전체 URL 추출
 	    var src = imgTag[1]; // match로 찾은 그룹 1을 사용
 	    imgName = src; // 전체 src를 사용
-	}	
+	}
 	
 	// FormData 객체 생성
 	let formData = new FormData();
+	formData.append('seq', seq);
 	formData.append('subject', subject);
 	formData.append('content', content);
 	
@@ -138,13 +146,13 @@ function submitContents(elClickedObj) {
 		$.ajax({
 			type: 'post',
 			enctype: 'multipart/form-data',
-			url: '/miniWeb/board/boardWrite.do',
+			url: '/miniWeb/board/boardUpdate.do',
 			processData: false,
 			contentType: false,
 			data: formData,
 			dataType: 'text',
 			success: function(data) {
-				alert('글을 작성하였습니다.');
+				alert('글을 수정하였습니다.');
 				location.href = '/miniWeb/board/boardForm.do?pg=1';
 			},
 			error: function(e) {

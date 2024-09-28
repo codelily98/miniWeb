@@ -38,11 +38,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from miniboard order by logtime desc, step asc limit #{startNum}, #{endNum}
 	</select>
 	<!-- View -->
-	<select id="boardView" parameterType = "Integer" resultType="boardDTO">
+	<select id="boardView" parameterType="Integer" resultType="boardDTO">
 		SELECT * FROM MINIBOARD WHERE SEQ = #{seq}
 	</select>
 	<!-- 글 삭제 -->
-	<delete id = "boardDelete" parameterType = "Integer">
+	<delete id="boardDelete" parameterType="Integer">
 		DELETE FROM MINIBOARD WHERE SEQ = #{seq}
 	</delete>
+	<update id="boardUpdate" parameterType="Map">
+		<choose>
+		    <when test="image1 != null and image1 != '' and image1 != 'null'">
+		        UPDATE MINIBOARD SET SUBJECT = #{subject}, CONTENT = #{content}, IMAGE1 = #{image1} WHERE SEQ = #{seq}
+		    </when>
+		    <otherwise>
+		        UPDATE MINIBOARD SET SUBJECT = #{subject}, CONTENT = #{content}, IMAGE1 = null WHERE SEQ = #{seq}
+		    </otherwise>
+		</choose>
+	</update>
 </mapper>

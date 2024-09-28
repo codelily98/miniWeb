@@ -304,6 +304,10 @@ a:active, a:visited, a:link {
     flex-direction: column; /* 입력 요소들을 세로 방향으로 나열 */
 }
 
+#title:hover {
+	cursor: pointer;
+}
+
 #listwrap input[type="text"] {
     width: 100%; /* 각 입력 요소의 너비를 100%로 설정 */
     box-sizing: border-box; /* 패딩과 보더를 포함한 총 너비 계산 */
@@ -371,8 +375,14 @@ table {
 }
 
 table th, table td {
-    padding: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #dcdcdc;
+}
+
+#titleStyle {
+	text-align: left;
+	padding-left: 0.5em;
 }
 
 table th {

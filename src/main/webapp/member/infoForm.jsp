@@ -37,7 +37,7 @@
 			<ul>
 				<li><a href="/miniWeb/index.do">메인</a></li>
 				<li><a href="#">뉴스</a></li>
-				<li class="active"><a href="/miniWeb/board/boardform.do?pg=1"><span>커뮤니티</span></a></li>
+				<li class="active"><a href="/miniWeb/board/boardForm.do?pg=1"><span>커뮤니티</span></a></li>
 				<li><a href="#">달력</a></li>
 				<li><a href="#">지도</a></li>
 			</ul> 
@@ -99,7 +99,7 @@
                </div>
             </div>
             <div class="btnwrap">
-               <input type="button" id="joinbtn" value="회원가입">
+               <input type="button" id="joinbtn" value="정보수정">
                <input type="reset" value="다시작성">
             </div>
          </div>

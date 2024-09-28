@@ -14,6 +14,7 @@ CREATE TABLE MINIBOARD(
      pseq int DEFAULT 0 NOT NULL,    			-- 원글번호
      reply int DEFAULT 0 NOT NULL,   			-- 답변수
      hit int DEFAULT 0,              			-- 조회수
+     category INTEGER DEFAULT 0,				-- 게시판 카테고리
      logtime TIMESTAMP DEFAULT NOW()			-- 작성일
  );
- select * from minimember;
+ select * from MINIBOARD;
