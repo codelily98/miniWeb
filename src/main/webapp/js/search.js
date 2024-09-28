@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#search').on('keyup', function(event) {
         if (event.key === 'Enter') {
         	let search = $('#search').val();
-        	alert(search);
+        	
         	$.ajax({
         		type:'post',
         		url:'/miniWeb/board/search.do',

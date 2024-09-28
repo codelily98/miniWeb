@@ -14,6 +14,7 @@
 			<li><a href="./index.do">홈</a></li>
 			<c:choose>
 				<c:when test="${not empty sessionScope.memId}">
+					<li><a href="./member/infoForm.do">회원정보</a></li>
 					<li><a href="./member/logout.do" id="logoutlink">로그아웃</a></li>
 				</c:when>
 				<c:otherwise>			

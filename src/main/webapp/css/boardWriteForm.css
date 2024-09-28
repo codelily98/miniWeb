@@ -386,7 +386,7 @@ se2_inputarea .bg {
 	outline-color: #ff4b2b;
 }
 
-#listwrap input[type="button"] {
+#listwrap input[type="button"], #listwrap input[type="reset"] {
    color: #ffffff;
    padding: 10px 20px;
    font-size: 10pt;
@@ -396,7 +396,7 @@ se2_inputarea .bg {
    border-radius: 5px;
 }
 
-#listwrap input[type="button"]:hover {
+#listwrap input[type="button"]:hover, #listwrap input[type="reset"]:hover {
    cursor: pointer;
    box-shadow: inset 0 0 15px red; 
 }

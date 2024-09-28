@@ -51,38 +51,90 @@
          	<div id="infowrap">
          		<div id="topbtnwrap">
          			<div id="deleteInfo">
-         				<a href="#">계정 삭제</a>
+         				<a href="#" onclick="delete()">&lt;계정 삭제&gt;</a>
          			</div>
          		</div>
          		<div id="mainwrap">
          			<div id="leftwrap">
          				<div id="profilewrap">
-         					<div id="profileimg">
-         						프로필 이미지 DB에서 불러오기
+         					<div id="profileimgwrap">
+         						<div id="profileImg">
+         							<c:if test="${list[0].profile != null}">
+         								<img src="${list[0].profile}" alt="${sessionScope.profileName}"/>
+         							</c:if>
+         							<c:if test="${list[0].profile == null}">
+         								<img src="../image/default.png" alt="default"/>
+         							</c:if>
+         						</div>
          					</div>
          					<div id="profilebtnwrap">
          						<input type="button" value="프로필 변경" id="profileBtn">
          					</div>
          				</div>
          				<div id="nicknamewrap">
-         					<div id="nicknameView">
-         						닉네임 DB에서 불러오기
+         					<div id="nicknameView" class="hide1">
+         						${list[0].nickname}
          					</div>
-         					<div id="nicknameUpdate">
-         						<!-- 닉네임 수정 버튼 누르면 나타남 -->
+         					<div id="nicknameUpdate" class="show1">
+         						<input type="text" id="nickname" name="nickname" value="${list[0].nickname}" class="show1"/>
          					</div>
-         					<div id="nicknameBtn">
-         						<input type="button" value="닉네임 변경" id="nicknameBtn">
+         					<div id="hide1Btn" class="hide1">
+         						<input type="button" value="닉네임 변경" id="hideBtn1" class="hide1">
+         					</div>
+         					<div id="nicknameBtn" class="show1">
+         						<input type="button" value="닉네임 변경" id="nickupdateBtn" class="show1">
+         						<input type="button" value="뒤로" id="resetBtn" onclick="location.reload()" class="show1">
          					</div>
          				</div>
          			</div>
          			<div id="rightwrap">
-         				회원정보 DB에서 불러오기
+         				<div id="memberinfowrap">
+         					<div class="infoWrap">
+	         					<div id="idwrap" class="infoDiv">
+	         						<div id="textDiv">아이디 : ${list[0].id}</div>
+	         						<input type="hidden" id="id" name="id" value="${list[0].id}"/>
+	         					</div>
+	         					<div id="namewrap" class="infoDiv">
+	         						<div id="textDiv">이름 : ${list[0].name}</div>
+	         						<input type="hidden" id="name" name="name" value="${list[0].name}"/>
+	         					</div>
+	         					<div id="emailwrap" class="infoDiv">
+	         						<div id="textDiv" class="hide2">이메일 : ${list[0].email}</div>
+	         						<input type="email" id="email" name="email" value="${list[0].email}" class="show2"/>
+	         						<input type="button" id="emailVertifyBtn" value="인증번호" class="show2"/>
+	         					</div>
+	         					<div id="checkemailwrap" class="infoDiv">
+	         						<input type="text" id="checkEmail" name="checkEmail" value="" class="show2"/>
+	         						<input type="button" id="checkEmailBtn" value="확인" class="show2"/>
+	         					</div>
+	         					<div id="zipcodewrap" class="infoDiv">
+	         						<div id="textDiv" class="hide2">우편번호 : ${list[0].zipcode}</div>
+	         						<input type="text" id="zipcode" name="zipcode" value="${list[0].zipcode}" class="show2"/>
+	         						<input type="button" id="zipcodeBtn" onclick="checkPost(); return false;" value="우편번호 검색" class="show2"/>
+	         					</div>
+	         					<div id="addr1wrap" class="infoDiv">
+	         						<div id="textDiv" class="hide2">주소 : ${list[0].addr1}</div>
+	         						<input type="text" id="addr1" name="addr1" value="${list[0].addr1}" class="show2"/>
+	         					</div>
+	         					<div id="addr2wrap" class="infoDiv">
+	         						<div id="textDiv" class="hide2">상세주소 : ${list[0].addr2}</div>
+	         						<input type="text" id="addr2" name="addr2" value="${list[0].addr2}" class="show2"/>
+	         					</div>
+	         					<div id="checkwrap" class="show2">
+	         						<div id="textDiv" id="checkDiv" class="show"></div>
+	         					</div>
+         					</div>
+         					<div id="middlebtnwrap" class="btnDiv">
+         						<input type="button" id="hideBtn2" value="회원정보 수정" class="hide2"/>
+         						<input type="button" id="updateBtn" value="회원정보 수정" class="show2"/>
+         						<input type="button" id="resetBtn" value="뒤로" onclick="location.reload()" class="show2"/>
+         					</div>
+         				</div>
          			</div>
          		</div>
          		<div id="bottombtnwrap">
          			<div id="adminGet">
-         				<a href="#">관리자 권한 신청</a>
+         				<a href="#">&lt;관리자 권한 신청&gt;</a>
          			</div>
          		</div>
          	</div>
@@ -91,6 +143,8 @@
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="../js/infoForm.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 </body>
 </html>

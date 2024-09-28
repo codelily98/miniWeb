@@ -202,14 +202,6 @@ a:active, a:visited, a:link {
     color: #ff4b2b;
 }
 
-#wrap {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 90vh;
-}
-
 
 /* Form Styling */
 #joinForm {
@@ -294,7 +286,7 @@ a:active, a:visited, a:link {
 #wrap {
 	display: flex;
 	width: 100%;
-	height: 80vh;
+	height: 70vh;
 	justify-content: center;
 	align-items: center;
 }
@@ -311,7 +303,6 @@ a:active, a:visited, a:link {
 
 #datawrap {
 	width: 100%;
-	border: 1px solid black;
 }
 
 #infowrap {
@@ -334,6 +325,12 @@ input[type="button"] {
     border-radius: 5px;
 	background-color: #ff4b2b;
     color: white;
+    transition: 0.2s ease-out;
+    width: 200px;
+}
+
+input[type="button"]:hover {
+	background-color: red;
 }
 
 #deleteInfo, #adminGet {
@@ -362,16 +359,81 @@ input[type="button"] {
     align-items: center; /* 자식 요소들을 가운데 정렬 */    
 }
 
-#profileimg, #nicknameView, #profilebtnwrap, #nicknameBtn {
+#profileImg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#profileImg img {
+	width: 200px;
+	height: 200px;
+}
+
+#nicknamewrap {
+	height: 108px;
+}
+
+#nicknameUpdate input[type="text"] {
+	width: 200px;
+	border: 1px solid #ff4b2b;
+	border-radius: 5px;
+	outline: none;
+	text-align: left;
+	padding: 5px 10px;
+	font-size: 12pt;
+}
+
+#nicknameUpdate input[type="text"]:hover {
+	outline: 1px solid #ff4b2b;
+}
+
+#nicknameUpdate input[type="text"]:active {
+	outline: 1px solid #ff4b2b;
+}
+
+#nicknameView, #nicknameUpdate {
+	width: 240px;
+	height: 60px;
+	display: flex;
+	align-items: center; /* 자식 요소들을 가운데 정렬 */
+	flex-direction: row;
+	justify-content: center;
+	text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+#profileimg, #nicknameView, #profilebtnwrap {
     display: flex;
     flex-direction: column; /* 수직 정렬 */
     align-items: center; /* 가운데 정렬 */
     justify-content: center; /* 수직 가운데 정렬 */
 }
 
-#profileimg {
+#nicknameBtn {
+	width: 240px;
+	display: flex;
+    flex-direction: row; /* 수직 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    justify-content: center; /* 수직 가운데 정렬 */
+}
+
+#nicknameBtn input[type="button"] {
+	width: 100px;
+}
+
+#profileimgwrap {
 	width: 240px;
 	height: 240px;
+	display: flex;
+    flex-direction: column; /* 수직 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    justify-content: center; /* 수직 가운데 정렬 */
+}
+
+#profileImg {
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
 }
 
 #nicknameView {
@@ -381,8 +443,86 @@ input[type="button"] {
 
 #rightwrap {
     width: 70%; /* 우측 50% */
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; /* 수직 정렬 */
     padding-left: 10px; /* 좌측 여백 추가 (필요 시) */
-    border: 1px solid black;
+}
+
+#memberinfowrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; /* 수직 정렬 */
+	width: 90%;
+	height: 100%;
+}
+
+.infoWrap {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; /* 수직 정렬 */
+	height: 350px;
+}
+
+.infoWrap div {
+	padding: 2px;
+}
+
+#textDiv {
+	width: 100%;
+	height: 35px;
+	text-align: left;
+}
+
+.infoDiv, #nicknameBtn, #hide1Btn {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row; /* 수평 정렬 */
+	text-align: left;
+}
+
+#nicknameBtn, #hide1Btn {
+	height: 48px;
+}
+
+#zipcode {
+	margin-bottom: 10px;
+}
+
+#zipcodeBtn {
+	margin-bottom: 20px;
+}
+
+#addr1 {
+	margin-bottom: 15px;
+}
+
+#checkwrap {
+	height: 20px;
+}
+
+.infoDiv input[type="text"], .infoDiv input[type="password"], .infoDiv input[type="email"] {
+	border: 1px solid #ff4b2b;
+	border-radius: 5px;
+	outline: none;
+	text-align: left;
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 12pt;
+}
+
+.infoDiv input[type="text"]:hover, .infoDiv input[type="password"]:hover, .infoDiv input[type="email"]:hover {
+	outline: 1px solid #ff4b2b;
+}
+
+.infoDiv input[type="text"]:active, .infoDiv input[type="password"]:active, .infoDiv input[type="email"]:active {
+	outline: 1px solid #ff4b2b;
 }
 
 #deleteInfo a, #adminGet a {
@@ -393,7 +533,9 @@ input[type="button"] {
 
 #profilewrap {
 	width: 80%;
-	border: 1px solid black;
+	border: 1px solid #FFDABF;
+	border-radius: 10px;
+	background-color: #FFDABF;
 }
 
 #bottombtnwrap {

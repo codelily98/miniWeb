@@ -62,9 +62,6 @@
 			</ul>
 		</div>
 		<div id="boardlist">
-			<div id="btnwrap">
-				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
-			</div>
 			<div id="listwrap">
 				<table>
 					<thead>
@@ -105,6 +102,14 @@
 				<div id="pagewrap">
 					${pagingHTML }
 				</div>
+			</div>
+			<div id="btnwrap">
+				<c:if test="${not empty sessionScope.memId}">
+				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
+				</c:if>
+				<c:if test="${empty sessionScope.memId}">
+				<input type="button" id="writebtn" value="로그인" onclick="location.href='/miniWeb/member/loginForm.do'">
+				</c:if>
 			</div>
 		</div>
 	</div>

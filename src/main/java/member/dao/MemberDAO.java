@@ -94,4 +94,21 @@ public class MemberDAO {
 		sqlSession.close();
 		return pwd;
 	}
+
+	public List<MemberDTO> getInfo(String id) {
+		List<MemberDTO> list = new ArrayList<MemberDTO>();
+		SqlSession sqlSession = sessionFactory.openSession();
+		list = sqlSession.selectList("memberSQL.getInfo", id);
+		sqlSession.close();
+		return list;
+	}
+
+	public int deleteInfo(String id) {
+		int su = 0;
+		SqlSession sqlSession = sessionFactory.openSession();
+		su = sqlSession.delete("memberSQL.deleteInfo", id);
+		sqlSession.commit();
+		sqlSession.close();
+		return su;
+	}
 }

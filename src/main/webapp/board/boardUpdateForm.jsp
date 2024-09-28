@@ -74,7 +74,7 @@
 					<br>
 					<div id="btnwrap">
 						<input type="button" value="수정" onclick="submitContents(this);">
-						<input type="reset" value="다시작성">					
+						<input type="button" id="resetbtn" value="다시작성">	
 					</div>
 				</form>
 			</div>

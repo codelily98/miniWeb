@@ -37,4 +37,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="isExistSearchPwd" parameterType="java.util.Map" resultType="String">
 		select pwd from MINIMEMBER where id=#{id} and name=#{name} and email=#{email}
 	</select>
+	
+	<!-- 회원정보 불러오기 -->
+	<select id="getInfo" parameterType="String" resultType="memberDTO">
+		SELECT * FROM MINIMEMBER WHERE ID = #{id}
+	</select>
+	
+	<!-- 회원정보 삭제 -->
+	<delete id="deleteInfo" parameterType="String">
+		DELETE FROM MINIMEMBER WHERE ID = #{id}
+	</delete>
 </mapper>

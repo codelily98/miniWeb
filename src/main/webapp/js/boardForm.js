@@ -15,6 +15,10 @@ $(function(){
 		location.href="/miniWeb/board/boardLatestForm.do?pg=1";
 	});
 	
+	$("#resetbtn").on('click', function(){
+		window.reload();
+	});
+	
 	//조회수 증가
 	$(document).on("click",".asubject", function(){
 		if($('#memNickname').val() == ''){
