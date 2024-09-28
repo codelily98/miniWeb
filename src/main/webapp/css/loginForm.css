@@ -134,3 +134,15 @@ input[type="button"]:hover {
     cursor: pointer;
     background-color: #FF6619;  
 }
+
+.btnwrap {
+	margin-bottom: 1em;
+}
+
+#checknumberDiv {
+	font-size: 12pt;
+	color: black;
+	font-weight: bold;
+	margin-left: 0.3em;
+	margin-bottom: 0.5em;
+}

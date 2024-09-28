@@ -79,7 +79,10 @@ $(document).ready(function () {
                 type: "POST",
                 data: { email: email },
                 success: function (response) {
-                    $("#check2").html(response);
+					let result = response.split("|");
+					
+					$("#authCode").val(result[0]);
+                    $("#check2").html(result[1]);
                 },
                 error: function () {
                     alert("인증번호 발송에 실패했습니다.");
@@ -99,9 +102,9 @@ $(document).ready(function () {
                 url: "/miniWeb/verifyAuthCode",
                 type: "POST",
                 data: { email: email, ckechnum: ckechnum },
+				dataType: 'text',
                 success: function (response) {
-                    $("#check2").html(response);
-					
+					$("#check2").html(response);
                 },
                 error: function () {
                     alert("인증번호 확인에 실패했습니다.");
@@ -124,7 +127,9 @@ $('#joinbtn').click(function(){
     var email = $('#email').val();
     var checkid = $('#checkid').val();
     var checknick = $('#checknick').val();
-    
+	var ckechnum = $('#ckechnum').val();
+    var authCode = $('#authCode').val();
+	
     $('#check1').html('');
     $('#check2').html('');
 	
@@ -146,7 +151,11 @@ $('#joinbtn').click(function(){
         $('#check1').html('<span style="color: red; font-weight: bold;">성별 입력해주세요.</span>');
     } else if (!email) {
         $('#check2').html('<span style="color: red; font-weight: bold;">이메일 입력해주세요.</span>');
-    } else {
+    } else if (!ckechnum) {
+		$('#check2').html('<span style="color: red; font-weight: bold;">인증번호를 입력해주세요.</span>');
+	} else if (ckechnum != authCode) {
+		$('#check2').html('<span style="color: red; font-weight: bold;">이메일 인증을 해주세요</span>');
+	} else {
         // 폼 유효성 검사 통과 시 서버에 제출
         $.ajax({
             type: 'post',

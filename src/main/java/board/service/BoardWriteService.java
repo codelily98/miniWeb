@@ -39,14 +39,16 @@ public class BoardWriteService implements CommandProcess {
         String subject = multi.getParameter("subject");
         String content = multi.getParameter("content");
         String image1 = multi.getParameter("image1"); // 원본 파일 이름
+        int admin = Integer.parseInt(multi.getParameter("admin"));
         System.out.println("BoardWriteService image1값: " + image1);
         
-        Map<String, String> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("id", id);
         map.put("nickname", nickname);
         map.put("email", email);
         map.put("subject", subject);
         map.put("content", content);
+        map.put("admin", Integer.valueOf(admin));
         
         String imageName = null;
         

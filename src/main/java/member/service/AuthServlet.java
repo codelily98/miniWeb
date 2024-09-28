@@ -40,7 +40,7 @@ public class AuthServlet extends HttpServlet {
         System.out.println("인증번호 : " + authCode);
         // 응답 상태 설정
         response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().write("인증번호가 " + email + "로 발송되었습니다.");
+        response.getWriter().write(authCode + "|인증번호가 " + email + "로 발송되었습니다.");
     }
 
     // 인증번호 확인 메소드

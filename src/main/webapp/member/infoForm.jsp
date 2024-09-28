@@ -46,66 +46,51 @@
 </div>
 <div id="wrap">
 	<div id="container">
-		      <form id="joinForm">
-         <div id="joinwrap">
-            <div id="titlewrap">
-               <div class="title">
-                  <span id="gomain">404</span>
-               </div>
-            </div>
-            <div class="inputwrap">
-               <div id="idwrap">
-                  <input type="text" id="id" name="id" placeholder="아이디" required="required">
-                  <input type="hidden" id="checkid" value="">
-               </div>
-               <div id="pwdwrap">
-                  <input type="password" id="pwd" name="pwd" placeholder="비밀번호" required="required">              
-               </div>
-               <div id="repwdwrap">
-                  <input type="password" id="repwd" name="repwd" placeholder="비밀번호 확인" required="required">
-               </div>
-               <div id="nicknamewrap">
-                  <input type="text" id="nickname" name="nickname" placeholder="닉네임" required="required">
-                  <input type="hidden" id="checknick" value="">
-               </div> 
-               <div id="namewrap">
-                  <input type="text" id="name" name="name" placeholder="이름" required="required">
-                  <div id="check1" class="check"></div>
-               </div>
-               <div id="genderwrap">
-                  <input type="radio" id="gender1" name="gender" value="M">
-                  <label for="gender1">남자</label>
-                  <input type="radio" id="gender2" name="gender" value="F">
-                  <label for="gender2">여자</label>
-               </div>
-               <div id="emailwrap">
-                  <input type="email" id="email" name="email" placeholder="이메일" required="required">
-                  <input type="button" id="emailcheck" name="emailcheck" value="이메일 인증">
-               </div>
-               <div>
-                  <input type="text" id="ckechnum" name="ckechnum" placeholder="인증번호" required="required">
-                  <input type="button" id="emailchecknum" value="인증번호 확인">
-                  <div id="check2" class="check"></div>
-               </div>
-               <div id="zipcodewrap">
-                  <input type="text" id="zipcode" placeholder="우편번호" name="zipcode">
-                  <input type="button" id="zipcodebtn" value="우편번호 검색" onclick="checkPost(); return false;">
-               </div>
-               <div id="addrwrap1">
-                  <input type="text" id="addr1" placeholder="주소" name="addr1">
-               </div>
-               <div id="addrwrap2">
-                  <input type="text" id="addr2" placeholder="상세주소" name="addr2">
-               </div>
-            </div>
-            <div class="btnwrap">
-               <input type="button" id="joinbtn" value="정보수정">
-               <input type="reset" value="다시작성">
-            </div>
+      <form id="updateForm">
+         <div id="datawrap">
+         	<div id="infowrap">
+         		<div id="topbtnwrap">
+         			<div id="deleteInfo">
+         				<a href="#">계정 삭제</a>
+         			</div>
+         		</div>
+         		<div id="mainwrap">
+         			<div id="leftwrap">
+         				<div id="profilewrap">
+         					<div id="profileimg">
+         						프로필 이미지 DB에서 불러오기
+         					</div>
+         					<div id="profilebtnwrap">
+         						<input type="button" value="프로필 변경" id="profileBtn">
+         					</div>
+         				</div>
+         				<div id="nicknamewrap">
+         					<div id="nicknameView">
+         						닉네임 DB에서 불러오기
+         					</div>
+         					<div id="nicknameUpdate">
+         						<!-- 닉네임 수정 버튼 누르면 나타남 -->
+         					</div>
+         					<div id="nicknameBtn">
+         						<input type="button" value="닉네임 변경" id="nicknameBtn">
+         					</div>
+         				</div>
+         			</div>
+         			<div id="rightwrap">
+         				회원정보 DB에서 불러오기
+         			</div>
+         		</div>
+         		<div id="bottombtnwrap">
+         			<div id="adminGet">
+         				<a href="#">관리자 권한 신청</a>
+         			</div>
+         		</div>
+         	</div>
          </div>
       </form>
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../js/infoForm.js"></script>
 </body>
 </html>

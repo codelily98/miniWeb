@@ -49,6 +49,7 @@
                <div>
                   <input type="text" id="ckechnum" name="ckechnum" placeholder="인증번호" required="required">
                   <input type="button" id="emailchecknum" value="인증번호 확인">
+                  <input type="hidden" id="authCode" name="authCode">
                   <div id="check2" class="check"></div>
                </div>
                <div id="zipcodewrap">

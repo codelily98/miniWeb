@@ -224,7 +224,7 @@ a:active, a:visited, a:link {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    height: 800px;
+    height: 850px;
 }
 
 /* Left Navigation */
@@ -370,12 +370,21 @@ table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    margin-top: 0; /* 상단 여백 초기화 */
+    margin-top: 1em; /* 상단 여백 초기화 */
+    border-radius: 8px; /* 테이블 모서리 둥글게 */
+    overflow: hidden; /* 테이블의 둥근 모서리 효과를 위한 설정 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 테이블에 그림자 추가 */
 }
 
 table th, table td {
-    padding: 12px;
+	padding: 12px;
     border-bottom: 1px solid #dcdcdc;
+    text-align: left;
+}
+
+#titleStyle {
+    text-align: left;
+    padding-left: 0.5em;
 }
 
 table th {
@@ -387,30 +396,12 @@ table th {
 table td {
     color: #202124;
     word-break: break-all;
-    white-space: nowrap; /* 텍스트를 한 줄로 표시 */
-	overflow: hidden; /* 넘치는 텍스트를 숨김 */
-	text-overflow: ellipsis; /* 넘친 텍스트를 ...으로 표시 */
-}
-
-#hitStyle, #logtimeStyle {
-	text-align: left;
-	margin-left: 3em;	
-}
-
-thead tr {
-    border-top: 2px solid rgb;
-}
-
-tbody tr {
-    transition: background-color 0.25s ease;
+    text-overflow: ellipsis; /* 넘친 텍스트를 ...으로 표시 */
+    transition: background-color 0.25s ease; /* 셀 배경색 변화 부드럽게 */
 }
 
 #content img {
 	max-width: 400px;
-}
-
-#formbtn {
-	width: 100%;
 }
 
 #formbtn #onebtn {

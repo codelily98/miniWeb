@@ -60,9 +60,6 @@
 			</ul>
 		</div>
 		<div id="boardlist">
-			<div id="btnwrap">
-				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
-			</div>
 			<div id="listwrap">
 				<table>
 					<thead>
@@ -103,6 +100,9 @@
 					${pagingHTML }
 				</div>
 			</div>
+			<div id="btnwrap">
+				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
+			</div>
 		</div>
 	</div>
 	<div id="footer">
@@ -110,6 +110,12 @@
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="../js/boardLatestForm.js"></script>
+<script type="text/javascript" src="../js/boardForm.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
+<script type="text/javascript">
+function boardPaging(pg) {
+    location.href = "boardLatestForm.do?pg=" + pg;
+}
+</script>
 </body>
 </html>

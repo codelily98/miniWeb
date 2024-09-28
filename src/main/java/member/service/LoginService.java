@@ -27,6 +27,7 @@ public class LoginService implements CommandProcess {
 			session.setAttribute("memberDTO", memberDTO);
 			session.setAttribute("memId", id);
 			session.setAttribute("memPwd", pwd);
+			session.setAttribute("admin", memberDTO.getAdmin());
 			session.setAttribute("memNickname", memberDTO.getNickname());
 			session.setAttribute("memName", memberDTO.getName());
 			session.setAttribute("memEmail", memberDTO.getEmail());

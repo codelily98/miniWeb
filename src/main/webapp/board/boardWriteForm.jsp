@@ -69,7 +69,13 @@
 					<!-- 스마트에디터가 적용될 textarea -->
 					<textarea name="ir1" id="ir1" cols="100" rows="10"></textarea>
 					<br>
-					<input type="button" value="글쓰기" onclick="submitContents(this);">
+					<input type="hidden" value="${admin}" id="admin">
+					<c:if test="${admin != '1'}">
+						<input type="button" value="글쓰기" onclick="submitContents(this);">
+					</c:if>
+					<c:if test="${admin == '1'}">
+						<input type="button" value="공지사항 등록" onclick="submitContents(this);">
+					</c:if>
 				</form>
 			</div>
 		</div>
@@ -80,7 +86,8 @@
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../se2/js/HuskyEZCreator.js"></script>
-<script type="text/javascript" src="../js/boardWriteForm.js"></script>
+<script type="text/javascript" src="../js/boardForm.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 <script type="text/javascript">
 /*<!-- 스마트에디터 자바스크립트 초기화 -->*/
 var oEditors = [];
@@ -110,7 +117,8 @@ function submitContents(elClickedObj) {
 	// 에디터의 내용이 textarea에 반영되도록 업데이트
 	oEditors[0].exec("UPDATE_CONTENTS_FIELD", []);
 	let subject = document.getElementById("subject").value;
-	let content = document.getElementById("ir1").value;	
+	let content = document.getElementById("ir1").value;
+	let admin = document.getElementById("admin").value;
 
 	// 본문 내용에서 첫 번째 이미지 태그 찾기
 	let imgTag = content.match(/<img[^>]+src="([^">]+)"/);
@@ -128,6 +136,7 @@ function submitContents(elClickedObj) {
 	let formData = new FormData();
 	formData.append('subject', subject);
 	formData.append('content', content);
+	formData.append('admin', admin);
 	
 	// 이미지가 있는 경우에만 추가
 	if (imgName) {

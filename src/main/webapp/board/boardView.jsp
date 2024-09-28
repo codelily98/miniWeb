@@ -96,8 +96,7 @@
 							<td id="hitStyle" align="right">${list[0].hit}</td>
 						</tr>
 						<tr>
-							<th align="left">내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</th>
-							<td id = content colspan = "5" height = "300px">${list[0].content}</td>
+							<td id = content colspan = "6" height = "500px">${list[0].content}</td>
 						</tr>
 						<tr>
 							<td id="formbtn" align="right" colspan="6">
@@ -124,33 +123,8 @@
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	let seq = $('td[data-seq]').data('seq');
-	let pwd = $('#pwd').val();
-	$('#deleteBtn').click(function(){
-		let password = prompt('비밀번호를 입력하세요.');
-		if(password == pwd){
-			$.ajax({
-				type:'post',
-				url:'./boardDelete.do',
-				data:{'seq':seq},
-				dataType:'text',
-				success:function(data){
-					alert('글을 삭제하였습니다.');
-					location.href = './boardForm.do?pg=1';
-				},
-				error:function(e){
-					alert('글을 삭제하는데 실패했습니다.');
-					console.log(e);
-				}
-			});
-		}
-		else{
-			alert('비밀번호가 일치하지 않습니다.');
-		}
-	});
-});
-</script>
+<script type="text/javascript" src="../js/boardForm.js"></script>
+<script type="text/javascript" src="../js/boardDelete.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 </body>
 </html>

@@ -53,7 +53,7 @@ public class BoardDAO {
 		return totalA;
 	}
 
-	public void boardWrite(Map<String, String> map) {
+	public void boardWrite(Map<String, Object> map) {
 		SqlSession sqlSession = sessionFactory.openSession();
 		
 		sqlSession.insert("boardSQL.boardWrite", map);
@@ -114,5 +114,28 @@ public class BoardDAO {
 		sqlSession.update("boardSQL.boardUpdate", map);
 		sqlSession.commit();
 		sqlSession.close();
+	}
+
+	public List<BoardDTO> boardSearchList(int startNum, int endNum, String search) {
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+        Map<String, Object> map = new HashMap<>();
+        map.put("startNum", startNum);
+        map.put("endNum", endNum);
+        map.put("search", search);
+        
+        SqlSession sqlSession = sessionFactory.openSession();
+        list = sqlSession.selectList("boardSQL.boardSearchList", map); 
+        sqlSession.close();
+        return list;
+	}
+
+	public int getSearchA(String search) {
+		int totalA = 0;
+		System.out.println("search = " + search);
+		SqlSession sqlSession = sessionFactory.openSession();
+		totalA = sqlSession.selectOne("boardSQL.getSearchA",search);
+		sqlSession.close();
+
+		return totalA;
 	}
 }

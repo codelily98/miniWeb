@@ -30,7 +30,9 @@
 				<div id="formwrap">
 					<div id="searchwrap">
 						<span id="gomain" onclick="location.href='../index.do'">404</span>
-						<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요">
+						<form id="searchBtn">
+							<input type="text"id="search" name="search" placeholder="검색할 내용을 입력해주세요">
+						</form>
 					</div> 
 				</div>
 			</div>
@@ -60,9 +62,6 @@
 			</ul>
 		</div>
 		<div id="boardlist">
-			<div id="btnwrap">
-				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
-			</div>
 			<div id="listwrap">
 				<table>
 					<thead>
@@ -103,6 +102,9 @@
 					${pagingHTML }
 				</div>
 			</div>
+			<div id="btnwrap">
+				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
+			</div>
 		</div>
 	</div>
 	<div id="footer">
@@ -110,6 +112,12 @@
 	</div>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="../js/boardHotForm.js"></script>
+<script type="text/javascript" src="../js/boardForm.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
+<script type="text/javascript">
+function boardPaging(pg) {
+    location.href = "boardHotForm.do?pg=" + pg;
+}
+</script>
 </body>
 </html>

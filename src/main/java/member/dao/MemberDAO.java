@@ -87,7 +87,7 @@ public class MemberDAO {
 	
 	public String isExistSearchPwd(Map<String, String> map) {
 		String pwd = null;
-		System.out.println("map"+map);
+		System.out.println("map" + map);
 		SqlSession sqlSession = sessionFactory.openSession();
 		pwd = sqlSession.selectOne("memberSQL.isExistSearchPwd",map);
 		System.out.println("DAO"+pwd);

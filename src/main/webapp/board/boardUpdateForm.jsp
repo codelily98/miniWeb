@@ -86,7 +86,8 @@
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../se2/js/HuskyEZCreator.js"></script>
-<script type="text/javascript" src="../js/boardUpdateForm.js"></script>
+<script type="text/javascript" src="../js/boardForm.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 <script type="text/javascript">
 /*<!-- 스마트에디터 자바스크립트 초기화 -->*/
 var oEditors = [];
