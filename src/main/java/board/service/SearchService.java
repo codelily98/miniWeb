@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.control.CommandProcess;
 
-public class BoardSearchService implements CommandProcess{
+public class SearchService implements CommandProcess{
 	@Override
 	public String requestpro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		return "none";

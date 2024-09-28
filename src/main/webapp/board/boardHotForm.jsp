@@ -30,9 +30,7 @@
 				<div id="formwrap">
 					<div id="searchwrap">
 						<span id="gomain" onclick="location.href='../index.do'">404</span>
-						<form id="searchBtn">
-							<input type="text"id="search" name="search" placeholder="검색할 내용을 입력해주세요">
-						</form>
+						<input type="text"id="search" name="search" placeholder="검색할 내용을 입력해주세요">
 					</div> 
 				</div>
 			</div>
@@ -83,9 +81,9 @@
 									<span>${startnum}</span>
 								</td>
 								<td class="asubject" id="titleStyle">
-								<input type = "hidden" id = "pg" class = "pg" value = "${requestScope.pg}" />
-								<input type = "hidden" id = "memNickname" class = "memNickname" value = "${memNickname}" />
-								<input type = "hidden" id = "postId" class = "postId" value = "${boardDTO.id}" />
+								<input type="hidden" id="pg" class="pg" value="${requestScope.pg}" />
+								<input type="hidden" id="memNickname" class="memNickname" value = "${memNickname}" />
+								<input type="hidden" id="postId" class="postId" value = "${boardDTO.id}" />
 									<span id="title">${boardDTO.subject}</span>
 								</td>
 								<td>${boardDTO.nickname}</td>

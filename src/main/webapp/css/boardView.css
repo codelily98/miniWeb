@@ -341,8 +341,14 @@ a:active, a:visited, a:link {
     margin-top: 20px; /* 테이블과 동일한 여백 추가 */
 }
 
+p {
+	margin: 0;
+}
+
 #content {
+	font-size: 9pt;
 	white-space: pre-wrap;
+	vertical-align: text-top;
 }
 
 #btnwrap {

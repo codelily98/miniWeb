@@ -15,8 +15,14 @@
 	<div id="header">
 		<div id="topawrap">
 			<div id="topnav">
-			    <a href="../member/loginForm.do">로그인</a>&nbsp;|
-				<a href="../index.do">홈</a>
+				<c:if test="${empty sessionScope.memId}">
+			    <a href="/miniWeb/member/loginForm.do">로그인</a>&nbsp;|
+			    </c:if>
+			    <c:if test="${not empty sessionScope.memId}">
+			    <a href="/miniWeb/member/infoForm.do">회원정보</a>&nbsp;|
+			    <a href="/miniWeb/member/logout.do">로그아웃</a>&nbsp;|
+				</c:if>
+				<a href="/miniWeb/index.do">홈</a>
 			</div>
 		</div>
 		<div id="logowrap">
@@ -24,13 +30,13 @@
 				<div id="formwrap">
 					<div id="searchwrap">
 						<span id="gomain" onclick="location.href='../index.do'">404</span>
-						<form id="searchBtn">
-							<input type="text"id="search" name="search" placeholder="검색할 내용을 입력해주세요">
-						</form>
+						<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요" value="${search}">
 					</div> 
 				</div>
 			</div>
 		</div>
+		<input type="hidden" id="image1" name="image1" value="${image1}"/>
+		<input type="hidden" id="imageName" name="imageName" value="${imageName}"/>
 		<div id="menunav">
 			<ul>
 				<li><a href="/miniWeb/index.do">메인</a></li>
@@ -56,33 +62,42 @@
 			</ul>
 		</div>
 		<div id="boardlist">
+			<div id="btnwrap">
+				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
+			</div>
 			<div id="listwrap">
 				<table>
 					<thead>
 						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>조회수</th>
+							<th width="10%">번호</th>
+							<th width="40%">제목</th>
+							<th width="25%">작성자</th>
+							<th width="15%">작성일</th>
+							<th width="10%">조회수</th>
 						</tr>
 					</thead>
 					<tbody>
 						<!-- DB에서 불러와서 입력 -->
 						<c:if test="${list != null}">
-							<c:forEach var = "boardDTO" items = "${list}">
-								<c:set var="startnum" value="${startnum + 1}"/>
-								<tr>
-									<td><input type="hidden" id="seq" value="${boardDTO.seq}">
-										<span>${startnum}</span>
-									</td>
-									<td class="asubject">${boardDTO.subject}</td>
-									<td>${boardDTO.nickname}</td>
-									<td>
-										<fmt:formatDate pattern = "yyyy.MM.dd." value = "${boardDTO.logtime}"/>
-									</td>
-									<td>${boardDTO.hit }</td>
-								</tr>
+						<c:forEach var = "boardDTO" items = "${list}">
+							<c:set var="startnum" value="${startnum + 1}"/>
+							<tr>
+								<td>
+									<input class="seq" id="seq" type="hidden" value="${boardDTO.seq}">
+									<span>${startnum}</span>
+								</td>
+								<td class="asubject" id="titleStyle">
+									<input type = "hidden" id = "pg" class = "pg" value = "${requestScope.pg}" />
+									<input type = "hidden" id = "memNickname" class = "memNickname" value = "${memNickname}" />
+									<input type = "hidden" id = "postnickname" class = "postnickname" value = "${boardDTO.nickname}" />
+									<span id="title">${boardDTO.subject}</span>
+								</td>
+								<td>${boardDTO.nickname}</td>
+								<td>
+									<fmt:formatDate pattern = "yy.MM.dd." value = "${boardDTO.logtime}"/>
+								</td>
+								<td>${boardDTO.hit }</td>
+							</tr>
 							</c:forEach>
 						</c:if>
 					</tbody>
@@ -90,9 +105,6 @@
 				<div id="pagewrap">
 					${pagingHTML }
 				</div>
-			</div>
-			<div id="btnwrap">
-				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
 			</div>
 		</div>
 	</div>
@@ -106,7 +118,7 @@
 <script type="text/javascript">
 function boardPaging(pg) {
 	search = $('#search').val();
-    location.href = "boardSearchList.do?pg=" + pg + '&search=' + search;
+	location.href = "boardSearchList.do?pg=" + pg + '&search=' + search;
 }
 </script>
 </body>
