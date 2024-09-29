@@ -41,10 +41,10 @@
 		<div id="menunav">
 			<ul>
 				<li><a href="/miniWeb/index.do">메인</a></li>
-				<li><a href="#">뉴스</a></li>
+				<li><a href="https://news.naver.com/section/105">뉴스</a></li>
 				<li class="active"><a href="/miniWeb/board/boardForm.do?pg=1"><span>커뮤니티</span></a></li>
-				<li><a href="#">달력</a></li>
-				<li><a href="#">지도</a></li>
+				<li><a href="/miniWeb/calender/CalendarForm.do">캘린더</a></li>
+				<li><a href="/miniWeb/map/mapForm.do">지도</a></li>
 			</ul> 
 		</div>
 	</div>

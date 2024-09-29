@@ -15,6 +15,7 @@ CREATE TABLE MINIMEMBER (
     logtime TIMESTAMP DEFAULT NOW()		-- 가입일
 );
 insert into minimember (id, pwd, nickname, name, gender, email) values('test', '1234', 'test', '테스트', '0', 'test@naver.com');
+DROP TABLE MINIMEMBER;
 select * from minimember;
 
 -- 업데이트 LOCK 해제

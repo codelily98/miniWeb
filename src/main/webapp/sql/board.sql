@@ -5,7 +5,7 @@ CREATE TABLE MINIBOARD(
      nickname VARCHAR(100),						-- 닉네임
      email VARCHAR(100),						-- 이메일
      subject VARCHAR(255) NOT NULL,    			-- 제목
-     content VARCHAR(5000) NOT NULL,   			-- 내용
+     content LONGBLOB NOT NULL,   	-- 내용
      image1 VARCHAR(200) DEFAULT NULL,			-- 게시글 이미지 파일(파일이름)
      profile VARCHAR(200) DEFAULT NULL,			-- 프로필 이미지(파일이름)
      ref int DEFAULT 0 NOT NULL,       			-- 그룹번호
@@ -17,4 +17,6 @@ CREATE TABLE MINIBOARD(
      category INTEGER DEFAULT 0,				-- 게시판 카테고리
      logtime TIMESTAMP DEFAULT NOW()			-- 작성일
  );
+ 
  select * from MINIBOARD;
+ DROP TABLE MINIBOARD;

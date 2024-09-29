@@ -1,0 +1,325 @@
+@charset "UTF-8";
+/* 전체 레이아웃 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-size: 12pt;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+a:active, a:visited, a:link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Top Wrap */
+#topwrap {
+    text-align: right;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Header */
+#header {
+    background-color: #fff;
+    color: white;
+    position: relative;
+}
+
+/* Top Area */
+#topawrap {
+    background-color: #FF8E33;
+}
+
+#topwrap a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+#topnav a:hover {
+    text-decoration: underline;
+}
+
+#topnav {
+	font-family: '돋움', Dotum, Helvetica, Sans-serif;	
+	font-size: 12px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 5px 30px;
+}
+
+#topnav #formwrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search Wrap */
+#searchwrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 24px; /* 수정: padding-top 제거 */
+}
+
+#searchwrap span {
+    font-family: 'LeeSeoyun';
+    padding: 0 0.5em;
+    color: #ff4b2b;
+}
+
+#searchwrap span:hover {
+    cursor: pointer;
+    color: #ff0000;
+}
+
+#formwrap input[type="text"] {
+    font-size: 18px;
+    border-radius: 25px;
+    width: 580px;
+    height: 48px;
+    padding: 0 1.2em;
+    border: 1px solid #ff4b2b;
+}
+
+#formwrap input[type="text"]:focus {
+    outline-color: #ff4b2b;
+}
+
+/* Menu Navigation */
+#menunav {
+    margin-top: -20px;
+    border-top: 1px solid #FF8E33;
+    border-bottom: 1px solid #FF8E33;
+    font-family: '돋움', Dotum, Helvetica, Sans-serif;
+}
+
+#menunav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#menunav ul li {
+    position: relative;
+    display: inline-block;
+    color: #40423C;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: color 250ms ease-out;
+}
+
+#menunav ul li::after {
+    position: absolute;
+    content: "";
+    display: block;
+    border-bottom: 2px solid #ff4b2b;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    transition: all 250ms ease-out;
+}
+
+#menunav ul li:hover {
+    color: #ff4b2b;
+}
+
+#menunav ul li:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+#menunav ul li a {
+    color: #40423C;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+}
+
+#menunav ul li a:hover {
+    color: #ff4b2b;
+}
+
+/* Main Content */
+#gomain {
+    font-weight: bold;
+}
+
+#gomain:hover {
+    color: #ff4b2b;
+    cursor: pointer;
+}
+
+/* Login Link */
+#loginlink {
+    color: #ffffff;
+    padding: 5px 10px;
+    background-color: #ff4b2b;
+    border-radius: 5px;
+    transition: background-color 0.25s ease;
+}
+
+#loginlink:hover {
+    color: white;
+    background-color: #e04328;
+}
+
+/* Wrap */
+#wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Logo Wrap */
+#logowrap {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#logowrap span {
+    font-size: 56px;
+    font-weight: 400;
+    color: #ff4b2b;
+}
+
+/* Container */
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+/* Section */
+#section {
+    width: 100%;
+    height: 130px;
+    padding: 0 40px;
+    margin-top: -1em;
+    text-align: center;
+}
+
+/* Board Container */
+#boardcontainer {
+    display: flex;
+    width: 1100px;
+    justify-content: center;
+    padding: 20px;
+    height: 700px;
+    border-radius: 10px;
+    margin-top: -3em;
+}
+
+.iframeWrap {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Active State */
+.active {
+    border: none; /* 기본 상태의 경계선으로 복원 (필요시) */
+    z-index: 1;
+    color: #ff4b2b;
+    background-color: #FF8E33;
+}
+
+.active a span {
+    color: #ffffff;
+}
+
+/* 게시판 리스트 */
+#boardlist {
+    width: 78%; /* 나머지 공간을 차지하게 */
+    margin-top: 20px; /* 테이블과 동일한 여백 추가 */
+}
+
+#editorForm {
+    width: 98%;
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 요소들을 배치 */
+    justify-content: center;
+}
+
+#title:hover {
+	cursor: pointer;
+}
+
+#listwrap input[type="text"] {
+    width: 100%; /* 각 입력 요소의 너비를 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 보더를 포함한 총 너비 계산 */
+    font-size: 12pt;
+    padding: 0.4em 1em;
+    outline-style: none;
+    border: 1px solid #ff4b2b;
+    margin-bottom: 1em;
+}
+
+#listwrap input[type="text"]:focus {
+    outline-color: #ff4b2b;
+}
+
+#listwrap input[type="button"] {
+    width: 100%; /* 각 입력 요소의 너비를 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 보더를 포함한 총 너비 계산 */
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 10pt;
+    margin-bottom: 5px;
+    border-style: none;
+    background-color: #ff4b2b;
+    border-radius: 5px;
+}
+
+#listwrap input[type="button"]:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 15px red; 
+}
+
+/* 게시판 리스트 */
+#boardlist {
+    width: 78%; /* 나머지 공간을 차지하게 */
+    margin-top: 0px; /* 테이블과 동일한 여백 추가 */
+}
+
+#btnwrap {
+   display: flex;
+   justify-content: flex-end;
+   width: 100%;
+   margin-top: -2em;
+}
+
+#btnwrap input[type="button"] {
+   color: #ffffff;
+   padding: 10px 20px;
+   font-size: 10pt;
+   margin-bottom: 5px;
+   border-style: none;
+   background-color: #ff4b2b;
+   border-radius: 5px;
+}
+
+#btnwrap input[type="button"]:hover {
+   cursor: pointer;
+   box-shadow: inset 0 0 15px red; 
+}

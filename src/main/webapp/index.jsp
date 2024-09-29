@@ -55,7 +55,7 @@
 						</c:if>
 						<li>
 							<div class="menuli">
-								<a class="awrap" href="">
+								<a class="awrap" href="https://news.naver.com/section/105">
 									<div class="imgwrap">
 										<img class="menuliimg" src="./image/newsicon.png" alt="뉴스">
 									</div>
@@ -79,19 +79,19 @@
 						</li>
 						<li>
 							<div class="menuli">
-								<a class="awrap" href="">
+								<a class="awrap" href="/miniWeb/calender/CalendarForm.do">
 									<div class="imgwrap">
 										<img class="menuliimg" src="./image/calender.png" alt="달력">
 									</div>
 									<div class="menuliname">
-										<span>달력</span>
+										<span>캘린더</span>
 									</div>					
 								</a>
 							</div>
 						</li>
 						<li>
 							<div class="menuli">
-								<a class="awrap" href="">
+								<a class="awrap" href="/miniWeb/map/mapForm.do">
 									<div class="imgwrap">
 										<img class="menuliimg" src="./image/map.png" alt="지도">
 									</div>

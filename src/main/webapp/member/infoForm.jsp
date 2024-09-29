@@ -36,10 +36,10 @@
 		<div id="menunav">
 			<ul>
 				<li><a href="/miniWeb/index.do">메인</a></li>
-				<li><a href="#">뉴스</a></li>
+				<li><a href="https://news.naver.com/section/105">뉴스</a></li>
 				<li class="active"><a href="/miniWeb/board/boardForm.do?pg=1"><span>커뮤니티</span></a></li>
-				<li><a href="#">달력</a></li>
-				<li><a href="#">지도</a></li>
+				<li><a href="/miniWeb/calender/CalendarForm.do">캘린더</a></li>
+				<li><a href="/miniWeb/map/mapForm.do">지도</a></li>
 			</ul> 
 		</div>
 	</div>
@@ -146,7 +146,7 @@
          					<a href="#" onclick="history.back()">&lt;뒤로가기&gt;</a>
          				</div>
          				<div id="adminBtnwrap">
-							<input type="text" id="adminCode" class="show3" style="border-color:#bfbfbf;">
+							<input type="password" id="adminCode" class="show3" style="border-color:#bfbfbf;">
 							<input type="hidden" id="adminCodeCheck" value="1234">
 	                        <a href="#" id="hideandshow" class="hide3">&lt;관리자 권한 신청&gt;</a>
 	                        <a href="#" id="abtn" class="show3">&lt;관리자 권한 신청&gt;</a>
