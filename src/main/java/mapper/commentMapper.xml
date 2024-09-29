@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commentSQL">
+	<!-- 댓글 삽입 -->
+    <insert id="commentWrite" parameterType="commentDTO">
+        INSERT INTO MINICOMMENT (ref, id, nickname, profile, content, logtime)
+        VALUES (#{ref}, #{id}, #{nickname}, #{profile}, #{content}, NOW())
+    </insert>
+    <select id="commentView" parameterType="Integer" resultType="commentDTO">
+    	SELECT * FROM MINICOMMENT WHERE REF = #{ref}
+    </select>
+</mapper>

@@ -15,12 +15,12 @@
 	<div id="header">
 		<div id="topawrap">
 			<div id="topnav">
-			    <c:if test="${empty sessionScope.memId}">
+				<c:if test="${empty sessionScope.memId}">
 			    <a href="/miniWeb/member/loginForm.do">로그인</a>&nbsp;|
 			    </c:if>
 			    <c:if test="${not empty sessionScope.memId}">
 			    <a href="/miniWeb/member/infoForm.do">회원정보</a>&nbsp;|
-			    <a href="/miniWeb/member/loout.do">로그아웃</a>&nbsp;|
+			    <a href="/miniWeb/member/logout.do">로그아웃</a>&nbsp;|
 				</c:if>
 				<a href="/miniWeb/index.do">홈</a>
 			</div>
@@ -30,11 +30,13 @@
 				<div id="formwrap">
 					<div id="searchwrap">
 						<span id="gomain" onclick="location.href='../index.do'">404</span>
-						<input type="text"id="search" name="search" placeholder="검색할 내용을 입력해주세요">
+						<input type="text" id="search" name="search" placeholder="검색할 내용을 입력해주세요">
 					</div> 
 				</div>
 			</div>
 		</div>
+		<input type="hidden" id="image1" name="image1" value="${image1}"/>
+		<input type="hidden" id="imageName" name="imageName" value="${imageName}"/>
 		<div id="menunav">
 			<ul>
 				<li><a href="/miniWeb/index.do">메인</a></li>
@@ -74,21 +76,22 @@
 					<tbody>
 						<!-- DB에서 불러와서 입력 -->
 						<c:if test="${list != null}">
-						<c:forEach var = "boardDTO" items = "${list}">
+						<c:forEach var="boardDTO" items="${list}">
 							<c:set var="startnum" value="${startnum + 1}"/>
 							<tr>
-								<td><input class="seq" type="hidden" id="seq" value="${boardDTO.seq}">
+								<td>
+									<input class="seq" id="seq" type="hidden" value="${boardDTO.seq}">
 									<span>${startnum}</span>
 								</td>
 								<td class="asubject" id="titleStyle">
-								<input type="hidden" id="pg" class="pg" value="${requestScope.pg}" />
-								<input type="hidden" id="memNickname" class="memNickname" value = "${memNickname}" />
-								<input type="hidden" id="postId" class="postId" value = "${boardDTO.id}" />
+									<input type="hidden" id="pg" class="pg" value="${requestScope.pg}" />
+									<input type="hidden" id="memNickname" class="memNickname" value="${memNickname}" />
+									<input type="hidden" id="postnickname" class="postnickname" value="${boardDTO.nickname}" />
 									<span id="title">${boardDTO.subject}</span>
 								</td>
 								<td>${boardDTO.nickname}</td>
 								<td>
-									<fmt:formatDate pattern = "yy.MM.dd." value = "${boardDTO.logtime}"/>
+									<fmt:formatDate pattern="yy.MM.dd." value="${boardDTO.logtime}"/>
 								</td>
 								<td>${boardDTO.hit }</td>
 							</tr>
@@ -124,7 +127,7 @@
 <script type="text/javascript" src="../js/search.js"></script>
 <script type="text/javascript">
 function boardPaging(pg) {
-    location.href = "boardHotForm.do?pg=" + pg;
+    location.href = "boardNotionForm.do?pg=" + pg;
 }
 </script>
 </body>

@@ -102,10 +102,15 @@
 			</div>
 			<div id="btnwrap">
 				<c:if test="${not empty sessionScope.memId}">
-				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
+					<c:if test="${sessionScope.admin == '1'}">
+						<input type="button" id="writebtn" value="공지등록" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
+					</c:if>
+					<c:if test="${sessionScope.admin != '1'}">
+						<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
+					</c:if>
 				</c:if>
 				<c:if test="${empty sessionScope.memId}">
-				<input type="button" id="writebtn" value="로그인" onclick="location.href='/miniWeb/member/loginForm.do'">
+					<input type="button" id="writebtn" value="로그인" onclick="location.href='/miniWeb/member/loginForm.do'">
 				</c:if>
 			</div>
 		</div>

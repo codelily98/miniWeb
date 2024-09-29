@@ -57,4 +57,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="profileUpdate" parameterType="memberDTO">
 		update MINIMEMBER set profile = #{profile} where id = #{id}
 	</update>
+	
+	<!-- 관리자 권한 요청 -->
+	<update id="adminAccess" parameterType="String">
+		update MINIMEMBER set ADMIN = 1 where id = #{id}
+	</update>
+	
+	<!-- 정보 수정 -->
+	<update id="infoUpdate" parameterType="memberDTO">
+		update MINIMEMBER set email = #{email}, zipcode = #{zipcode}, addr1 = #{addr1}, addr2 = #{addr2} where id = #{id}
+	</update>
 </mapper>

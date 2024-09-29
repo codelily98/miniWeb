@@ -1,10 +1,24 @@
+$(document).ready(function(){
+	$(".show1").hide();
+	
+	$("#comentShowBtn").on('click', function(){
+		$(".hide1").hide();
+		$(".show1").show();		
+	});
+	
+	$("#comentHideBtn").on('click', function(){
+		$(".hide1").show();
+		$(".show1").hide();		
+	});
+});
+
 $(function(){
 	$("#notice_list").on('click', function(){
-		location.href="/miniWeb/board/noticeboardForm.do?pg=1";
+		location.href="/miniWeb/board/boardNotionForm.do?pg=1";
 	});
 
 	$("#all_list").on('click', function(){
-		location.href="../board/boardForm.do?pg=1";
+		location.href="/miniWeb//board/boardForm.do?pg=1";
 	});
 	
 	$("#hot_list").on('click', function(){

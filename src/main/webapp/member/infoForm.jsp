@@ -106,14 +106,15 @@
 	         						<input type="hidden" id="name" name="name" value="${list[0].name}"/>
 	         					</div>
 	         					<div id="emailwrap" class="infoDiv">
-	         						<div id="textDiv" class="hide2">이메일 : ${list[0].email}</div>
-	         						<input type="email" id="email" name="email" value="${list[0].email}" class="show2"/>
-	         						<input type="button" id="emailVertifyBtn" value="인증번호" class="show2"/>
-	         					</div>
-	         					<div id="checkemailwrap" class="infoDiv">
-	         						<input type="text" id="checkEmail" name="checkEmail" value="" class="show2"/>
-	         						<input type="button" id="checkEmailBtn" value="확인" class="show2"/>
-	         					</div>
+                              	<div id="textDiv" class="hide2">이메일 : ${list[0].email}</div>
+									<input type="email" id="email" name="email" value="${list[0].email}" class="show2"/>
+									<input type="button" id="emailVertifyBtn" value="인증번호" class="show2"/>
+								</div>
+								<div id="checkemailwrap" class="infoDiv">
+								   <input type="text" id="chechnum" name="chechnum" class="show2"/>
+								   <input type="button" id="checkEmailBtn" value="확인" class="show2"/>
+								   <input type="hidden" id="authCode">
+								</div>
 	         					<div id="zipcodewrap" class="infoDiv">
 	         						<div id="textDiv" class="hide2">우편번호 : ${list[0].zipcode}</div>
 	         						<input type="text" id="zipcode" name="zipcode" value="${list[0].zipcode}" class="show2"/>
@@ -128,7 +129,7 @@
 	         						<input type="text" id="addr2" name="addr2" value="${list[0].addr2}" class="show2"/>
 	         					</div>
 	         					<div id="checkwrap" class="show2">
-	         						<div id="textDiv" id="checkDiv" class="show"></div>
+	         						<div id="textDiv" id="checkDiv" class="show2"></div>
 	         					</div>
          					</div>
          					<div id="middlebtnwrap" class="btnDiv">
@@ -145,8 +146,11 @@
          					<a href="#" onclick="history.back()">&lt;뒤로가기&gt;</a>
          				</div>
          				<div id="adminBtnwrap">
-         					<a href="#">&lt;관리자 권한 신청&gt;</a>
-         				</div>
+							<input type="text" id="adminCode" class="show3" style="border-color:#bfbfbf;">
+							<input type="hidden" id="adminCodeCheck" value="1234">
+	                        <a href="#" id="hideandshow" class="hide3">&lt;관리자 권한 신청&gt;</a>
+	                        <a href="#" id="abtn" class="show3">&lt;관리자 권한 신청&gt;</a>
+	                     </div>
          			</div>
          		</div>
          	</div>

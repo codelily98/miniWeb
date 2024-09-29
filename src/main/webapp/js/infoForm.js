@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$('.show1').hide();
 	$('.show2').hide();
+	$('.show3').hide();
 	
     $('#hideBtn2').on('click', function() {
         // .hide 클래스가 적용된 요소를 숨김
@@ -15,6 +16,13 @@ $(document).ready(function() {
         // .show 클래스가 적용된 요소를 표시
         $('.show1').show();
     });
+	
+	$("#hideandshow").on('click', function(){
+		// .hide 클래스가 적용된 요소를 숨김
+        $('.hide3').hide();        
+        // .show 클래스가 적용된 요소를 표시
+        $('.show3').show();
+	});
 });
 
 // delete() 함수 정의
@@ -153,3 +161,108 @@ function readURL(input){
    }
    reader.readAsDataURL(input.files[0]);
 }
+
+//관리자 권한 요청
+$('#abtn').click(function(){
+   adminCode = $('#adminCode').val();
+   adminCodeCheck = $('#adminCodeCheck').val();
+   id = $('#id').val();
+   if(adminCode == adminCodeCheck){
+      $.ajax({
+         type:'post',
+         url:'/miniWeb/member/adminAccess.do',
+         data:{'id':id},
+         success:function(){
+            alert('관리자 권한 요청이 완료되었습니다.');
+         },
+         error:function(e){
+            console.log(e);
+            alert('서버 통신 실패');
+         }
+      });
+   }
+   else{
+      alert('관리자 권한 요청 코드가 올바르지 않습니다.')
+   }
+});
+
+// 이메일 유효성 검사 등 추가 가능
+$(document).ready(function () {
+    // 인증번호 발송 버튼 클릭 시
+    $("#emailVertifyBtn").click(function () {
+        var email = $("#email").val();
+        if (email) {
+            $.ajax({
+                url: "/miniWeb/sendAuthCode",
+                type: "POST",
+                data: { email: email },
+                success: function (response) {
+               let result = response.split("|");
+               
+               $("#authCode").val(result[0]);
+                    $("#checkwrap>div").html(result[1]);
+                },
+                error: function () {
+                    alert("인증번호 발송에 실패했습니다.");
+                }
+            });
+        } else {
+            alert("이메일을 입력해주세요.");
+        }
+    });
+
+    // 인증번호 확인 버튼 클릭 시
+    $("#checkEmailBtn").click(function() {
+		var email = $("#email").val();
+		var chechnum = $('#chechnum').val();
+		
+		alert(chechnum);
+		if (chechnum) {
+			$.ajax({
+				url: "/miniWeb/verifyAuthCode",
+                type: "POST",
+                data: { email: email, ckechnum: chechnum },
+				dataType: 'text',
+                success: function (response) {
+					$("#checkwrap > div").html(response);
+				},
+                error: function () {
+                    alert("인증번호 확인에 실패했습니다.");
+                }
+            });
+        } else {
+            alert("인증번호를 입력해주세요.");
+        }
+    });
+});
+// 수정 버튼 클릭 시 최종 확인 후 제출
+$('#joinbtn').click(function(){
+	var email = $('#email').val();
+	var chechnum = $('#chechnum').val();
+    var authCode = $('#authCode').val();
+   
+    $('#checkwrap > div').html('');
+   
+    if (!email) {
+        $('#check2').html('<span style="color: red; font-weight: bold;">이메일 입력해주세요.</span>');
+    } else if (!chechnum) {
+		$('#check2').html('<span style="color: red; font-weight: bold;">인증번호를 입력해주세요.</span>');
+	} else if (chechnum != authCode) {
+		$('#check2').html('<span style="color: red; font-weight: bold;">이메일 인증을 해주세요</span>');
+	} else {
+        // 폼 유효성 검사 통과 시 서버에 제출
+        $.ajax({
+            type: 'post',
+            url: '/miniWeb/member/infoUpdate.do',
+            data: $('#updateForm').serialize(),
+            dataType: 'text',
+            success: function(){
+                alert('회원정보수정이 완료되었습니다.');
+                location.reload();
+            },
+            error: function(e){
+                console.log(e);
+            }
+        });
+    }
+});

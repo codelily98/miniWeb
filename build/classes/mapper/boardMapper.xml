@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="boardSQL">
 	<select id="boardList" parameterType="Map" resultType="boardDTO">
-		select * from miniboard order by ref desc, step asc limit #{startNum}, #{endNum}
+		select * from miniboard order by CATEGORY desc, LOGTIME DESC, step asc limit #{startNum}, #{endNum}
 	</select>
 	
 	<select id="getTotalA" resultType="Integer">
@@ -46,13 +46,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="boardHit" parameterType="int">
 		update miniboard set hit = hit + 1 where seq = #{seq}
 	</update>
+	<!-- 공지사항 -->
+	<select id="boardNotionList" parameterType="Map" resultType="boardDTO">
+		select * from miniboard WHERE CATEGORY = 1 order by LOGTIME DESC, step asc limit #{startNum}, #{endNum}
+	</select>	
 	<!-- 인기글 게시판 -->
 	<select id="boardHotList" parameterType="Map" resultType="boardDTO">
-		select * from miniboard order by hit desc, step asc limit #{startNum}, #{endNum}
+		select * from miniboard order by CATEGORY DESC, hit desc, step asc limit #{startNum}, #{endNum}
 	</select>
 	<!-- 최신글 게시판 -->
 	<select id="boardLatestList" parameterType="Map" resultType="boardDTO">
-		select * from miniboard order by logtime desc, step asc limit #{startNum}, #{endNum}
+		select * from miniboard order by CATEGORY DESC, logtime desc, step asc limit #{startNum}, #{endNum}
 	</select>
 	<!-- View -->
 	<select id="boardView" parameterType="Integer" resultType="boardDTO">
@@ -80,5 +84,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="getSearchA" parameterType="String" resultType="Integer">
 		SELECT COUNT(*) FROM MINIBOARD where subject LIKE CONCAT('%', #{search}, '%')
+	</select>
+	<select id="getNotionA" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM MINIBOARD where CATEGORY = '1'
 	</select>
 </mapper>

@@ -31,6 +31,7 @@ public class LoginService implements CommandProcess {
 			session.setAttribute("memNickname", memberDTO.getNickname());
 			session.setAttribute("memName", memberDTO.getName());
 			session.setAttribute("memEmail", memberDTO.getEmail());
+			session.setAttribute("profile", memberDTO.getProfile());
 			
 			return "/member/loginOk.jsp";
 		} else {

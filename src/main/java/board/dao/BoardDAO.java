@@ -52,7 +52,7 @@ public class BoardDAO {
 		
 		return totalA;
 	}
-
+	
 	public void boardWrite(Map<String, Object> map) {
 		SqlSession sqlSession = sessionFactory.openSession();
 		
@@ -62,6 +62,18 @@ public class BoardDAO {
 		sqlSession.close();
 	}
 	
+	public List<BoardDTO> boardNotionList(int startNum, int endNum) {
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		SqlSession sqlSession = sessionFactory.openSession();
+		list = sqlSession.selectList("boardSQL.boardNotionList", map); 
+		sqlSession.close();
+		return list;
+	}
+
 	public List<BoardDTO> boardHotList(int startNum, int endNum) {
 		List<BoardDTO> list = new ArrayList<BoardDTO>();
 		Map<String, Integer> map = new HashMap<>();
@@ -144,5 +156,14 @@ public class BoardDAO {
 		sqlSession.update("memberSQL.profileUpdate", map);
 		sqlSession.commit();
 		sqlSession.close();
+	}
+
+	public int getNotionA() {
+		int totalA = 0;
+		SqlSession sqlSession = sessionFactory.openSession();
+		totalA = sqlSession.selectOne("boardSQL.getNotionA");
+		sqlSession.close();
+
+		return totalA;
 	}
 }

@@ -117,15 +117,29 @@ public class MemberDAO {
 		Map<String, String> map = new HashMap<>();
 		map.put("id",id);
 		map.put("nickname",nickname);
-		sqlSession.update("memberSQL.nicknameUpdate",map);
+		sqlSession.update("memberSQL.nicknameUpdate", map);
 		sqlSession.commit();
 		sqlSession.close();
 	}
 
 	public void profileUpdate(MemberDTO memberDTO) {
 		SqlSession sqlSession = sessionFactory.openSession();
-		sqlSession.update("memberSQL.profileUpdate",memberDTO);
+		sqlSession.update("memberSQL.profileUpdate", memberDTO);
 		sqlSession.commit();
 		sqlSession.close();
    }
+
+	public void adminAccess(String id) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.update("memberSQL.adminAccess", id);
+		sqlSession.commit();
+		sqlSession.close();
+	}
+
+	public void infoUpdate(MemberDTO memberDTO) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.update("memberSQL.infoUpdate",memberDTO);
+		sqlSession.commit();
+		sqlSession.close();
+	}
 }

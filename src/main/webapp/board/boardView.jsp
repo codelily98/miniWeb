@@ -65,7 +65,7 @@
 			<div id="listwrap">
 				<form id = boardViewForm>
 					<input type="hidden" name="pg" value="${requestScope.pg }">
-					<input type="hidden" name="seq" value="${list[0].seq}">
+					<input type="hidden" id="seq" name="seq" value="${list[0].seq}">
 					<input type="hidden" id="pwd" value="${memPwd}">
 					<table>
 						<tr>
@@ -108,14 +108,58 @@
 					${pagingHTML }
 				</div>
 			</div>
-			<div id="btnwrap">
-				<c:if test="${not empty sessionScope.memId}">
-				<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
-				</c:if>
-				<c:if test="${empty sessionScope.memId}">
-				<input type="button" id="writebtn" value="로그인" onclick="location.href='/miniWeb/member/loginForm.do'">
-				</c:if>
-			</div>
+			<c:if test="${not empty sessionScope.memId}">
+				<div id="btnwrap">
+					<input type="hidden" id="id" name="name" value="${sessionScope.memId}">
+					<input type="hidden" id="nickname" name="nickname" value="${sessionScope.memNickname}">
+					<input type="hidden" id="profile" name="profile" value="${sessionScope.profile}">
+					<input type="button" id="comentShowBtn" value="댓글 작성" class="hide1">
+					<input type="button" id="comentHideBtn" value="댓글 닫기" class="show1">
+					<input type="button" id="writebtn" value="글쓰기" onclick="location.href='/miniWeb/board/boardWriteForm.do'">		
+				</div>
+				<div id="commentWritewrap" class="show1">
+				    <div class="comment-input-area">
+				        <div class="profile-pic">
+				            <img width="30px" height="30px" src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-97/upload/${sessionScope.profile}" alt="${profile}">
+				            <span class="nickname">${sessionScope.memId}</span>
+				        </div>
+				        <div class="comment-input">
+				            <textarea id="comment" name="comment" placeholder="댓글을 남겨보세요"></textarea>
+				            <div class="comment-actions">
+				                <input type="button" id="commentSubmitBtn" value="등록">
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<c:forEach var="commentDTO" items="${Clist}">
+					<div id="commentViewwrap">
+						<div class="profile-pic">
+							<div id="InsertImg">
+								<c:if test="${not empty commentDTO.profile}">
+				            		<img width="30px" height="30px" src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-97/upload/${commentDTO.profile}" alt="${commentDTO.profile}">
+				           		</c:if>
+				           		<c:if test="${empty commentDTO.profile}">
+				            		<img width="30px" height="30px" src="../image/default.png" alt="default">
+				            	</c:if>
+							</div>
+							<div id="InsertNickname">
+								<span class="nickname" id="insertNickname">${commentDTO.nickname}</span>
+							</div>
+							<div id="InsertDate">
+								<span><fmt:formatDate pattern="yy.MM.dd. HH:mm" value="${commentDTO.logtime}"/></span>
+							</div>
+				        </div>
+						<div id="insertComment" name="insertComment">
+							<div id="borderwrap">${commentDTO.content}</div>
+						</div>
+					</div>
+				</c:forEach>
+			</c:if>
+			<c:if test="${empty sessionScope.memId}">
+				<div id="btnwrap">
+					<input type="button" id="writebtn" value="로그인" onclick="location.href='/miniWeb/member/loginForm.do'">	
+				</div>
+			</c:if>
 		</div>
 	</div>
 	<div id="footer">
@@ -124,6 +168,7 @@
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../js/boardForm.js"></script>
+<script type="text/javascript" src="../js/commentWrite.js"></script>
 <script type="text/javascript" src="../js/boardDelete.js"></script>
 <script type="text/javascript" src="../js/search.js"></script>
 </body>

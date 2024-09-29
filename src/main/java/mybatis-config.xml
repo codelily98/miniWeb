@@ -8,7 +8,7 @@
 	<typeAliases>
 		<typeAlias type="member.bean.MemberDTO" alias="memberDTO"/>
 		<typeAlias type="board.bean.BoardDTO" alias="boardDTO"/>
-		<typeAlias type="admin.bean.AdminDTO" alias="adminDTO"/>
+		<typeAlias type="comment.bean.CommentDTO" alias="commentDTO"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -26,6 +26,6 @@
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml"/>
 		<mapper resource="mapper/boardMapper.xml"/>
-		<mapper resource="mapper/adminMapper.xml"/>
+		<mapper resource="mapper/commentMapper.xml"/>
 	</mappers>
 </configuration>
