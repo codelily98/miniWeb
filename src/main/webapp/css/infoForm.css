@@ -333,9 +333,29 @@ input[type="button"]:hover {
 	background-color: red;
 }
 
-#deleteInfo, #adminGet {
+#deleteInfo  {
 	text-align: right;	
 	padding: 10px;
+}
+
+#adminGet {
+	display: flex;
+	padding: 10px;
+	width: 100%;
+	align-items: center;
+	flex-direction: row;
+}
+
+#backwrap, #adminBtnwrap {
+	width: 50%;
+}
+
+#backwrap {
+	text-align: left;
+}
+
+#adminBtnwrap {
+	text-align: right;
 }
 
 #mainwrap {
@@ -434,6 +454,12 @@ input[type="button"]:hover {
 	width: 200px;
 	height: 200px;
 	border-radius: 10px;
+}
+
+#profileImg .image {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
 }
 
 #nicknameView {

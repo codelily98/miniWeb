@@ -138,4 +138,11 @@ public class BoardDAO {
 
 		return totalA;
 	}
+
+	public void profileUpdate(Map<String, Object> map) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.update("memberSQL.profileUpdate", map);
+		sqlSession.commit();
+		sqlSession.close();
+	}
 }

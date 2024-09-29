@@ -61,7 +61,7 @@ $('#updateBtn').click(function(){
 		$.ajax({
 			type: 'post',
 			url: '/miniWeb/member/infoUpdate.do',
-			data: $('form[name="updateForm"]').serialize(), // name=값&id=값&~~~~
+			data: $('form[id="updateForm"]').serialize(),
 			success: function(){
 				alert('회원정보 수정 완료');
 				location.href = '/miniWeb/index.do';
@@ -99,3 +99,57 @@ function checkPost() {
     }).open();
 }
 
+$('#nickupdateBtn').click(function(){
+   confirm('해당 요청은 즉시 저장되며 되돌릴 수 없습니다.\n정말 닉네임을 바꾸시겠습니까?');
+   if(confirm){
+      nickname = $('#nickname').val();
+      id = $('#id').val();
+      $.ajax({
+         type:'post',
+         url: '/miniWeb/member/nicknameUpdate.do',
+         data: {
+            'id':id,
+            'nickname':nickname
+         },
+         success:function(){
+            location.reload();
+         },
+         error:function(e){
+            console.log(e);
+         }
+      })      
+   }
+});
+
+//프로필 사진 수정
+$('#profileBtn').click(function(){
+	$('#profile').trigger('click');   //강제 이벤트 발생 -> image1 아이디에 해당하는 곳이 클릭되는 이벤트
+});
+$('#profile').on('change',function(){
+	readURL(this);
+   
+	let formdata = new FormData($('#updateForm')[0]);
+		$.ajax({
+			type:'post',
+			enctype:'multipart/form-data',
+			processData:false,
+			contentType: false,
+			url:'/miniWeb/member/profileUpdate.do',
+			data: formdata,
+			success:function(){
+            	alert('프로필 등록 완료');
+            	location.reload();
+			},
+			error:function(e){
+				console.log(e);
+		}
+	});
+});
+
+function readURL(input){
+   var reader = new FileReader();
+   reader.onload = function(e){
+      $('.image').attr('src',e.target.result);   //e.targetr - 이벤트가 발생하는 요소를 반환해준다
+   }
+   reader.readAsDataURL(input.files[0]);
+}

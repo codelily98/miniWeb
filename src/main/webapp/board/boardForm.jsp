@@ -76,7 +76,7 @@
 					<tbody>
 						<!-- DB에서 불러와서 입력 -->
 						<c:if test="${list != null}">
-						<c:forEach var = "boardDTO" items = "${list}">
+						<c:forEach var="boardDTO" items="${list}">
 							<c:set var="startnum" value="${startnum + 1}"/>
 							<tr>
 								<td>
@@ -84,14 +84,14 @@
 									<span>${startnum}</span>
 								</td>
 								<td class="asubject" id="titleStyle">
-									<input type = "hidden" id = "pg" class = "pg" value = "${requestScope.pg}" />
-									<input type = "hidden" id = "memNickname" class = "memNickname" value = "${memNickname}" />
-									<input type = "hidden" id = "postnickname" class = "postnickname" value = "${boardDTO.nickname}" />
+									<input type="hidden" id="pg" class="pg" value="${requestScope.pg}" />
+									<input type="hidden" id="memNickname" class="memNickname" value="${memNickname}" />
+									<input type="hidden" id="postnickname" class="postnickname" value="${boardDTO.nickname}" />
 									<span id="title">${boardDTO.subject}</span>
 								</td>
 								<td>${boardDTO.nickname}</td>
 								<td>
-									<fmt:formatDate pattern = "yy.MM.dd." value = "${boardDTO.logtime}"/>
+									<fmt:formatDate pattern="yy.MM.dd." value="${boardDTO.logtime}"/>
 								</td>
 								<td>${boardDTO.hit }</td>
 							</tr>
@@ -109,6 +109,9 @@
 				</c:if>
 				<c:if test="${empty sessionScope.memId}">
 				<input type="button" id="writebtn" value="로그인" onclick="location.href='/miniWeb/member/loginForm.do'">
+				</c:if>
+				<c:if test="${sessionScope.admin == '1'}">
+				<input type="button" id="writebtn" value="공지등록" onclick="location.href='/miniWeb/board/boardWriteForm.do'">
 				</c:if>
 			</div>
 		</div>

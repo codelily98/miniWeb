@@ -60,15 +60,16 @@
          					<div id="profileimgwrap">
          						<div id="profileImg">
          							<c:if test="${list[0].profile != null}">
-         								<img src="${list[0].profile}" alt="${sessionScope.profileName}"/>
-         							</c:if>
-         							<c:if test="${list[0].profile == null}">
-         								<img src="../image/default.png" alt="default"/>
-         							</c:if>
+										<img class="image" src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-97/upload/${list[0].profile}" alt="${profileName}"/>
+									</c:if>
+									<c:if test="${list[0].profile == null}">
+										<img class="image" src="../image/default.png" alt="default"/>
+									</c:if>
          						</div>
          					</div>
          					<div id="profilebtnwrap">
          						<input type="button" value="프로필 변경" id="profileBtn">
+         						<input type="file" id="profile" name="profile" style="display:none;">
          					</div>
          				</div>
          				<div id="nicknamewrap">
@@ -96,6 +97,12 @@
 	         					</div>
 	         					<div id="namewrap" class="infoDiv">
 	         						<div id="textDiv">이름 : ${list[0].name}</div>
+	         						<input type="hidden" id="name" name="name" value="${list[0].name}"/>
+	         					</div>
+	         					<div id="textDiv" class="infoDiv">
+	         						<div id="textDiv" class="hide2">
+	         						성별 : <c:if test = "${list[0].gender == 'M'}">남자</c:if><c:if test = "${list[0].gender == 'F'}">여자</c:if>
+	         						</div>
 	         						<input type="hidden" id="name" name="name" value="${list[0].name}"/>
 	         					</div>
 	         					<div id="emailwrap" class="infoDiv">
@@ -134,7 +141,12 @@
          		</div>
          		<div id="bottombtnwrap">
          			<div id="adminGet">
-         				<a href="#">&lt;관리자 권한 신청&gt;</a>
+         				<div id="backwrap">
+         					<a href="#" onclick="history.back()">&lt;뒤로가기&gt;</a>
+         				</div>
+         				<div id="adminBtnwrap">
+         					<a href="#">&lt;관리자 권한 신청&gt;</a>
+         				</div>
          			</div>
          		</div>
          	</div>

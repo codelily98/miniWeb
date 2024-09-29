@@ -47,4 +47,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteInfo" parameterType="String">
 		DELETE FROM MINIMEMBER WHERE ID = #{id}
 	</delete>
+	
+	<!-- 닉네임 수정(변경) -->
+	<update id="nicknameUpdate" parameterType="Map">
+		update MINIMEMBER set nickname = #{nickname} where id = #{id}
+	</update>
+   
+	<!-- 프로필 수정(변경) -->
+	<update id="profileUpdate" parameterType="memberDTO">
+		update MINIMEMBER set profile = #{profile} where id = #{id}
+	</update>
 </mapper>

@@ -111,4 +111,21 @@ public class MemberDAO {
 		sqlSession.close();
 		return su;
 	}
+	
+	public void nicknameUpdate(String id, String nickname) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		Map<String, String> map = new HashMap<>();
+		map.put("id",id);
+		map.put("nickname",nickname);
+		sqlSession.update("memberSQL.nicknameUpdate",map);
+		sqlSession.commit();
+		sqlSession.close();
+	}
+
+	public void profileUpdate(MemberDTO memberDTO) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.update("memberSQL.profileUpdate",memberDTO);
+		sqlSession.commit();
+		sqlSession.close();
+   }
 }
