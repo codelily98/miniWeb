@@ -10,9 +10,7 @@ public class LogoutService implements CommandProcess {
 	@Override
 	public String requestpro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		HttpSession session = request.getSession();
-		session.removeAttribute("memName");
-		session.removeAttribute("memId");
-		session.removeAttribute("memEmail");
+		session.invalidate();
 		
 		return "/member/logout.jsp";
 	}
