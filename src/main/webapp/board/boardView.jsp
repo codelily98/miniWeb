@@ -83,7 +83,14 @@
 						</tr>
 						<tr>
 							<th align="left">작&nbsp;성&nbsp;자&nbsp;:</th>
-							<td align="left">${list[0].id}</td>
+							<td align="left" class="tdtd">
+								<div id="imgimg">
+									<img class="boardWriterImg" src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-97/upload/${list[0].profile}" alt="${sessionScope.profile}" width="30px" height="30px" style="border-radius: 15px;">
+								</div>
+								<div id="nicknick">
+									${list[0].nickname}
+								</div>
+							</td>
 							<th align="right">조&nbsp;회&nbsp;수&nbsp;:</th>
 							<td id="hitStyle" align="right">${list[0].hit}</td>
 						</tr>
@@ -121,7 +128,7 @@
 				    <div class="comment-input-area">
 				        <div class="profile-pic">
 				            <img width="30px" height="30px" src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-97/upload/${sessionScope.profile}" alt="${profile}">
-				            <span class="nickname">${sessionScope.memId}</span>
+				            <span class="nickname">${sessionScope.memNickname}</span>
 				        </div>
 				        <div class="comment-input">
 				            <textarea id="comment" name="comment" placeholder="댓글을 남겨보세요"></textarea>

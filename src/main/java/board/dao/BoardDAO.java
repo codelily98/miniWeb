@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import board.bean.BoardDTO;
+import member.bean.MemberDTO;
 
 public class BoardDAO {
 	private static BoardDAO boardDAO = new BoardDAO();
@@ -165,5 +166,12 @@ public class BoardDAO {
 		sqlSession.close();
 
 		return totalA;
+	}
+
+	public void listProfileUpdate(Map<String, Object> map) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.update("boardSQL.listProfileUpdate", map);
+		sqlSession.commit();
+		sqlSession.close();
 	}
 }

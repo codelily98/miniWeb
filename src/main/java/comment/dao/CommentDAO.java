@@ -49,4 +49,11 @@ public class CommentDAO {
 		sqlSession.close();
 		return Clist;
 	}
+
+	public void commentProfileUpdate(Map<String, Object> map) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.update("commentSQL.commentProfileUpdate", map);
+		sqlSession.commit();
+		sqlSession.close();		
+	}
 }

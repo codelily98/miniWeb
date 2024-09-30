@@ -216,7 +216,6 @@ $(document).ready(function () {
 		var email = $("#email").val();
 		var chechnum = $('#chechnum').val();
 		
-		alert(chechnum);
 		if (chechnum) {
 			$.ajax({
 				url: "/miniWeb/verifyAuthCode",

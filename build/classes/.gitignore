@@ -1,0 +1,9 @@
+/board/
+/com/
+/comment/
+/db.properties
+/main/
+/map/
+/mapper/
+/member/
+/mybatis-config.xml

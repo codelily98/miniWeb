@@ -22,7 +22,7 @@ $(function(){
 					if(result != 'fail') {
 						location.href="../index.do";				
 					} else {
-						$("#checkPwd").html("<span style='color: red; font-size: 10pt; font-weight: bold;'>아이디 또는 비밀번호를 확인해주세요.</span>");
+						$("#checkpwd").html("<span style='color: red; font-size: 10pt; font-weight: bold;'>아이디 또는 비밀번호를 확인해주세요.</span>");
 					}
 				},
 				error: function(e) {

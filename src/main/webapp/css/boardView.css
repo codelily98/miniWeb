@@ -494,6 +494,10 @@ table td {
 	width: 5%;
 }
 
+#InsertImg img, .profile-pic img {
+	border-radius: 15px;
+}
+
 #InsertNickname {
 	display: flex;
 	align-items: center;
@@ -556,8 +560,6 @@ table td {
 	outline: 2px solid #ff4b2b;
 }
 
-
-
 .comment-actions {
     display: flex;
     justify-content: flex-end;
@@ -575,4 +577,21 @@ table td {
 
 .comment-actions input:hover {
     background-color: red; /* 예시: 버튼 호버 색상 */
+}
+
+.tdtd {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+}
+
+.tdtd #imgimg {
+	display: flex;
+	width: 12%;
+}
+
+.tdtd #nicknick {
+	display: flex;
+	width: 100%;
 }

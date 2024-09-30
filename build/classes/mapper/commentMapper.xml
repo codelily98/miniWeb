@@ -9,6 +9,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         VALUES (#{ref}, #{id}, #{nickname}, #{profile}, #{content}, NOW())
     </insert>
     <select id="commentView" parameterType="Integer" resultType="commentDTO">
-    	SELECT * FROM MINICOMMENT WHERE REF = #{ref}
+    	SELECT * FROM MINICOMMENT WHERE REF = #{ref} ORDER BY LOGTIME DESC
     </select>
+    
+    <!-- 프로필 사진 업데이트 -->
+	<update id="commentProfileUpdate" parameterType="Map">
+		UPDATE MINICOMMENT SET PROFILE = #{profile} WHERE ID = #{id}
+	</update>
 </mapper>

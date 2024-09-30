@@ -88,4 +88,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getNotionA" parameterType="String" resultType="Integer">
 		SELECT COUNT(*) FROM MINIBOARD where CATEGORY = '1'
 	</select>
+	
+	<!-- 프로필 사진 업데이트 -->
+	<update id="listProfileUpdate" parameterType="Map">
+		UPDATE MINIBOARD SET PROFILE = #{profile} WHERE ID = #{id}
+	</update>
 </mapper>

@@ -1,6 +1,8 @@
 package member.service;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +12,9 @@ import com.control.CommandProcess;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import board.dao.BoardDAO;
 import board.service.NCPObjectStorageService;
+import comment.dao.CommentDAO;
 import member.bean.MemberDTO;
 import member.dao.MemberDAO;
 
@@ -47,6 +51,15 @@ public class ProfileUpdateService implements CommandProcess{
 	  
 		MemberDAO memberDAO = MemberDAO.getInstance();
 		memberDAO.profileUpdate(memberDTO);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("profile", profile);
+		BoardDAO boardDAO = BoardDAO.getInstance();
+		boardDAO.listProfileUpdate(map);
+		
+		CommentDAO commentDAO = CommentDAO.getInstance();
+		commentDAO.commentProfileUpdate(map);
 		
 		session.setAttribute("profile", profile);
 		request.setAttribute("realFolder", realFolder);
