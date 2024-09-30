@@ -13,6 +13,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import board.dao.BoardDAO;
+import comment.dao.CommentDAO;
 
 public class BoardWriteService implements CommandProcess {
     private String bucketName = "bitcamp-9th-bucket-97";
@@ -38,6 +39,7 @@ public class BoardWriteService implements CommandProcess {
         String email = (String) session.getAttribute("memEmail");
         String subject = multi.getParameter("subject");
         String content = multi.getParameter("content");
+        String profile = multi.getParameter("profile");
         String image1 = multi.getParameter("image1"); // 원본 파일 이름
         int admin = Integer.parseInt(multi.getParameter("admin"));
         System.out.println("BoardWriteService image1값: " + image1);
@@ -53,11 +55,11 @@ public class BoardWriteService implements CommandProcess {
         String imageName = null;
         
         if(image1 != null) {
-        	map.put("image1", image1);
-        	File imageFile = new File(image1);
-        	imageName = imageFile.getName(); // 파일 이름만 추출
+           map.put("image1", image1);
+           File imageFile = new File(image1);
+           imageName = imageFile.getName(); // 파일 이름만 추출
         } else {
-        	map.put("image1", null);
+           map.put("image1", null);
         }
         
         System.out.println("subject = " + subject);
@@ -67,7 +69,10 @@ public class BoardWriteService implements CommandProcess {
         // DB에 데이터 저장
         BoardDAO boardDAO = BoardDAO.getInstance();
         boardDAO.boardWrite(map);
-
+        
+        map.put("profile", profile);
+        boardDAO.listProfileUpdate(map);
+      
         request.setAttribute("image1", image1);
         request.setAttribute("imageName", imageName);
         

@@ -56,4 +56,11 @@ public class CommentDAO {
 		sqlSession.commit();
 		sqlSession.close();		
 	}
+
+	public void commentWrtieFormDelete(int seq) {
+		SqlSession sqlSession = sessionFactory.openSession();
+		sqlSession.delete("commentSQL.commentWrtieFormDelete", seq);
+		sqlSession.commit();
+		sqlSession.close();		
+	}
 }

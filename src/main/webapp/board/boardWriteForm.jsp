@@ -65,6 +65,7 @@
 		<div id="boardlist">
 			<div id="listwrap">
 				<form id="editorForm">
+					<input type="hidden" id="profile" name="profile" value="${sessionScope.profile}">
 					<input type="text" name="subject" id="subject" placeholder="제목 입력"/>
 					<!-- 스마트에디터가 적용될 textarea -->
 					<textarea name="ir1" id="ir1" cols="100" rows="10"></textarea>
@@ -119,6 +120,7 @@ function submitContents(elClickedObj) {
 	let subject = document.getElementById("subject").value;
 	let content = document.getElementById("ir1").value;
 	let admin = document.getElementById("admin").value;
+	let profile = document.getElementById("profile").value;
 
 	// 본문 내용에서 첫 번째 이미지 태그 찾기
 	let imgTag = content.match(/<img[^>]+src="([^">]+)"/);
@@ -137,6 +139,7 @@ function submitContents(elClickedObj) {
 	formData.append('subject', subject);
 	formData.append('content', content);
 	formData.append('admin', admin);
+	formData.append('profile', profile);
 	
 	// 이미지가 있는 경우에만 추가
 	if (imgName) {

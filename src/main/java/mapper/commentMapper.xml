@@ -16,4 +16,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="commentProfileUpdate" parameterType="Map">
 		UPDATE MINICOMMENT SET PROFILE = #{profile} WHERE ID = #{id}
 	</update>
+	
+	<delete id="commentWrtieFormDelete" parameterType="Integer">
+		DELETE FROM MINICOMMENT WHERE REF = #{seq}
+	</delete>
 </mapper>
