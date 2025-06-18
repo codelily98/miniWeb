@@ -77,21 +77,88 @@
 
 ---
 
-### 필수 구현 기능
+## ERD
 
-1. **회원 시스템**
-    - 회원가입, 로그인, 회원정보 수정, 회원탈퇴
-    - **이메일 인증** 기능 구현 (참고: 인터넷 검색)
-2. **게시판 기능**
-    - 글쓰기, 목록 보기, 작성한 글 확인, 덧글 기능
-    - 글 수정 및 삭제
-    - 사진 첨부기능
-    - **스마트 에디터** 도입 (참고: [스마트 에디터 설치 가이드](https://beforb.tistory.com/53))
-3. **게시판 검색 및 페이징**
-    - 검색 조건: 기간, 제목 또는 작성자
-    - 검색할 input 제공, 결과 페이징 처리
-4. **관리자 페이지**
-    - 공지사항 등록/삭제
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 ERD.png" />
+
+## 기능
+
+- 회원
+  - 회원가입(이메일 인증)
+  - 로그인/로그아웃
+  - 정보수정(프로필, 닉네임, 주소, 비밀번호, 전화번호)
+  - 회원탈퇴
+- 커뮤니티
+  - 글 목록 보기(공지사항, 인기글, 최신글)
+  - 글 상세보기
+  - 글/댓글 작성/수정/삭제(이미지 첨부)
+- 뉴스
+  - 네이버 뉴스 페이지로 이동
+- 캘린더
+  - 구글 캘린더 API 적용
+- 지도
+  - 카카오 지도 API 적용 (강남 비트캠프 기준 지도 출력)
+- 검색
+  - 커뮤니티 내용 검색 기능
+
+**역할 (BE/FE)**
+
+- 프로젝트 팀장
+  - 프로젝트 구조 및 기능 설계/구현
+  - ERD 설계 및 usecase 작성
+- BE
+  - 회원 및 커뮤니티 기능 구현
+  - MyBatis + NCP DB 연동 및 이미지 업로드
+  - 카카오 로그인 적용
+- FE
+  - 전체 페이지 구성 및 스마트 에디터 적용
+- CI/CD
+  - NCP 서버 + Docker + Jenkins를 이용한 배포
+
+## 성과
+
+- MVC 프로젝트 설계 및 개발 숙달
+- 다양한 API 사용 경험
+- CI/CD 파이프라인 구축 경험
+
+## 프로젝트 리뷰
+
+- Keep: 팀원 역할 분담, 스마트 에디터 성공 적용
+- Problem: 에디터 적용 난이도, API 기능 활용 부족
+
+## 느낀점
+
+- MVC 구조에 대한 실전 경험
+- 반응형 미지원 문제 인식 → 다른 프로젝트에서 구현 예정
+
+## 실행화면
+### 메인화면
+- 로그아웃
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 main.png" />
+- 로그인
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 main-login.png" />
+
+### 마이페이지
+- 기본
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 mypage.png" />
+- 닉네임 변경
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 mypage-nickname-update.png" />
+- 회원정보 변경
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 mypage-info-update.png" />
+
+### 커뮤니티
+- 글목록
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 community.png" />
+- 글 상세보기 & 댓글 작성
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 readpage.png" />
+- 글 작성 (SmartEditor 2.0)
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 writepage.png" />
+
+### 기능
+- 지도
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 map.png" />
+- 캘린더
+<img src="https://storage.googleapis.com/next-step-assets/saosa/404 calendar.png" />
     - 상품 등록/삭제
 
 ---
